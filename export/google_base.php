@@ -18,14 +18,17 @@ function flush_buffers()
 }
 
 
-define('SAVE_FEED_LOCATION','/var/www/html/magento/export/google_base.txt');
+define('SAVE_FEED_LOCATION','/var/www/html/magento/export/');
+define('SAVE_FEED_FILENAME','google_base'); // ".txt" estension will be added
+define('SAVE_FEED_FILE_EXTENSION','.txt');
 set_time_limit(0);
 require_once '/var/www/html/magento/app/Mage.php';
 Mage::app();
 
 try 
 {
-	$handle = fopen(SAVE_FEED_LOCATION, 'w');
+        $file_index=1;
+	$handle = fopen(SAVE_FEED_LOCATION.SAVE_FEED_FILENAME.$file_index.SAVE_FEED_FILE_EXTENSION, 'w');
 	$heading = 			array('id','title','description','google_product_category','product_type','link','image_link','condition','availability','price','brand','mpn','weight');
 	$feed_line= implode("\t", $heading)."\r\n";
 	fwrite($handle, $feed_line);
@@ -50,8 +53,10 @@ try
 	$count = count($products);
 	echo "Writing $count Products<br/>";
 	
+        $counter=0;
 	foreach ($products as $product)
 	{
+                $counter=1;
 		$product_data = array();
 		
 		//sku
@@ -194,6 +199,12 @@ try
 		$feed_line = implode("\t", $product_data)."\r\n";
 		fwrite($handle, $feed_line);
 		fflush($handle);
+                if ($counter==200000){
+                    $counter=0;
+                    $file_index++;
+                    fclose($handle);
+                    $handle = fopen(SAVE_FEED_LOCATION.SAVE_FEED_FILENAME.$file_index.SAVE_FEED_FILE_EXTENSION, 'w');
+                }
 		
 	}
 	
@@ -201,5 +212,5 @@ try
 	
 }
 catch(Exception $e){
-die($e->getMessage());
+    die($e->getMessage());
 }
