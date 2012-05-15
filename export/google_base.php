@@ -204,6 +204,8 @@ try
                     $file_index++;
                     fclose($handle);
                     $handle = fopen(SAVE_FEED_LOCATION.SAVE_FEED_FILENAME.$file_index.SAVE_FEED_FILE_EXTENSION, 'w');
+                    fwrite($handle, $feed_line);
+	
                 }
 		
 	}
