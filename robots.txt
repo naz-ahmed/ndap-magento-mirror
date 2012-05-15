@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /checkout
+Disallow: /debug
+Disallow: /*?SID=
+Disallow: /*?price=
+Disallow: /*cat=
+Disallow: /*p=
+Disallow: /*order=
+Disallow: /*dir=
+Disallow: /*mode=
+Disallow: /*limit=
+Disallow: /*q=
+Allow: /
+
+Sitemap: http://www.carpartkings.com/sitemap.xml
