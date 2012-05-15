@@ -1,0 +1,261 @@
+<?php
+
+//Error reporting
+ini_set('display_errors', 1);
+error_reporting(E_ALL); 
+
+include "/var/etl/bin/includes/logging.php";
+
+// Logging class initialization
+$log = new Logging();
+
+$log->lfile('/var/log/paGateway/pag_update_shipping.log');
+
+$log->lwrite("starting file. \r\n");
+
+// **************************************** SCRIPT MODE ***************************************************************/
+// set to test so that magento status is not set to complete. no way to move from complete back to processing         */
+	$scriptMode = "test";
+
+$config_info = parse_ini_file('paGateway.ini', true);
+
+//load paAPI
+require_once("paOrder.php");
+
+
+function getStatus($orderId)
+{
+	$config_info = parse_ini_file('paGateway.ini', true);
+
+	$uid = $config_info['login']['uid'];
+	$pass = $config_info['login']['pass'];
+	
+	// PO Number entered via API. Use Magento Invoice ID.
+	//$_orderId = "100000043";
+	
+
+	$order = new paOrder();
+	$order->setUser($uid, $pass);
+	$order->setPoNumber($orderId);
+	$order->sendRequest();  //response is JSON object
+	
+	//get the response
+	$response = json_decode($obj, true); 
+	$OrderStatus = array();
+	if($response)
+	{
+		if($response["responseStatus"] == "Failed")
+		{
+			//PO number was wrong or response failed for some other reason
+			echo "Response failed \r\n";
+			$log->lwrite("Response failed while checking order status at PA. Order# ".$orderId." ResponseDetail: ".$response['responseDetail']."\r\n"); 
+			$OrderStatus['Status'] = "Failed";
+			
+		}
+		
+	//prepare array to return
+	$OrderStatus['Status'] = $response[0]['Status'];
+	$OrderStatus['TrackingNumber'] = $response[0]['TrackingNum'];
+	$OrderStatus['Time'] = $response[0]['entryTime'];
+	
+	}
+	
+	return $OrderStatus;
+	
+}
+
+
+require_once("../app/Mage.php");
+Mage::app();
+
+
+//if shipping, shipping time will be added to the comment later
+$comment = "shipped";
+
+$email = false;
+if($scriptMode == "live") { $email = true; }
+
+$includeComment = false;  //sets if the comment should be included in the email to customer.
+if($scriptMode == "live") { $includeComment = false; }
+
+//***************************** testing with one ID for now. TODO: loop through all Ids with status=sent_to_pa *********** */
+
+
+//$order = Mage::getModel('sales/order')->loadByIncrementId($orderId);
+$myOrder = Mage::getModel('sales/order');
+
+$orders=Mage::getModel('sales/mysql4_order_collection');
+$orders->addFieldToFilter('status',Array('eq'=>"sent_to_pa"));  //filter to orders whose Status is "sent_to_pa"
+
+// print_r($orders);
+
+
+$allIds=$orders->getAllIds();
+
+
+foreach($allIds as $thisId) 
+{
+	
+	$myOrder->reset()->load($thisId);
+	$myOrder->load(Mage::getSingleton('sales/order')->getLastOrderId());
+	$IncrementId = $myOrder->getIncrementId();
+	$paDetails = getStatus($IncrementId);
+	$paStatus = $paDetails['Status'];
+	
+	$log->lwrite("Order id = ".$thisId." Increment Id = ".$IncrementId." PA Status = ".$paStatus."\r\n");
+	
+	//skip over anything that doesn't have "Shipped" status from PA
+	if($paStatus !== "Shipped") { continue; }
+
+	$TrackingNumber = $paStatus['TrackingNumber'];
+	$comment .= " ".$paStatus['Time']; //adds the shipping time to the comment
+	
+	//DEV
+	// going to try it for all. should only make changes if we have a tracking number
+	// if($IncrementId !== '100000034') { continue; }
+	
+	echo "Increment Id = ".$IncrementId."\r\n";
+	echo	"Status = ".$myOrder->getStatus()."\r\n";
+	
+	
+	
+	$convertor = Mage::getModel('sales/convert_order');
+	$shipment = $convertor->toShipment($myOrder);
+
+	foreach ($myOrder->getAllItems() as $orderItem) {
+	    
+	    if (!$orderItem->getQtyToShip()) {
+	        continue;
+	    }
+	    if ($orderItem->getIsVirtual()) {
+	        continue;
+	    }
+	    
+	    $item = $convertor->itemToShipmentItem($orderItem);
+	
+	    $qty = $orderItem->getQtyToShip();
+	
+	    $item->setQty($qty);
+	    $shipment->addItem($item);
+	}
+	
+	
+
+	$MagentoShipMethod = $myOrder->getShippingMethod();
+	$MagentoShipDescription = $myOrder->getShippingDescription();
+	$MagentoShipCode = $myOrder->getCarrier_code();
+	
+	echo "MagentoShipMethod = ".$MagentoShipMethod."\r\n";
+	echo	"MagentoShipDescription = ".$MagentoShipDescription."\r\n";
+	echo "MagentoShipCode = ".$MagentoShipCode."\r\n";
+	
+	//$carrierInstances = Mage::getSingleton('shipping/config')->getAllCarriers($myOrder->getShipment()->getStoreId());
+	//$carrierInstances = Mage::getSingleton('shipping/config')->getAllCarriers(1);
+	//print_r($carrierInstances);
+	
+	//TODO google_checkout carriers! skipping them for now
+	if($MagentoShipCode == "googlecheckout_carrier")
+	{ continue; }
+	
+	$data = array();
+	$data['carrier_code'] = substr($MagentoShipMethod,0,strpos($MagentoShipMethod,'_'));
+	$data['title'] = $MagentoShipDescription;
+	$data['number'] = $TrackingNumber;
+	
+	$track = Mage::getModel('sales/order_shipment_track')->addData($data);
+	$shipment->addTrack($track);
+	
+	Mage::register('current_shipment', $shipment);
+	
+	$shipment->register();
+	$shipment->addComment($comment, $email && $includeComment);
+	
+	// TODO in admin marked email sent but don't see an email yet. doublecheck.
+	$shipment->setEmailSent(false);
+	if($scriptMode = live) { $shipment->setEmailSent(true); }
+	
+	// TODO marks item COMPLETE - disable for testing?
+	if($scriptMode == "test")
+	{
+		//TODO enable this line for real LIVE useage.
+		//$shipment->getOrder()->setIsInProcess(true); // believe this is what marks the order complete
+		
+		/*
+		$transactionSave = Mage::getModel('core/resource_transaction')
+		    ->addObject($shipment)
+		    ->addObject($shipment->getOrder())
+		    ->save();
+		
+		$shipment->sendEmail($email, ($includeComment ? $comment : ''));
+		*/
+		$log->lwrite("shipping recorded and order updated for Order Id: ".$IncrementId."\r\n");
+	}
+
+
+
+} //for-each $allIds
+
+
+
+
+
+/******  DEV
+
+
+$convertor = Mage::getModel('sales/convert_order');
+$shipment = $convertor->toShipment($order);
+
+foreach ($order->getAllItems() as $orderItem) {
+    
+    if (!$orderItem->getQtyToShip()) {
+        continue;
+    }
+    if ($orderItem->getIsVirtual()) {
+        continue;
+    }
+    
+    $item = $convertor->itemToShipmentItem($orderItem);
+
+    $qty = $orderItem->getQtyToShip();
+
+    $item->setQty($qty);
+    $shipment->addItem($item);
+}
+
+//TODO will need to find what actual carrier was and match
+
+$data = array();
+$data['carrier_code'] = 'ups';
+$data['title'] = 'United Parcel Service';
+$data['number'] = 'test';
+
+$track = Mage::getModel('sales/order_shipment_track')->addData($data);
+$shipment->addTrack($track);
+
+Mage::register('current_shipment', $shipment);
+
+$shipment->register();
+$shipment->addComment($comment, $email && $includeComment);
+// TODO in admin marked email sent but don't see an email yet. doublecheck.
+$shipment->setEmailSent(true);
+
+// TODO marks item COMPLETE - disable for testing?
+if($scriptMode == "live")
+{
+	$shipment->getOrder()->setIsInProcess(true);
+	
+	$transactionSave = Mage::getModel('core/resource_transaction')
+	    ->addObject($shipment)
+	    ->addObject($shipment->getOrder())
+	    ->save();
+	
+	$shipment->sendEmail($email, ($includeComment ? $comment : ''));
+}
+
+
+DEV *******/ 
+
+
+
+
+?>
