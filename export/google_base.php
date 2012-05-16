@@ -76,7 +76,7 @@ try
 		foreach ($product->getCategoryIds() as $_categoryId)
 		{
 			$category = Mage::getModel('catalog/category')->load($_categoryId);
-			$product_data['product_type'] = $category->getName().', ';
+			$product_data['product_type'] .= $category->getName().', ';
 		}
 		$product_data['product_type'] = rtrim($product_data['product_type'],', ');
 		
