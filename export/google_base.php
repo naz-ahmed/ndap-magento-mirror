@@ -56,7 +56,7 @@ try
         $counter=0;
 	foreach ($products as $product)
 	{
-                $counter=1;
+                $counter++;
 		$product_data = array();
 		
 		//sku
