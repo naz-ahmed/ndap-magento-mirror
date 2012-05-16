@@ -1,0 +1,280 @@
+<?php 
+/* /var/www/html/magento/app/design/frontend/carpartkings/default/template/page
+require_once '../app/Mage.php';
+Mage::app('carpartkings');
+*/
+include_once('/var/www/html/magento/fitter/dropdown.php'); 
+?> 
+
+<? 
+$firstDrop = getTierOne(); 
+$base = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); 
+?>
+
+<? $firstDrop = getTierOne(); ?>
+
+<script type="text/javascript">
+//<![CDATA[     
+var thisSection = 1;
+var stillclosed = "yup";
+
+var vFitsId = '<?php echo $firstDrop; ?>'; 
+var substr = vFitsId.split('|');
+ 
+  
+    function boxIt(){
+
+/*dropdown box one*/
+        jQuery('#vDropbox1').combobox({
+                             
+            data: substr,
+            matchMiddle: false,
+                    
+            key: function(e, ui) {
+                jQuery('#year').html(ui.value);
+                //$('#year').attr('name', 'New Name'); 
+            },
+            change: function(e, ui) {
+                jQuery('#year').html(ui.value);
+                theid = jQuery(ui.value).attr('id');
+                jQuery('#year').attr('name', theid); 
+            }
+        }).bind('comboboxselect', function(e, ui) {
+             
+/*dropdown box two*/
+
+                scrollBtns();                  
+                jQuery("#dropdowns").css("top","1px");
+      
+                //var vFitsId;
+                var droppingIds = theid;
+
+                /* Ajax call to get next drop data */ 
+                jQuery.ajax({      
+                    async: false,
+                    type: "POST",
+                    dataType: "text",
+                    url: "<?echo $base?>/fitter/dropdown2.php",
+                    data: "name="+droppingIds,
+                    success: function(dropData){
+                    vFitsId = dropData;
+                    }
+                    });   
+
+                var substr = vFitsId.split('|');  //need to get the response into an array
+             
+                jQuery('#vDropbox1').remove(); 
+                jQuery('#vDropbox2').show('slow');
+                jQuery('#yearback').css("display","inline");
+                 
+                jQuery('#vDropbox2').combobox({
+                    data:  substr,
+                    matchMiddle: false,
+                    key: function(e, ui) {},
+                    change: function(e, ui) {
+                        jQuery('#make').html(ui.value);
+                        theid2 = jQuery(ui.value).attr('id');
+                        jQuery('#make').attr('name', theid2);
+                        }
+                    }).bind('comboboxselect', function(e, ui) {
+         
+                        /*dropdown box three*/
+                        scrollBtns();
+                        jQuery("#dropdowns").css("top","1px");
+                         
+                        //var vFitsId
+                        var droppingIds = theid2;
+                        /* Ajax call to get next drop data */
+                        jQuery.ajax({
+                            async: false,
+                            type: "POST",
+                            dataType: "text",
+                            url: "<?echo $base?>/fitter/dropdown3.php",
+                            data: "name="+droppingIds,//"name=Andrew&location=CT",
+                            success: function(dropData){
+                            vFitsId = dropData;
+                            }
+                        });   
+
+                        var substr = vFitsId.split('|');  //need to get the response into an array
+                 
+                        jQuery('#vDropbox2').remove(); 
+                        jQuery('#vDropbox3').show('slow');
+                        jQuery('#vDropbox3').combobox({
+                            data: substr,
+                            matchMiddle: false,
+                            key: function(e, ui) {
+                                jQuery('#model').html(ui.value);
+                            },
+                            change: function(e, ui) {
+                                jQuery('#model').html(ui.value);
+                                theid3 = jQuery(ui.value).attr('id');
+                                jQuery('#model').attr('name', theid3); 
+                            }
+                        }).bind('comboboxselect', function(e, ui) {
+                            scrollBtns();
+                            jQuery('#vDropbox3').remove();
+                            jQuery('#dropdownsContainer').css("border","none");   
+                            });
+                            
+                 jQuery('.ui-combobox-list').show('fast', function() {scrollBtns();});        
+                });
+
+        jQuery('.ui-combobox-list').show('fast', function() {scrollBtns(); });
+
+        });
+} //end of boxIt() 
+
+function buildIt()
+    {   //alert("buildit");
+        
+        jQuery('#dropdowns').html('<div id = "vDropbox1" style=""></div> <div id = "vDropbox2" style="display:none;"></div> <div id = "vDropbox3" style="display:none;"></div>');
+        boxIt();   
+    } //end of buildIt()
+
+function redoIt()
+    {
+        jQuery('#vDropbox1').remove();
+        jQuery('#vDropbox2').remove();
+        jQuery('#vDropbox3').remove();
+        jQuery('#demo4').remove();
+        buildIt(); 
+        //boxIt(); 
+        jQuery('.ui-combobox-list').show('fast');  
+    }//end of redoIt()
+
+    
+function scrollBtns() //hide up down arrows if the box is too small 
+    {            
+        var newH = jQuery("#dropdowns").height();
+        thisSection = 1;
+        if (newH < 350){ 
+            jQuery('#goUp').css("display","none");
+            jQuery('#goDown').css("display","none");    
+            }else{ 
+                jQuery('#goUp').css("display","inline");
+                jQuery('#goDown').css("display","inline");     
+                } 
+    } //end of scrollBtns()   
+//]]>    
+</script> 
+
+
+<div class="search-vehicle" id="search-vehicle">
+    <div class="title">START HERE BY FINDING YOUR VEHICLE</div>
+    
+    <div class="search-form-vehicle" id="search-form-vehicle">
+        <div class="vform-search">
+            <div class="vinput-text">
+                <div id = "vMenu">
+                    <span id="year" style="padding-right:10px;">Select Your Vehicle</span> 
+                    <span id="make" style="padding-right:10px;"></span> 
+                    <span id="model" style="padding-right:10px;"></span>
+                    <span id="yearback" style="display:none;"><img id="backx" alt="go" style="padding-top:8px;" src="/fitter/goback.png"/></span> 
+                    <button id="GOOO" title="Go" class="button"></button>
+                </div><!-- EoF vMenu--> 
+                <div class="box-float">      
+                    <div id="flipper" class="flipper">
+                        <div class="arrowContainer">
+                            <img alt="up" width="42" height="175" id="goUp" style="display: none;" src="/fitter/arrowup.png"/> 
+                            <img alt="down" width="42" height="175" id="goDown" style="display: none;" src="/fitter/arrowdown.png"/>
+                        </div><!-- EoF arrowContainer-->                                   
+
+                        <div id = "dropdownsContainer" style="">
+                                   
+                            <div id = "dropdowns"></div>
+                             
+                        </div><!-- EoF dropdownsContainer--> 
+                    </div><!-- EoF flipper-->  
+                </div><!-- EoF box-float-->
+            </div><!-- EoF vinput-text--> 
+        </div><!-- EoF vform-search--> 
+    </div><!-- EoF search-form-vehicle--> 
+
+<script type="text/javascript">
+//<![CDATA[     
+buildIt(); 
+//boxIt();
+jQuery('.ui-combobox-list').show('fast', function() {scrollBtns(); });    
+
+jQuery("#backx").click(function() {
+    redoIt();
+    jQuery('#year').html('');
+    jQuery('#make').html('');
+    jQuery('#model').html('');
+    jQuery('#year').attr('name', '');
+    jQuery('#make').attr('name', '');
+    jQuery('#model').attr('name', '');
+    jQuery('#yearback').css("display","none");
+    jQuery('#goUp').css("display","inline");
+    jQuery('#goDown').css("display","inline");
+    jQuery('#dropdowns').css("top","1px");
+    jQuery('#dropdownsContainer').css("border","1px solid black");
+    thisSection = 1;
+});
+
+jQuery("#GOOO").click(function() {       // go button           
+    yearVar = jQuery('#year').attr('name');    
+    makeVar = jQuery('#make').attr('name'); 
+    modelVar = jQuery('#model').attr('name');     
+        if(yearVar !== '' && makeVar !== '' && modelVar !== ''){                               
+            window.location = "/vaf/product/list/?year=" + yearVar +'&make=' + makeVar + '&model=' + modelVar;
+            }else{
+                alert("Please Finish Selecting Your Vehicle");
+                }   
+}); 
+
+jQuery("#goUp").click(function() {  //scroll up
+     //figue out how big the div is and how much scrolling can be done  
+    h = jQuery("#dropdowns").height();
+    sections = h/350;   
+       
+    if (thisSection > 1){
+        thisSection = thisSection - 1;     
+        var dropCss  = jQuery("#dropdowns").css("top");
+        dropCss = dropCss.replace("px", "");
+        dropCss = -dropCss;
+        if (dropCss < 349) {
+            jQuery("#dropdowns").animate({top: "1px"}, 450 );
+            }else{
+                jQuery("#dropdowns").animate({top: "+=350px"}, 450 );  
+                }  
+        }
+});
+  
+jQuery("#goDown").click(function () {   //scroll down
+    
+    var h = jQuery("#dropdowns").height();
+    sections = h/350;
+    //alert(jQuery("#dropdowns").height());
+    //alert("sections "+sections);   
+    if (thisSection < sections){        
+        thisSection = thisSection + 1;   
+        checkDivision = h / sections;        
+        var decimal = sections - Math.floor(sections);  // this gets the decimal so we dont scroll too far
+        lastpage = decimal * 350;        
+            if (thisSection > sections){
+                lastpage = '-='+lastpage+'px';             
+                jQuery("#dropdowns").animate({top: lastpage}, 450 );
+                }
+                else{
+                    jQuery("#dropdowns").animate({top: "-=350px"}, 450 );  
+                    } 
+    } 
+});
+
+jQuery("#search-vehicle").click(function () {
+    
+    if (stillclosed == "yup"){ 
+        stillclosed = "nope";
+        jQuery('.flipper').show('slow', function() {
+        jQuery('#dropdowns').css("display","inline");  
+            jQuery('#goUp').css("display","inline");
+            jQuery('#goDown').css("display","inline"); 
+        });
+           
+    } 
+});
+//]]>
+</script>
+</div><!-- EoF search-vehicle--> 

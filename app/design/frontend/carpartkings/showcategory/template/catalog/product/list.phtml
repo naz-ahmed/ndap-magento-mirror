@@ -1,0 +1,169 @@
+<?php
+$currentCat = Mage::registry('current_category');
+$loadCategory = $currentCat;
+
+$subCategories = explode(',', $loadCategory->getChildren());	
+$_collectionSize = count($subCategories) ;
+
+//$_currentcategory  = $this->getCurrentCategory();
+/*foreach ( $subCategories as $subCategoryId ){
+$cat = Mage::getModel('catalog/category')->load($subCategoryId);
+if($cat->getIsActive()){
+    echo '<a href="'.$cat->getURL().'">'.$cat->getName().'<br /><img src="'.$cat->getImageUrl().'" width="100" height="100"></a><br />';
+}
+}*/
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+?>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+<div class="category-products categories">
+    <?php echo $this->getToolbarHtml() ?>
+    <?php // List mode ?>
+    <?php if($this->getMode()!='grid'): ?>
+    <?php $_iterator = 0; ?>
+    <ol class="products-list" id="products-list">
+    <?php $i=0; foreach ($subCategories as $subCategoryId): ?>
+    	<?php 		
+		$cat = Mage::getModel('catalog/category')->load($subCategoryId);
+		
+		$_child_category_title = '';
+		//print_r($cat);
+		if($cat->getChildrenCount()): 
+			$_child_category_title = '<div class="all-categories" onclick="show_hide('.$cat->getEntityId().')" id="item_'.$cat->getEntityId().'">See all categories</div>';
+        endif;
+		
+		if($cat->getIsActive()):	
+		?>
+        <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">            
+            <div class="product-name-container">
+                <h2 class="product-name"><a href="<?php echo $cat->getURL(); ?>"><?php echo $this->htmlEscape($cat->getName()); ?></a></h2>
+                <?php echo $_child_category_title ?>
+            </div>    
+            <div class="product-image">
+            <img src="<?php echo Mage::getBaseUrl('media').'catalog/category/'.$cat->getThumbnail() ?>" width="120" height="50" alt="<?php echo $this->htmlEscape($cat->getName()); ?>" title="<?php echo $this->htmlEscape($cat->getName()); ?>" />
+            </div> 
+            <div class="product-shop"><?php echo $cat->getDescription(); ?></div>
+        </li>
+        
+        <?php // get children ?>
+        <?php if($cat->getChildrenCount()): ?>	
+        	<?php 
+			$subCategories_child = explode(',', $cat->getChildren());	
+			$_collectionSize_child = count($subCategories_child);
+			$i_child=0; 
+			foreach ($subCategories_child as $subCategoryId_child):
+        	$cat_child = Mage::getModel('catalog/category')->load($subCategoryId_child);
+			
+            if($cat_child->getIsActive()):
+				//if($i_child < 5): 
+            ?>
+            <li class="item child" id="item_child_<?php echo $cat->getEntityId().'_'.$i_child?>">            
+                <div class="product-name-container">
+                    <h2 class="product-name"><a href="<?php echo $cat_child->getURL(); ?>"><?php echo $this->htmlEscape($cat_child->getName()); ?></a></h2>
+                </div>    
+                <div class="product-image">
+                <img src="<?php echo Mage::getBaseUrl('media').'catalog/category/'.$cat_child->getThumbnail() ?>" width="120" height="50" alt="<?php echo $this->htmlEscape($cat_child->getName()); ?>" 
+                title="<?php echo $this->htmlEscape($cat_child->getName()); ?>" />
+                </div> 
+                <div class="product-shop"><?php echo $cat_child->getDescription(); ?></div>
+            </li>			
+			<?php
+				//endif;
+			endif;
+			$i_child = $i_child + 1;
+			endforeach; 
+			?>
+            
+        <?php endif; ?>
+        
+        <?php endif; ?>
+    <?php endforeach; ?>
+    </ol>
+    <?php else: ?>
+    
+    
+
+    <?php // Grid Mode ?>
+    <?php $_columnCount = 2; ?>
+    <?php $i=0; foreach ($subCategories as $subCategoryId): ?>
+        <?php if ($i++%$_columnCount==0): ?>
+        <ul class="products-grid">
+        <?php endif ?>
+            <?php 		
+			$cat = Mage::getModel('catalog/category')->load($subCategoryId);
+
+			$_child_category_title = '';
+			//print_r($cat);
+			if($cat->getChildrenCount()): 
+				$_child_category_title = '<div class="all-categories" onclick="show_hide('.$cat->getEntityId().')" id="item_'.$cat->getEntityId().'">See all categories</div>';
+			endif;
+			
+			if($cat->getIsActive()):
+			?>
+            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+                <div class="title"><h2 class="product-name"><a href="<?php echo $cat->getURL(); ?>"><?php echo $this->htmlEscape($cat->getName()); ?></a></h2>
+                <?php echo $_child_category_title ?></div>
+                <a href="<?php echo $cat->getURL(); ?>" class="product-image">
+                <img src="<?php echo Mage::getBaseUrl('media').'catalog/category/'.$cat->getThumbnail() ?>" width="120" height="50" alt="<?php echo $this->htmlEscape($cat->getName()); ?>" title="<?php echo $this->htmlEscape($cat->getName()); ?>" />
+                </a>
+                <div class="actions">
+                <?php echo $cat->getDescription(); ?>
+                </div>
+            </li>
+            <?php // get children ?>
+			<?php if($cat->getChildrenCount()): ?>	
+                <?php 
+                $subCategories_child = explode(',', $cat->getChildren());	
+                $_collectionSize_child = count($subCategories_child);
+                $i_child=0; 
+                foreach ($subCategories_child as $subCategoryId_child):
+                $cat_child = Mage::getModel('catalog/category')->load($subCategoryId_child);
+                
+                if($cat_child->getIsActive()):
+                    //if($i_child < 5): 
+                ?>
+                <li class="item child" id="item_child_<?php echo $cat->getEntityId().'_'.$i_child?>">            
+                    <div class="title">
+                        <h2 class="product-name"><a href="<?php echo $cat_child->getURL(); ?>"><?php echo $this->htmlEscape($cat_child->getName()); ?></a></h2>
+                    </div>                        
+                    <a href="<?php echo $cat_child->getURL(); ?>" class="product-image">
+                    <img src="<?php echo Mage::getBaseUrl('media').'catalog/category/'.$cat_child->getThumbnail() ?>" width="120" height="50" alt="<?php echo $this->htmlEscape($cat_child->getName()); ?>" 
+                    title="<?php echo $this->htmlEscape($cat_child->getName()); ?>" />
+					</a>
+                    <div class="actions"><?php echo $cat_child->getDescription(); ?></div>
+                </li>			
+                <?php
+                   // endif;
+                endif;
+                $i_child = $i_child + 1;
+                endforeach; 
+                ?>
+                
+            <?php endif; ?>
+            <?php // end: get children ?>
+            <?php endif ?>
+        <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+        </ul>
+        <?php endif ?>
+        <?php endforeach ?>     
+        <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script> 
+    <?php endif; ?>
+</div>
+<?php endif; ?>
+<script type="text/javascript">// <![CDATA[
+function show_hide(id){
+	for(i=0;i<50;i++){
+		jQuery("#item_child_"+id+'_'+i).toggle(400);
+	}
+	return false;
+}
+function hide_all(id){
+	for(i = 0; i <= 50; i++){			
+		jQuery("#item_child_"+id+'_'+i).hide();			
+	}
+}
+// ]]></script>

@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+.e-block,
+.e-home-prod-block,
+#TopPromoArea .v4acpcont,
+#CentralArea .v4acpcont,
+#LeftPanel .v4acpcont,
+.e-product-description .e-block-right h2, .e-gallery .gallery-image img,
+#TopPromoArea .v4acpcont, .e-block-content-text .sb .e-newsletter,
+#LeftPanel .v4acpcont .sb input,
+#TopPromoArea .v4acpcont .sb input, #CentralArea .cmpBr,
+#CentralArea  div.cmpb, #CentralArea .pgbc, #CentralArea .ctrlbr,
+.toplne,.e-gallery img{
+	border:solid 1px #ddd !important;
+	}
+.e-content .e-col-center .e-block,
+.e-coll-3 .e-col-center .e-block,
+.e-coll-2 .e-col-center .e-block,
+#LeftPanel .e-block-a-link,
+div.fpcc{
+	border:none !important;
+	}
+.cmpBr{
+	margin-top:-1px !important;
+	}
+#LeftPanel + td + td #TopPromoArea .v4toppromos .fs2-prel{
+	width:590px !important;
+	}
+.e-coll-2 .e-col-center{
+	width:630px !important;
+	}
+.e-product-actions{
+	height:35px;
+	}
+.e-product-description,
+.e-product-actions{
+	clear:both !important;
+	float:none;
+	}
+.gallery-image img{
+	border:solid 1px #dddddd !important;
+	}
+.gallery-thumbnail{
+	width:450px;
+	margin:0 auto !important;
+	}

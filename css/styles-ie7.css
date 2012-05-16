@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+.e-gallery img,
+.e-gallery .gallery-image img{
+	width:450px;
+	}
+.e-block,
+.e-home-prod-block,
+#TopPromoArea .v4acpcont,
+#CentralArea .v4acpcont,
+#LeftPanel .v4acpcont,
+.e-product-description .e-block-right h2, .e-gallery .gallery-image img,
+#TopPromoArea .v4acpcont, .e-block-content-text .sb .e-newsletter,
+#LeftPanel .v4acpcont .sb input,
+#TopPromoArea .v4acpcont .sb input, #CentralArea .cmpBr,
+#CentralArea  div.cmpb, #CentralArea .pgbc, #CentralArea .ctrlbr,
+.toplne, .e-gallery img{
+	border:solid 1px #ddd !important;
+	}
+.e-content .e-col-center .e-block,
+.e-coll-3 .e-col-center .e-block,
+.e-coll-2 .e-col-center .e-block,
+#LeftPanel .e-block-a-link,
+div.fpcc{
+	border:none !important;
+	}
+.cmpBr{
+	margin-top:-1px !important;
+	}
+#LeftPanel,
+.e-about-page{
+	padding-left:83px !important;
+	}
+#CentralArea,
+.e-about-page{
+	padding-right:83px !important;
+	}
+.lcat .lev1 .lev2{
+	margin-bottom:0 !important;
+	}
+#TopPromoArea{
+	width:660px !important;
+	}
+#e-listing .e-coll-2 .e-col-center{
+	width:630px !important;
+	}
+.e-product-actions{
+	height:35px;
+	}
+.e-product-description,
+.e-product-actions{
+	clear:both !important;
+	float:none;
+	}	
+.gallery-image img{
+	border:solid 1px #dddddd !important;
+	}
+.gallery-thumbnail{
+	width:450px;
+	margin:0 auto !important;
+	}
+	
+/* Store Right Area */
+.e-block-content-eBayStoresItemShowcase .v4shwc .gallery .image,
+.e-block-content-eBayStoresItemShowcase table.gallery,
+.e-block-content-eBayStoresItemShowcase .fixed{width:80px !important;}
+.e-block-content-eBayStoresItemShowcase .v4shwc .gallery .picture,
+.e-block-content-eBayStoresItemShowcase .v4shwc .gallery img,
+.e-block-content-eBayStoresItemShowcase table.gallery td.picture div.image img{width:80px !important;height:80px !important;}
+.e-block-content-eBayStoresItemShowcase .v4shwc .gallery .details img{width: auto !important;height:auto !important;}
+.e-block-content-eBayStoresItemShowcase .v4shwc .gallery .details a{font-size:10px !important;}
+.e-block-content-eBayStoresItemShowcase .v4stw{margin-left:5px !important;}
+.e-block-content-eBayStoresItemShowcase table.v4shwc td.grItm {width: 70px !important;}
+.e-block-content-eBayStoresItemShowcase table.v4shwc td.lcell{padding-right:5px !important;}
+.e-block-content-eBayStoresItemShowcase .e-block-content-conteiner{margin:0 0 -20px 0 !important;}
+table.v4shwc td.grItm{padding-left:5px !important; padding-right:0 !important;}
+.e-block-content-eBayStoresItemShowcase table{border-collapse:collapse !important;}
+
+#e-gallery{
+	display:none !important;
+	}
+.e-block-content-eBayStoresItemShowcase table.gallery table.fixed div.time2{
+	padding-right:0 !important;
+	}
+table.gallery table.fixed tbody > tr td + td,
+table.gallery table.fixed tbody > tr + tr td{
+	display:block !important;
+	width:100%;
+	}
+td.gallery td.picture {
+	border:solid 1px #ededed !important;
+	}
+#CentralArea table.grid{
+	border-top:none !important;
+	}
+.pagecontainer > table ~ table table + table hr + p,
+.pagecontainer > table ~ table table + table hr + p + p,
+.pagecontainer > table ~ table table + table hr + p + p + p{
+	display:none;
+	}

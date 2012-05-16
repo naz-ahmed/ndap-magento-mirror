@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <magictoolbox translate="title" module="magicthumb">
+            <title>Magic Toolbox</title>
+            <sort_order>300</sort_order>
+            <children>
+                <magicthumb translate="title" module="magicthumb">
+                    <title>Magic Thumb settings</title>
+                    <sort_order>10</sort_order>
+                    <action>magicthumb/adminhtml_settings/index</action>
+                </magicthumb>
+            </children>
+        </magictoolbox>
+    </menu>
+</config>

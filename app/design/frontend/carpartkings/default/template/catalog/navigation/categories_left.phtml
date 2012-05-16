@@ -1,0 +1,64 @@
+<?php $_currentcategory  = $this->getCurrentCategory(); ?>
+<?/*       this is a little function to build the manufacturer drop down
+function getSelectBox($attributeCode, $label = '', $defaultSelect = null, $extraParams = null){
+    $options            = array();
+    $product            = Mage::getModel('catalog/product');
+    $attribute          = $product->getResource()->getAttribute($attributeCode);
+    if($attribute->usesSource()){
+        $options = $attribute->getSource()->getAllOptions(false);
+        array_unshift($options, array('label' => $label, 'value' => ''));
+    }
+ 
+    $select = Mage::app()->getLayout()->createBlock('core/html_select')
+            ->setName($attributeCode)
+            ->setId($attributeCode)
+            ->setTitle($label)
+            ->setValue($defaultSelect)
+            ->setExtraParams($extraParams)
+            ->setOptions($options);
+    return $select->getHtml();
+} */
+?>
+
+<div class="block block-left-nav">
+    <div class="block-title"><?php echo $this->__('Filter by') ?></div>
+    <?//php echo getSelectBox('manufacturer', 'Select Manufacturer'); //this displays the dropdown?>
+    <div class="block-content">
+    <dl>
+    <?php foreach ($this->getStoreCategories() as $_category): ?>
+    <?php $open = $this->isCategoryActive($_category) && $_category->hasChildren(); ?>
+	<?php 		
+    $_i = 0; 
+    foreach ($_category->getChildren() as $child): 			
+        $_i = $_i+1;
+    endforeach; 
+    ?>      
+        <dt>
+        <? $catName = $_category->getName(); 
+        $catName = str_replace (" ", "", $catName); ?>
+        <a href="javascript:void(0);" onclick="jQuery('#<?php echo $catName?>').slideDown('slow');"><?php print $_category->getName();?></a> </dt>  
+        
+        <?/*<a href="<?php print $this->getCategoryUrl($_category); ?>" class="<?php echo $parent_class ?>"><?php print $_category->getName();?></a></dt>  */?>
+  
+        <dd>
+        <ul id="<?php echo $catName?>" style="display:none;">
+        <?php foreach ($_category->getChildren() as $child): ?>
+            <li><a href="<?php print $this->getCategoryUrl($child); ?>" <?php $child->entity_id == $_currentcategory->entity_id ? $active="active" : $active = ""; echo 'class="'.$active.'"'; ?>><?php print $child->getName();?></a>            	
+                <?php /* ?>
+				<?php if($child->hasChildren()): ?>	
+                <ol>
+					<?php foreach ($child->getChildren() as $subchild): ?>   
+                    <li><a href="<?php print $this->getCategoryUrl($subchild); ?>" <?php $subchild->entity_id == $_currentcategory->entity_id ? $active="active" : $active = ""; echo 'class="'.$active.'"'; ?>><?php print $subchild->getName();?></a></li>
+                    <?php endforeach; ?>     	
+                </ol>
+            	<?php endif; ?>
+				<?php */ ?>
+            </li>
+        <?php endforeach; ?>   
+       </ul>
+       </dd>
+       </li>
+    <?php endforeach ?>
+    </dl>
+    </div>
+</div>

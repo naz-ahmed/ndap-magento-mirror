@@ -1,0 +1,5 @@
+<?php
+/** custom tracking for the MLN code **/
+echo "order id = ".Mage::getModel('sales/order')->loadByIncrementId($this->getOrderId());
+echo '<br/>'.Mage::getModel('sales/order')->load($orderId);
+?>

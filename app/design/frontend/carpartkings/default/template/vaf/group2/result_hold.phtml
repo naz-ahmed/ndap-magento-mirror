@@ -1,0 +1,49 @@
+
+
+<div class="page-head vaf-category-result">
+    <h3><?php 
+    		echo "The Kings have found ";
+echo number_format( $this->getTotalProductCount() ) . ' product' . ($this->getTotalProductCount() > 1 ? 's' : '' );
+echo " for your ".substr($this->getHeaderText(),13);
+		?>
+    </h3>
+</div>
+
+<?php
+if( !$this->getTotalCategoryCount() || !$this->getResultCount() )
+{
+    ?>
+    <div class="note-msg">
+        <?php echo ($this->getNoResultText()) ? $this->getNoResultText() : $this->__('Your search returns no results.') ?>
+        <?php
+        if ($messages = $this->getNoteMessages())
+        {
+            ?>
+            <?php foreach ($messages as $message):?>
+            <br /><?php echo $message?>
+            <?php endforeach;?>
+            <?php
+        }
+        ?>
+    </div>
+    <?php
+    return;
+}
+
+
+// echo ' found in ' . number_format( $this->getTotalCategoryCount() ) . ( $this->getTotalCategoryCount() > 1 ? ' categories' : ' category' );
+// echo '<br />';
+
+$categories = $this->getCategories();
+$mi = 0;
+foreach( $categories as $category )
+{
+	if($mi % 2){ echo("<div class='vaf-odd'>"); } else if($mi==0){} else{ echo("<div class='vaf-even'>"); }
+    ?>
+    <?=$this->drawItem( $category )?>
+    <?php
+    if($mi !== 0){echo("</div>");}
+    $mi++;
+    
+    
+}

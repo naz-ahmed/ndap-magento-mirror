@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   Mage
+ * @package    Mage_Core
+ * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+    <global>
+        <install>
+            <date><![CDATA[Fri, 16 Dec 2011 15:18:15 +0000]]></date>
+        </install>
+        <crypt>
+            <key><![CDATA[d20c6e3b0e833124b847ba4615b5b5c0]]></key>
+        </crypt>
+        <disable_local_modules>false</disable_local_modules>
+        <resources>
+            <db>
+                <table_prefix><![CDATA[]]></table_prefix>
+            </db>
+            <default_setup>
+                <connection>
+                    <host><![CDATA[magento01.c2lug8itjgui.us-east-1.rds.amazonaws.com]]></host>
+                    <username><![CDATA[magento]]></username>
+                    <password><![CDATA[C3HKMVYD7DQJsSVY]]></password>
+                    <dbname><![CDATA[magento]]></dbname>
+                    <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
+                    <model><![CDATA[mysql4]]></model>
+                    <type><![CDATA[pdo_mysql]]></type>
+                    <pdoType><![CDATA[]]></pdoType>
+                    <active>1</active>
+                </connection>
+            </default_setup>
+        </resources>
+        <session_save><![CDATA[memcache]]></session_save> <!-- db / memcache / empty=files -->
+        <session_save_path><![CDATA[tcp://127.0.0.1:11211?persistent=1&weight=2&timeout=10&retry_interval=10]]></session_save_path><!-- e.g. for memcache session save handler tcp://10.0.0.1:11211?persistent=1&weight=2&timeout=10&retry_interval=10 -->
+
+        <session_cache_limiter><![CDATA[]]></session_cache_limiter><!-- see http://php.net/manual/en/function.session-cache-limiter.php#82174 for possible values -->
+
+
+        <cache>
+            <backend>memcached</backend><!-- apc / memcached / xcache / empty=file -->
+            <slow_backend>database</slow_backend> <!-- database / file (default) - used for 2 levels cache setup, necessary for all shared memory storages -->
+            <slow_backend_store_data/> <!-- 1 / 0 (default) - used for 2 levels cache setup, sets whether store data in db slow cache backend -->
+            <auto_refresh_fast_cache/> <!-- 1 / 0 (default) - used for 2 levels cache setup, sets whether refresh data in fast cache backend -->
+            <memcached><!-- memcached cache backend related config -->
+                <servers><!-- any number of server nodes can be included -->
+                    <server>
+                        <host><![CDATA[127.0.0.1]]></host>
+                        <port><![CDATA[11211]]></port>
+                        <persistent><![CDATA[1]]></persistent>
+                        <weight><![CDATA[1]]></weight>
+                        <timeout><![CDATA[60]]></timeout>
+                        <retry_interval><![CDATA[10]]></retry_interval>
+                        <status><![CDATA[1]]></status>
+                    </server>
+                </servers>
+                <compression><![CDATA[0]]></compression>
+                <cache_dir><![CDATA[]]></cache_dir>
+                <hashed_directory_level><![CDATA[]]></hashed_directory_level>
+                <hashed_directory_umask><![CDATA[]]></hashed_directory_umask>
+                <file_name_prefix><![CDATA[]]></file_name_prefix>
+            </memcached>
+        </cache>      
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <frontName><![CDATA[admin]]></frontName>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+	<lightspeed>
+		
+		<global><!-- this is a read-only db connection and should have access to core_config_data, sales_flat_quote, and sales_flat_quote_item  -->
+			<connection>
+				<host><![CDATA[magento01.c2lug8itjgui.us-east-1.rds.amazonaws.com]]></host>
+	            <username><![CDATA[magento]]></username>
+	            <password><![CDATA[C3HKMVYD7DQJsSVY]]></password>
+	            <dbname><![CDATA[magento]]></dbname>
+			</connection>
+			<multi_currency>0</multi_currency> <!-- defaults to false "0" -->
+			<request_path><![CDATA[]]></request_path> <!-- this will almost always be blank -->
+			<!--
+			  	Examples - If your base_url looks like:
+			  		http://www.tinybrick.com 				then 	'' 
+			  		http://www.tinybrick.com/tempstore 		then 	'/tempstore'
+			-->
+			<params></params> <!-- comma separated list of url params to ignore such as get parameters for ads -->
+		</global>
+		
+		<session>
+			<type>memcached</type><!-- files|memcached|db; empty defaults to files -->
+			<!-- file -->
+			<path></path><!-- empty defaults to var/session -->
+			
+			<!-- memcached -->
+			<servers> <!-- can use multiple servers in a federated, distributed cluster -->
+	  			<localhost><!-- name is arbitrary -->
+	  				<host><![CDATA[127.0.0.1]]></host>
+	  				<port><![CDATA[11211]]></port>
+	  				<persistent><![CDATA[1]]></persistent>
+	  			</localhost>
+	  		</servers>
+	  		
+	  		<!-- db -->
+			<connection>
+				<host><![CDATA[magento01.c2lug8itjgui.us-east-1.rds.amazonaws.com]]></host>
+	            <username><![CDATA[magento]]></username>
+	            <password><![CDATA[C3HKMVYD7DQJsSVY]]></password>
+	            <dbname><![CDATA[magento]]></dbname>
+			</connection>
+		</session>
+		
+		<cache>
+			<type>memcached</type><!-- files|memcached; empty default to files, memcached is STRONGLY encouraged in environments where possible -->
+			
+			<!-- file -->
+			<path></path><!-- empty defaults to var/lightspeed -->
+			
+			<!-- memcached -->
+			<servers> <!-- can use multiple servers in a federated, distributed cluster -->
+	  			<localhost><!-- name is arbitrary -->
+                        <host><![CDATA[127.0.0.1]]></host>
+                        <port><![CDATA[11211]]></port>
+                        <persistent><![CDATA[1]]></persistent>
+                        <weight><![CDATA[1]]></weight>
+                        <timeout><![CDATA[60]]></timeout>
+                        <retry_interval><![CDATA[10]]></retry_interval>
+                        <status><![CDATA[1]]></status>  
+	  			</localhost>
+	  		</servers>
+		</cache>
+
+	</lightspeed>		
+</config>

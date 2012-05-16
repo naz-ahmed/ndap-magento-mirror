@@ -1,0 +1,70 @@
+<div class="product-collateral">
+<ul class="product-tabs">
+<li id="product_tabs_categories" class=" active first"><a href="javascript:void(0)">Popular Categories</a></li>
+<li id="product_tabs_parts"><a href="javascript:void(0)">Featured Parts</a></li>
+<li id="product_tabs_brands" class="fake">Featured Brands</li>
+</ul>
+<div id="product_tabs_categories_contents" class="product-tabs-content">
+<div id="slider-code"><a class="buttons prev" href="#">left</a>
+<div class="viewport">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('popular_categories')->toHtml() ?>
+</div>
+<a class="buttons next" href="#">right</a></div>
+<script type="text/javascript">// <![CDATA[
+jQuery(document).ready(function(){				
+	jQuery('#slider-code').tinycarousel({interval:10, display: 1});		
+});
+// ]]></script>
+</div>
+<div id="product_tabs_parts_contents" class="product-tabs-content" style="display: none;">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('featured_parts')->toHtml() ?>
+</div>
+<div id="product_tabs_brands_contents" class="product-tabs-content">
+<div class="std">
+<div id="slider-code-brands"><a class="buttons prev" href="#">left</a>
+<div class="viewport">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('featured_brands')->toHtml() ?>
+</div>
+<a class="buttons next" href="#">right</a></div>
+<script type="text/javascript">// <![CDATA[
+jQuery(document).ready(function(){				
+	jQuery('#slider-code-brands').tinycarousel({interval:10, display: 1});		
+});
+// ]]></script>
+</div>
+</div>
+<script type="text/javascript">// <![CDATA[
+//&lt;![CDATA[
+Varien.Tabs = Class.create();
+Varien.Tabs.prototype = {
+initialize: function(selector) {
+var self=this;
+$$(selector+' a').each(this.initTab.bind(this));
+},
+
+initTab: function(el) {
+el.href = 'javascript:void(0)';
+if ($(el.parentNode).hasClassName('active')) {
+this.showContent(el);
+}
+el.observe('click', this.showContent.bind(this, el));
+},
+
+showContent: function(a) {
+var li = $(a.parentNode), ul = $(li.parentNode);
+ul.select('li', 'ol').each(function(el){
+var contents = $(el.id+'_contents');
+if (el==li) {
+el.addClassName('active');
+contents.show();
+} else {
+el.removeClassName('active');
+contents.hide();
+}
+});
+}
+}
+new Varien.Tabs('.product-tabs');
+//]]&gt;
+// ]]></script>
+</div>

@@ -1,0 +1,281 @@
+<?php
+/**  /var/www/html/magento/app/design/frontend/carpartkings/default/template/page/html
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_modern
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+
+<div class="footer-container">
+    <div class="footer">
+        <?php echo $this->getChildHtml('footer_content') ?>
+		<?php echo $this->getChildHtml('bottomContainer') ?>
+                        
+    </div>
+</div>
+<div class="footer-fixed">
+	<div class="footer-fixed-content">
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('1')->toHtml() ?>
+    <?//php echo $this->getChildHtml('footer_links') ?>
+    <?//php echo $this->getCopyright() ?> 
+    </div>
+</div>
+</div> 
+
+<? include_once('/var/www/html/magento/fitter/dropdown.php'); ?>
+
+        
+<?php
+
+
+    if (isset($_SESSION['garage']))
+    {
+        $garage = $_SESSION['garage'];
+        $myLastElement = end($garage->vehicles());        
+        foreach ($garage->vehicles() as $vehicle)
+        {   
+            if ($vehicle == $myLastElement) {
+                 $schema = new Elite_Vaf_Model_Schema;
+                 $finder = new Elite_Vaf_Model_Vehicle_Finder( $schema );
+                 $vehicle = $finder->findOneByLevelIds($vehicle);
+            if (!is_object($vehicle)){  //echo " NOT AN OBJECT! ";} 
+                        unset($_SESSION['garage']); //if the vehicle is not valid - remove it, popup selector will pop up later down this script
+            ?>   
+<div style="display:none;">  <a id="various1" href="#inline1"></a></div>  
+<div id="inline1" style="width:900px;height:auto;display:none;">
+    <div class="search-vehicle2" id="search-vehicle2" style="margin-left:0px;">
+    <div class="title">Get the right parts.<br /><span style="font-size:24px">Start by selecting your vehicle.</span></div>
+        <div class="search-form-vehicle" id="search-form-vehicle">
+            <div class="vform-search">         
+            <?
+            $pageURL = "http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+            ?>
+                <form action="<?echo $pageURL?>" method="GET"> 
+                    <select name="year" id="drop_1">
+                      <option value="" selected="selected" class="drop_dummy" disabled="disabled">Select a Year</option>
+                      <?php getTierOne(); ?>
+                    </select>
+                    
+                    <span id="wait_1" style="display: inline;">
+                        <select disabled="disabled" name="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Make</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_1" style="display: none;"></span>
+                    
+                    <span id="wait_2" style="display: inline;">
+                        <select disabled="disabled" class="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Model</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_2" style="display: none;"></span>
+                    
+                        <span id="result_3" style="display: none;"></span>
+                    <div style="height: 35px; width: 45px; float:right;">
+                        <div id="cpkBtn" style="display: none">
+                            <input type="image" name="goBtn" img id="goBtn" src="/fitter/go2.png"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <?
+             }else{            
+             $selectedYear = $vehicle->getLevel('year')->getId();
+             $selectedYearText = $vehicle->getLevel('year')->getTitle();
+             $selectedMake = $vehicle->getLevel('make')->getId();
+             $selectedMakeText = $vehicle->getLevel('make')->getTitle(); 
+             $selectedModel = $vehicle->getLevel('model')->getId();
+             $selectedModelText = $vehicle->getLevel('model')->getTitle(); 
+             
+             ?>
+<div style="display:none;">  <a id="various1" href="#inline1"></a></div>  
+<div id="inline1" style="width:900px;height:auto;display:none;">
+    <div class="search-vehicle2" id="search-vehicle2" style="margin-left:0px;">
+    <div class="title">Get the right parts.<br /><span style="font-size:24px">Start by selecting your vehicle.</span></div>
+        <div class="search-form-vehicle" id="search-form-vehicle" style="padding-left: 110px;">
+            <div class="vform-search">           
+            <?
+            $pageURL = "http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+            ?>
+                <form action="<?echo $pageURL?>" method="GET">
+                    <select id="drop_1" name="year">
+                      <?getTierOne_footer($selectedYear, $selectedYearText)?>
+                    </select>    
+                     
+                                        
+                    <span style="display: none;" id="wait_1">
+                        <select id="drop_dummy" name="drop_dummy" disabled="disabled">
+                            <option disabled="disabled" selected="selected" value="">Select a Make</option>                                        
+                        </select>
+                    </span>
+                    
+                    
+                    <span style="" id="result_1">
+                        <select id="drop_2" name="make">
+                            <?drop_1_footer($selectedYear, $selectedMake, $selectedMakeText)?>  
+                        </select>
+                    </span>
+                    
+                    
+                    <span style="display: none;" id="wait_2">
+                        <select id="drop_dummy" class="drop_dummy" disabled="disabled">
+                            <option disabled="disabled" selected="selected" value="">Select a Model</option>                     
+                        </select>
+                    </span>
+                    
+                    
+                    <span style="" id="result_2">
+                        <select id="drop_3" name="model">
+                            <?drop_2_footer($selectedMake, $selectedModel, $selectedModelText)?>
+                        </select>
+                    </span>
+                    
+                   <span style="display: none;" id="result_3"></span> 
+                    <div style="height: 35px; width: 45px; float:right;">
+                        <div style="display: block;" id="cpkBtn">
+                            <input type="image" src="/fitter/go2.png" id="goBtn" img="" name="goBtn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script type=\"text/javascript\">             
+        jQuery('#cpkBtn').show('fast');   
+        </script>";     
+<?              }
+            }
+        }                
+    }else{
+        
+?>
+<div style="display:none;">  <a id="various1" href="#inline1"></a></div>  
+<div id="inline1" style="width:900px;height:auto;display:none;">
+    <div class="search-vehicle2" id="search-vehicle2" style="margin-left:0px;">
+    <div class="title">Get the right parts.<br /><span style="font-size:24px">Start by selecting your vehicle.</span></div>
+        <div class="search-form-vehicle" id="search-form-vehicle" style="padding-left: 110px;">
+            <div class="vform-search">           
+            <?
+            $pageURL = "http://".$_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+            ?>
+                <form action="<?echo $pageURL?>" method="GET">
+                    <select name="year" id="drop_1">
+                      <option value="" selected="selected" class="drop_dummy" disabled="disabled">Select a Year</option>
+                      <?php getTierOne(); ?>
+                    </select>
+                    
+                    <span id="wait_1" style="display: inline;">
+                        <select disabled="disabled" name="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Make</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_1" style="display: none;"></span>
+                    
+                    <span id="wait_2" style="display: inline;">
+                        <select disabled="disabled" class="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Model</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_2" style="display: none;"></span>
+                    
+                        <span id="result_3" style="display: none;"></span>
+                    <div style="height: 35px; width: 45px; float:right;">
+                        <div id="cpkBtn" style="display: none">
+                            <input type="image" name="goBtn" img id="goBtn" src="/fitter/go2.png"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> 
+<?                
+        
+    }
+?>
+    </div>
+</div> 
+
+
+<script type="text/javascript">
+  jQuery('#wrapper').css("min-height",height+"px");
+  jQuery('.fancybox').fancybox();   
+</script>
+
+    <? 
+$pageURL = $_SERVER["REQUEST_URI"];  //$pageURL = /wiper-and-washer/windshield-wiper-arm-blade-and-related-components.html   
+//if (Mage::registry('current_product')) { $onProdPage = 1;}  //don't show the picker on the product pages
+   
+if (    !isset($_SESSION['garage']) &&
+        //$onProdPage != 1 &&    //don't show the picker on the product pages
+        $pageURL != "/" && 
+        $pageURL != "/index.php/" &&
+        $pageURL != "/about" && 
+        $pageURL != "/contacts" && 
+        $pageURL != "/customer-service" && 
+        $pageURL != "/privacy" && 
+        $pageURL != "/sitemap" && 
+        $pageURL != "/terms" && 
+        $pageURL != "/vendors" && 
+        stristr($pageURL, 'catalogsearch') === FALSE &&
+        stristr($pageURL, 'customer') === FALSE &&
+        stristr($pageURL, 'checkout') === FALSE  
+        ){             
+?>
+<script type="text/javascript">
+     
+    jQuery(document).ready(function() {         
+            
+            jQuery("#various1").fancybox().trigger('click');
+                     
+    });
+
+</script>
+ 
+<?    
+    }//end garage cookie
+?>
+
+<?
+$pos = strpos($pageURL,'success');
+
+if($pos === false) { // success  NOT found in URL
+echo '<SCRIPT LANGUAGE="JavaScript">
+ord=Math.random();
+ord=ord*10000000000000000000;
+document.write(\'<IFRAME SRC="https://ad.mlnadvertising.com/tag.ashx?id=EDA19500-79AC-44BE-9A15-F90FDE7B881A&amp;tag=adi&amp;ord=\'+ord+\'?" style="visibility:hidden;display:none" width="1" height="1" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling=no bordercolor="#000000">\');
+document.write(\'</IFRAME>\');
+</SCRIPT>';
+} ?>
+
+
+<?                                                          
+//Here are some ways to check if we are on the product page:
+/*echo $this->getRequest()->getControllerName();
+if($this->getRequest()->getControllerName()=='product'){echo "product page";}
+if($this->getRequest()->getControllerName()=='category') {echo "cat page";}
+if (Mage::registry('current_product')) { echo "found current_product";}
+echo Mage::registry('current_product'); */
+?>    

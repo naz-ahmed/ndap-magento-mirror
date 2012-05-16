@@ -1,0 +1,151 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_modern
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<div class="footer-container">
+    <div class="footer">
+        <?php echo $this->getChildHtml('footer_content') ?>
+		<?php echo $this->getChildHtml('bottomContainer') ?>
+                        
+    </div>
+</div>
+<div class="footer-fixed">
+	<div class="footer-fixed-content"><?//php echo $this->getChildHtml('footer_links') ?> <?php echo $this->getCopyright() ?> 
+           
+    </div>
+</div>
+</div> 
+<?php 
+
+    
+   
+//if (!isset($_SESSION['garage'])){ 
+   
+$pageURL = $_SERVER["REQUEST_URI"];  //$pageURL = /wiper-and-washer/windshield-wiper-arm-blade-and-related-components.html      
+
+
+
+  //if(stristr($pageURL, 'catalogsearch') === FALSE) {
+    //echo 'failed 1';
+ 
+
+    //if(stristr($pageURL, 'customer') === FALSE) {
+       // echo 'failed 2';
+       
+  
+
+   if (
+        !isset($_SESSION['garage']) &&
+        $pageURL != "/" && 
+        $pageURL != "/about" && 
+        $pageURL != "/contacts" && 
+        $pageURL != "/customer-service" && 
+        $pageURL != "/privacy" && 
+        $pageURL != "/sitemap" && 
+        $pageURL != "/terms" && 
+        $pageURL != "/vendors" && 
+        stristr($string, 'catalogsearch') === FALSE &&
+        stristr($string, 'customer') === FALSE &&
+        stristr($string, 'checkout') === FALSE  
+        
+        // checkout, my account
+        ){  
+            include_once('/var/www/html/magento/fitter/dropdown.php');  
+            echo "test passed! ".$pageURL;    
+    ?>
+
+
+<div style="display:none;">  <a id="various1" href="#inline1">Inline</a></div>  
+<div id="inline1" style="width:900px;height:auto;display:none;"> 
+
+<?php ?> 
+<div class="search-vehicle" id="search-vehicle" style="margin-left:0px;">
+    <div class="title">START HERE BY FINDING YOUR VEHICLE</div>
+        <div class="search-form-vehicle" id="search-form-vehicle" style="padding-left: 110px;">
+            <div class="vform-search">
+                <form action="http://dev.carpartkings.com/vaf/product/list/" method="GET">
+                    <select name="year" id="drop_1">
+                      <option value="" selected="selected" class="drop_dummy" disabled="disabled">Select a Year</option>
+                      <?php getTierOne(); ?>
+                    </select>
+                    
+                    <span id="wait_1" style="display: inline;">
+                        <select disabled="disabled" name="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Make</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_1" style="display: none;"></span>
+                    
+                    <span id="wait_2" style="display: inline;">
+                        <select disabled="disabled" class="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Model</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_2" style="display: none;"></span>
+                    
+                        <span id="result_3" style="display: none;"></span>
+                    <div style="height: 35px; width: 45px; float:right;">
+                        <div id="cpkBtn" style="display: none">
+                            <input type="image" name="goBtn" img id="goBtn" src="/fitter/go2.png"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+ 
+
+
+<script type="text/javascript">
+  jQuery('#wrapper').css("min-height",height+"px");
+
+   var pathname = window.location.pathname;
+   jQuery('.fancybox').fancybox();  
+
+</script>
+
+<script type="text/javascript">
+     
+    jQuery(document).ready(function() {         
+         
+            jQuery("#various1").fancybox().trigger('click');
+                     
+    });
+
+</script>
+ 
+        <?
+   //echo "not set!";     
+    }//end garage cookie
+    
+         //   } //end second find in string  
+
+       // }//end first find in string
+?>

@@ -1,0 +1,274 @@
+<?php 
+/* /var/www/html/magento/app/design/frontend/carpartkings/default/template/page
+require_once '../app/Mage.php';
+Mage::app('carpartkings');
+*/
+include_once('/var/www/html/magento/fitter/dropdown.php'); 
+?> 
+
+<? 
+$firstDrop = getTierOne(); 
+$base = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); 
+?>
+
+<script type="text/javascript">     
+var thisSection = 1;
+var stillclosed = "yup";
+
+var vFitsId = '<?php echo $firstDrop; ?>'; 
+var substr = vFitsId.split('|');
+
+function buildIt()
+    {
+        var thehtml = '<div id = "vDropbox1" style=""></div> <div id = "vDropbox2" style="display:none;"></div> <div id = "vDropbox3" style="display:none;"></div> <div style="display:none;" class="demo-container" name="demo-container" id="demo-container">hold</div> ';
+        $('#dropdowns').html(thehtml);   
+    } //end of buildIt()
+
+function redoIt()
+    {
+        $('#vDropbox1').remove();
+        $('#vDropbox2').remove();
+        $('#vDropbox3').remove();
+        $('#demo4').remove();
+        buildIt(); 
+        boxIt(); 
+        $('.ui-combobox-list').show('fast');  
+    }//end of redoIt()
+
+    
+function scrollBtns() //hide up down arrows if the box is too small 
+    {            
+        var newH = $("#dropdowns").height();
+        thisSection = 1;
+        if (newH < 350){ 
+            $('#goUp').css("display","none");
+            $('#goDown').css("display","none");    
+            }else{ 
+                $('#goUp').css("display","inline");
+                $('#goDown').css("display","inline");     
+                } 
+    } //end of scrollBtns()   
+    
+</script> 
+
+<script type="text/javascript">
+/*dropdown box one*/
+        $('#vDropbox1').combobox({
+                             
+            data: 'test','test','test', //substr,
+            matchMiddle: false,
+                    
+            key: function(e, ui) {
+                $('#year').html(ui.value);
+                //$('#year').attr('name', 'New Name'); 
+            },
+            change: function(e, ui) {
+                $('#year').html(ui.value);
+                theid = $(ui.value).attr('id');
+                $('#year').attr('name', theid); 
+            }
+        }).bind('comboboxselect', function(e, ui) {
+             
+/*dropdown box two*/
+
+                scrollBtns();                  
+                $("#dropdowns").css("top","1px");
+      
+                var vFitsId
+                var droppingIds = theid;
+
+                /* Ajax call to get next drop data */ 
+                $.ajax({      
+                    async: false,
+                    type: "POST",
+                    dataType: "text",
+                    url: "<?echo $base?>/dropdown2.php",
+                    data: "name="+droppingIds,
+                    success: function(dropData){
+                    vFitsId = dropData;
+                    }
+                    });   
+
+                var substr = vFitsId.split('|');  //need to get the response into an array
+             
+                $('#vDropbox1').remove(); 
+                $('#vDropbox2').show('slow');
+                $('#yearback').css("display","inline");
+                 
+                $('#vDropbox2').combobox({
+                    data:  substr,
+                    matchMiddle: false,
+                    key: function(e, ui) {},
+                    change: function(e, ui) {
+                        $('#make').html(ui.value);
+                        theid2 = $(ui.value).attr('id');
+                        $('#make').attr('name', theid2);
+                        }
+                    }).bind('comboboxselect', function(e, ui) {
+         
+                        /*dropdown box three*/
+                        scrollBtns();
+                        $("#dropdowns").css("top","1px");
+                         
+                        var vFitsId
+                        var droppingIds = theid2;
+                        /* Ajax call to get next drop data */
+                        $.ajax({
+                            async: false,
+                            type: "POST",
+                            dataType: "text",
+                            url: "<?echo $base?>dropdown3.php",
+                            data: "name="+droppingIds,//"name=Andrew&location=CT",
+                            success: function(dropData){
+                            vFitsId = dropData;
+                            }
+                        });   
+
+                        var substr = vFitsId.split('|');  //need to get the response into an array
+                 
+                        $('#vDropbox2').remove(); 
+                        $('#vDropbox3').show('slow');
+                        $('#vDropbox3').combobox({
+                            data: substr,
+                            matchMiddle: false,
+                            key: function(e, ui) {
+                                $('#model').html(ui.value);
+                            },
+                            change: function(e, ui) {
+                                $('#model').html(ui.value);
+                                theid3 = $(ui.value).attr('id');
+                                $('#model').attr('name', theid3); 
+                            }
+                        }).bind('comboboxselect', function(e, ui) {
+                            scrollBtns();
+                            $('#vDropbox3').remove();
+                            $('#dropdownsContainer').css("border","none");   
+                            })
+                            
+                 $('.ui-combobox-list').show('fast', function() {scrollBtns();});        
+                });
+
+        $('.ui-combobox-list').show('fast', function() {scrollBtns(); });
+
+        });
+</script>
+</head>
+
+<body>
+<div class="search-vehicle" id="search-vehicle">
+<div class="title">START HERE BY FINDING YOUR VEHICLE</div>
+<div class="search-form-vehicle" id="search-form-vehicle">
+<div class="vform-search">
+       
+<div class="vinput-text"> 
+
+<div id = "vMenu">
+<span id="year" name="" style="padding-right:10px;">Select Your Vehicle</span> 
+<span id="make" name="" style="padding-right:10px;"></span> 
+<span id="model" name="" style="padding-right:10px;"></span>
+<span id="yearback" style="display:none;" oldBlock="inline">
+<img id="backx" style="padding-top:8px;"src="/fitter/goback.png"/>
+</span> 
+<button id="GOOO" title="Go" class="button"></button>
+</div>
+   
+<div class="flipper"> 
+
+<div class="arrowContainer">
+<img width="42" height="175" id="goUp" style="display: none;" src="/fitter/arrowup.png"> 
+<img width="42" height="175" id="goDown" style="display: none;" src="/fitter/arrowdown.png">
+</div>                                  
+
+<div id = "dropdownsContainer" style="">  
+<div id = "dropdowns" style=""></div> 
+</div><!-- EoF flipperinput-text--> 
+</div><!-- EoF vinput-text-->
+</div>
+</div>
+</div>
+
+<script type="text/javascript">
+//alert("MARK!");   
+$("#backx").click(function() {
+    redoIt();
+    $('#year').html('');
+    $('#make').html('');
+    $('#model').html('');
+    $('#year').attr('name', '');
+    $('#make').attr('name', '');
+    $('#model').attr('name', '');
+    $('#yearback').css("display","none");
+    $('#goUp').css("display","inline");
+    $('#goDown').css("display","inline");
+    $('#dropdowns').css("top","1px");
+    $('#dropdownsContainer').css("border","1px solid black");
+    thisSection = 1;
+});
+
+$("#GOOO").click(function() {       // go button           
+    yearVar = $('#year').attr('name');    
+    makeVar = $('#make').attr('name'); 
+    modelVar = $('#model').attr('name');     
+        if(yearVar != '' && makeVar != '' && modelVar != ''){                               
+            window.location = "/vaf/product/list/?year=" + yearVar +'&make=' + makeVar + '&model=' + modelVar;
+            }else{
+                alert("Please Finish Selecting Your Vehicle");
+                }   
+}); 
+
+$("#goUp").click(function() {  //scroll up
+     //figue out how big the div is and how much scrolling can be done  
+    h = $("#dropdowns").height();
+    sections = h/350;   
+       
+    if (thisSection > 1){
+        thisSection = thisSection - 1;     
+        var dropCss  = $("#dropdowns").css("top");
+        dropCss = dropCss.replace("px", "");
+        dropCss = -dropCss
+        if (dropCss < 349) {
+            $("#dropdowns").animate({top: "1px"}, 450 );
+            }else{
+                $("#dropdowns").animate({top: "+=350px"}, 450 );  
+                }  
+        }
+});
+  
+$("#goDown").click(function () {   //scroll down
+    
+    h = $("#dropdowns").height();
+    sections = h/350;   
+    if (thisSection < sections){        
+        thisSection = thisSection + 1;   
+        checkDivision = h / sections        
+        var decimal = sections - Math.floor(sections)  // this gets the decimal so we dont scroll too far
+        var lastpage = decimal * 350;        
+            if (thisSection > sections){
+                lastpage = '-='+lastpage+'px'             
+                $("#dropdowns").animate({top: lastpage}, 450 );
+                }
+                else{
+                    $("#dropdowns").animate({top: "-=350px"}, 450 );  
+                    } 
+    } 
+});
+
+$("#search-vehicle").click(function () {
+    alert("click!");
+    if (stillclosed == "yup"){ 
+        stillclosed = "nope";
+        $('.flipper').show('slow', function() { 
+            $('#goUp').css("display","inline");
+            $('#goDown').css("display","inline"); 
+        });
+           
+    } 
+});  
+
+</script>
+
+<script type="text/javascript">   
+buildIt(); 
+//boxIt();
+$('.ui-combobox-list').show('fast', function() {scrollBtns(); });    
+</script>   

@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+
+.e-search-block input{
+	overflow:hidden;
+	display:block;
+	}
+.e-category-gallery a:hover img,
+.e-block a:hover img,
+.e-prom-block a:hover img,
+.e-store-page-gallery a:hover img{
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+	}
+.rs-pview table.grid{
+	margin-top:-2px !important;
+	}
+

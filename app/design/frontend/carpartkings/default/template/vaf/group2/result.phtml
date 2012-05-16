@@ -1,0 +1,67 @@
+<?// /var/www/html/magento/app/design/frontend/carpartkings/default/template/vaf/group2 ?>
+
+<?/*<div class="page-head vaf-category-result">
+    <h3><?php 
+    		echo "The Kings have found ";
+echo number_format( $this->getTotalProductCount() ) . ' product' . ($this->getTotalProductCount() > 1 ? 's' : '' );
+echo " for your ".substr($this->getHeaderText(),13);
+		?>     </h3>
+</div>
+*/?>
+<div class="header-callout-title">
+<?
+echo "The Kings have found ";
+echo number_format( $this->getTotalProductCount() ) . ' product' . ($this->getTotalProductCount() > 1 ? 's' : '' );
+echo " for your ".substr($this->getHeaderText(),13);
+echo '<div id=changeVfits class=changeVfits"><a href="#inline1" class="fancybox"><img src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'media/cpk/change.png" alt="Change Vehicle"/></a></div>';  
+?>                                                                   
+</div>        
+
+
+<?php
+if( !$this->getTotalCategoryCount() || !$this->getResultCount() )
+{
+    ?>
+    <div class="note-msg">
+        <?php echo ($this->getNoResultText()) ? $this->getNoResultText() : $this->__('Your search returns no results.') ?>
+        <?php
+        if ($messages = $this->getNoteMessages())
+        {
+            ?>
+            <?php foreach ($messages as $message):?>
+            <br /><?php echo $message?>
+            <?php endforeach;?>
+            <?php
+        }
+        ?>
+    </div>
+    <?php
+    return;
+}
+
+
+// echo ' found in ' . number_format( $this->getTotalCategoryCount() ) . ( $this->getTotalCategoryCount() > 1 ? ' categories' : ' category' );
+// echo '<br />';
+?>
+<ol id="products-list" class="products-list">
+<?
+
+
+$categories = $this->getCategories();
+$mi = 0;
+foreach( $categories as $category )
+{
+	//echo '<li class="item">' ;
+    ?>
+    <?=$this->drawItem( $category )?>
+    <?php
+    //if($mi !== 0){echo("</li>");}
+    //$mi++;
+    
+    
+}
+
+?>
+</ol>
+
+    <?

@@ -1,0 +1,208 @@
+<?php  ///var/www/html/magento/app/design/frontend/carpartkings/default/template/page
+include_once('/var/www/html/magento/fitter/dropdown.php');
+//include_once('/var/www/html/magento_staging/fitter/dropdown.php');
+?>
+<?/* 
+<div class="search-vehicle" id="search-vehicle">
+    <div class="title">START HERE BY FINDING YOUR VEHICLE</div>
+        <div class="search-form-vehicle" id="search-form-vehicle">
+            <div class="vform-search">
+            
+                <form action="http://<?echo $website;?>/vaf/product/list/" method="GET">
+                
+                
+                    <select name="year" id="drop_1">
+                      <option value="" selected="selected" class="drop_dummy" disabled="disabled">Select a Year</option>
+                      <?php getTierOne(); ?>
+                    </select>
+                    
+                    <span id="wait_1" style="display: inline;">
+                        <select disabled="disabled" name="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Make</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_1" style="display: none;"></span>
+                    
+                    <span id="wait_2" style="display: inline;">
+                        <select disabled="disabled" class="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Model</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_2" style="display: none;"></span>
+
+                    <span id="result_3" style="display: none;"></span>
+                    <div id="cpkBtn" style="display: none">
+                        <input type="image" name="goBtn" img id="goBtn" src="/fitter/go2.png"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>   */?>
+
+<?php
+
+
+if (isset($_SESSION['garage']))
+    {
+        $garage = $_SESSION['garage'];
+        $myLastElement = end($garage->vehicles());        
+        foreach ($garage->vehicles() as $vehicle)
+        {  
+            if ($vehicle == $myLastElement) {
+                 $schema = new Elite_Vaf_Model_Schema;
+                 $finder = new Elite_Vaf_Model_Vehicle_Finder( $schema );
+                 $vehicle = $finder->findOneByLevelIds($vehicle);  
+                 
+                             if (!is_object($vehicle)){
+?>
+<div class="search-vehicle" id="search-vehicle">
+    <div class="title">START HERE BY FINDING YOUR VEHICLE</div>
+        <div class="search-form-vehicle" id="search-form-vehicle">
+            <div class="vform-search">         
+               <form action="<?echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)?>vaf/product/list/" method="GET"> 
+                    <select name="year" id="drop_1">
+                      <option value="" selected="selected" class="drop_dummy" disabled="disabled">Select a Year</option>
+                      <?php getTierOne(); ?>
+                    </select>
+                    
+                    <span id="wait_1" style="display: inline;">
+                        <select disabled="disabled" name="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Make</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_1" style="display: none;"></span>
+                    
+                    <span id="wait_2" style="display: inline;">
+                        <select disabled="disabled" class="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Model</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_2" style="display: none;"></span>
+                    
+                        <span id="result_3" style="display: none;"></span>
+                    <div style="height: 35px; width: 45px; float:right;">
+                        <div id="cpkBtn" style="display: none">
+                            <input type="image" name="goBtn" img id="goBtn" src="/fitter/go2.png"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>   <?
+             }else{ 
+             $selectedYear = $vehicle->getLevel('year')->getId();
+             $selectedYearText = $vehicle->getLevel('year')->getTitle();
+             $selectedMake = $vehicle->getLevel('make')->getId();
+             $selectedMakeText = $vehicle->getLevel('make')->getTitle(); 
+             $selectedModel = $vehicle->getLevel('model')->getId();
+             $selectedModelText = $vehicle->getLevel('model')->getTitle(); 
+             
+             ?>
+<div class="search-vehicle" id="search-vehicle">
+    <div class="title">START HERE BY FINDING YOUR VEHICLE</div>
+        <div class="search-form-vehicle" id="search-form-vehicle">
+        
+            <div class="vform-search">
+                       
+                <form action="<?echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)?>vaf/product/list/" method="GET"> 
+                    <select id="drop_1" name="year">
+                      <?getTierOne_footer($selectedYear, $selectedYearText)?>
+                    </select>    
+                     
+                                        
+                    <span style="display: none;" id="wait_1">
+                        <select id="drop_dummy" name="drop_dummy" disabled="disabled">
+                            <option disabled="disabled" selected="selected" value="">Select a Make</option>                                        
+                        </select>
+                    </span>
+                    
+                    
+                    <span style="" id="result_1">
+                        <select id="drop_2" name="make">
+                            <?drop_1_footer($selectedYear, $selectedMake, $selectedMakeText)?>  
+                        </select>
+                    </span>
+                    
+                    
+                    <span style="display: none;" id="wait_2">
+                        <select id="drop_dummy" class="drop_dummy" disabled="disabled">
+                            <option disabled="disabled" selected="selected" value="">Select a Model</option>                     
+                        </select>
+                    </span>
+                    
+                    
+                    <span style="" id="result_2">
+                        <select id="drop_3" name="model">
+                            <?drop_2_footer($selectedMake, $selectedModel, $selectedModelText)?>
+                        </select>
+                    </span>
+                    
+                   <span style="display: none;" id="result_3"></span> 
+                    <div style="height: 35px; width: 45px; float:right;">
+                        <div style="display: block;" id="cpkBtn">
+                            <input type="image" src="/fitter/go2.png" id="goBtn" img="" name="goBtn">
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script type=\"text/javascript\">             
+        jQuery('#cpkBtn').show('fast');   
+        </script>     
+<?              }
+            }
+        }                
+    }else{
+        
+?>
+<div class="search-vehicle" id="search-vehicle">
+    <div class="title">START HERE BY FINDING YOUR VEHICLE</div>
+        <div class="search-form-vehicle" id="search-form-vehicle">
+            <div class="vform-search">         
+               <form action="<?echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB)?>vaf/product/list/" method="GET"> 
+                    <select name="year" id="drop_1">
+                      <option value="" selected="selected" class="drop_dummy" disabled="disabled">Select a Year</option>
+                      <?php getTierOne(); ?>
+                    </select>
+                    
+                    <span id="wait_1" style="display: inline;">
+                        <select disabled="disabled" name="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Make</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_1" style="display: none;"></span>
+                    
+                    <span id="wait_2" style="display: inline;">
+                        <select disabled="disabled" class="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Model</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_2" style="display: none;"></span>
+                    
+                        <span id="result_3" style="display: none;"></span>
+                    <div style="height: 35px; width: 45px; float:right;">
+                        <div id="cpkBtn" style="display: none">
+                            <input type="image" name="goBtn" img id="goBtn" src="/fitter/go2.png"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>         
+<?                
+        
+    }
+?>

@@ -1,0 +1,205 @@
+<?php
+/**  /var/www/html/magento/app/design/frontend/carpartkings/default/template/catalog/product/view
+* this is the most recent file
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product description template
+ *
+ * @see Mage_Catalog_Block_Product_View_Description
+ */ 
+?>
+<div class="fitNotes">
+<!-- begin fitment notes -->
+<?php
+$finalOutput = '';
+if( $this->getProduct()->getIsUniversal() )
+{
+    echo 'Universal Product';
+}else{    
+    
+    if (isset($_SESSION['garage']))  // see if the user has selected a vehicle then show related notes, otherwise show all notes
+    {
+        $garage = $_SESSION['garage'];
+        $myLastElement = end($garage->vehicles());
+        foreach ($garage->vehicles() as $vehicle)
+        {
+            if ($vehicle == $myLastElement) {   
+
+                if( $this->getProduct()->isUniversal() )
+                {
+                     echo 'Product is universal and has no fitment notes';
+                }else{
+                
+                       $schema = new Elite_Vaf_Model_Schema;
+                       $finder = new Elite_Vaf_Model_Vehicle_Finder( $schema );
+                       $validVehicle = $finder->findOneByLevelIds($vehicle);  
+                 
+                       if (!is_object($validVehicle)){
+                            $noteFinder = new Elite_Vafnote_Model_Finder();
+                            foreach( $this->getProduct()->getFits() as $fit ){
+                                $notes = '';
+                                $output = '';
+                
+                                if(isset($fit->year)){$thisFittment = $fit->year.' ';} 
+                                if(isset($fit->make)){$thisFittment .= $fit->make.' ';}
+                                if(isset($fit->model)){$thisFittment .= $fit->model.' ';}
+                                if(isset($fit->submodel)){$thisFittment .= $fit->submodel.' ';}
+                                if(isset($fit->engine)){$thisFittment .= $fit->engine.' ';}
+                                //$thisFittment = $fit->year.' '.$fit->make.' '.$fit->model.' '.$fit->submodel.' '.$fit->engine;  
+                                $notes = $noteFinder->getNotes($fit->id);   
+                                $theseNotes = $notes[0]->message;
+                                $pieces = explode("|", $theseNotes);
+                
+                                $output = "<strong>$thisFittment</strong></br>";
+                                    foreach( $pieces as $piece ) {
+                                        if ($piece){
+                                            $output .= '<span class="horzList">&bull; '.$piece.'</span>';
+                                            }else{$output .= '<span class="horzList">&bull; Part fits this vehicle</span><br/>';}   
+                                    }
+                                    $output .= "</br></br>";
+                
+                                    $finalOutput = $finalOutput.$output;             
+            }//foreach( $this->getProduct()->getFits() as $fit ) 
+            echo $finalOutput;   
+                 }else{ 
+                      $vehicleFinder = new Elite_Vaf_Model_Vehicle_Finder(new Elite_Vaf_Model_Schema);
+                      $vehicle = $vehicleFinder->findOneByLevelIds($vehicle, Elite_Vaf_Model_Vehicle_Finder::EXACT_ONLY);
+                      $thisFitment = $vehicle->getLevel('year')->getTitle().$vehicle->getLevel('make')->getTitle().$vehicle->getLevel('model')->getTitle();           
+                      
+                      
+                      foreach( $this->getProduct()->getFits() as $fit )
+                      {
+                            $currentItem = $fit->year.$fit->make.$fit->model;
+                            
+                            
+                            if($thisFitment == $currentItem){
+                                $found = 1;
+                                $thisFittment = $fit->year.$fit->make.$fit->model;
+                            
+                                if(isset($fit->year)){$thisFittmentText = $fit->year.' ';} 
+                                if(isset($fit->make)){$thisFittmentText .= $fit->make.' ';}
+                                if(isset($fit->model)){$thisFittmentText .= $fit->model.' ';}
+                                if(isset($fit->submodel)){$thisFittmentText .= $fit->submodel.' ';}
+                                if(isset($fit->engine)){$thisFittmentText .= $fit->engine.' ';}
+                                //$thisFittmentText = $fit->year.' '.$fit->make.' '.$fit->model.' '.$fit->submodel.' '.$fit->engine;
+                                $noteFinder = new Elite_Vafnote_Model_Finder();
+                                $notes = $noteFinder->getNotes($fit->id);   
+                                $theseNotes = $notes[0]->message;
+                                $pieces = explode("|", $theseNotes);
+                                
+                                echo "<strong>$thisFittmentText</strong></br>";
+                                foreach( $pieces as $piece ) {                                     
+                                    if ($piece){ 
+                                        echo '<span class="horzList">&bull; '.$piece.'</span>';                                      
+                                        }else { echo '<span class="horzList">&bull; Part fits this vehicle</span></br>'; }
+                                    }   
+                                echo '</br></br>';   
+                            } //if($thisFitment == $currentItem)                         
+                      }//foreach( $this->getProduct()->getFits() as $fit )
+                      
+                      if (!$found == 1){
+                          $noteFinder = new Elite_Vafnote_Model_Finder();                          
+                          
+                          foreach( $this->getProduct()->getFits() as $fit )
+                          {
+                                $notes = '';
+                                $output = '';
+                       
+                       
+                       
+                                if(isset($fit->year)){$thisFittment = $fit->year.' ';} 
+                                if(isset($fit->make)){$thisFittment .= $fit->make.' ';}
+                                if(isset($fit->model)){$thisFittment .= $fit->model.' ';}
+                                if(isset($fit->submodel)){$thisFittment .= $fit->submodel.' ';}
+                                if(isset($fit->engine)){$thisFittment .= $fit->engine.' ';}
+                                //$thisFittment = $fit->year.' '.$fit->make.' '.$fit->model.' '.$fit->submodel.' '.$fit->engine;  
+                                $notes = $noteFinder->getNotes($fit->id);   
+                                $theseNotes = $notes[0]->message;
+                                $pieces = explode("|", $theseNotes);
+                
+                                $output = "<strong>$thisFittment</strong></br>";  
+                                    foreach( $pieces as $piece ) {
+                                        if ($piece){
+                                        $output .= '<span class="horzList">&bull; '.$piece.'</span>';
+                                        }else{$output .= '<span class="horzList">&bull; Part fits this vehicle</span>';}    
+                                    }
+                                $output .= "</br></br>";       
+                                $finalOutput = $finalOutput.$output;             
+                        }//foreach( $this->getProduct()->getFits() as $fit ) 
+                    if (!$finalOutput){
+                              echo "<br/><h5>We apologize, but there are no notes for this item.</h5><br/>";                                                                                       
+                          }
+                          else{
+                              echo "<br/><h5>This item will not fit your ".$vehicle->getLevel('year')->getTitle().' '.$vehicle->getLevel('make')->getTitle().' '.$vehicle->getLevel('model')->getTitle()."  but it will fit....</h5><br/>";                                                                                       
+                          }
+                    echo $finalOutput;
+                      
+                      
+                      } 
+                }//else
+                }//else   
+            }//if ($vehicle == $myLastElement)        
+        }//foreach ($garage->vehicles() as $vehicle)
+    }//if (isset($_SESSION['garage']))
+    else{  $noteFinder = new Elite_Vafnote_Model_Finder();
+            foreach( $this->getProduct()->getFits() as $fit )
+            {
+                $notes = '';
+                $output = '';
+                
+                if(isset($fit->year)){$thisFittment = $fit->year.' ';} 
+                if(isset($fit->make)){$thisFittment .= $fit->make.' ';}
+                if(isset($fit->model)){$thisFittment .= $fit->model.' ';}
+                if(isset($fit->submodel)){$thisFittment .= $fit->submodel.' ';}
+                if(isset($fit->engine)){$thisFittment .= $fit->engine.' ';}
+                //$thisFittment = $fit->year.' '.$fit->make.' '.$fit->model.' '.$fit->submodel.' '.$fit->engine;  
+                $notes = $noteFinder->getNotes($fit->id);   
+                $theseNotes = $notes[0]->message;
+                $pieces = explode("|", $theseNotes);
+                
+                $output = "<strong>$thisFittment</strong></br>";   
+                foreach( $pieces as $piece ) {
+                    if ($piece){
+                                        $output .= '<span class="horzList">&bull; '.$piece.'</span>';
+                                        }else{$output .= '<span class="horzList">&bull; Part fits this vehicle</span><br/>';}   
+                }
+                $output .= "</br></br>";
+                 
+                $finalOutput = $finalOutput.$output;           
+
+            }//foreach( $this->getProduct()->getFits() as $fit ) 
+         
+            if (!$finalOutput){
+                              echo "<br/><h5>We apologize, but there are no notes for this item.</h5><br/>";                                                                                       
+            }                          
+            echo $finalOutput; //this is built backwards so the new years are listed first     
+    } //else       
+            
+            
+}          
+?>
+<!-- end fitment notes -->
+  </div>  

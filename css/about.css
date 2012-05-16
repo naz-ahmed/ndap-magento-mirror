@@ -1,0 +1,150 @@
+@charset "utf-8";
+/* CSS Document */
+	
+/* Bread Crumb Link */
+.pagecontainer > table{
+	border:none !important;
+	color:#1F1F1F !important;
+	position:relative;
+	z-index:100;
+	width:880px;
+	margin:0 auto;
+	padding-bottom:5px;
+	}
+.pagecontainer > table + table{
+	position:relative;
+	z-index:10;
+	width:100% !important;
+	border-bottom:none !important;
+	padding-bottom:0 !important;
+	}
+.pagecontainer > table b{
+	color:#1F1F1F !important;
+	font-size:9px !important;
+	font-weight:bold !important;
+	}
+.pagecontainer > table a:link,
+.pagecontainer > table a:visited{
+	color: #1F1F1F !important;
+	font-size:9px !important;
+	font-weight:bold !important;
+	}
+.pagecontainer > table tr td[bgcolor="#999999"],
+.pagecontainer > table tr td[height="8"],
+#s_i_ebay,
+#i_sGauge,
+#i_sGauge + img{
+	display:none;
+	}
+.e-mian-menu a span{
+	font-size:13px !important;
+	font-weight:normal !important;
+	}
+.e-second-menu a strong span{
+	font-weight:bold;
+	}
+
+/* About Page */
+.pagecontainer > table ~ table table{
+	display:table !important;
+	width:100% !important;
+	}
+.pagecontainer > table ~ table table + table{
+	display:table !important;
+	width:1026px !important;
+	margin:0 auto !important;
+	}	
+.e-about-page{
+	padding:40px 15px 15px 15px;
+	margin-top:-52px;
+	}
+.gh-w{
+	margin-bottom:-12px !important;
+	}	
+	
+/* Content */	
+.pagecontainer > table table a:link,
+.pagecontainer > table table a:visited{
+	color: #263586 !important;
+	font-size:12px !important;
+	}
+.pagecontainer > table table b{
+	color:#000 !important;
+	font-size:12px !important;
+	padding-right:5px !important;
+	}
+.pagecontainer > table table{
+	color:#444444 !important;
+	}	 
+.pagecontainer > table ~ table table + table a:hover{
+	color: #000000 !important;
+	}
+hr,
+strong strong br,
+.e-about-page ~ br{
+	display:none !important;
+	}
+.e-about-page ~ p{
+	margin-left:15px;
+	}
+
+/* Feedback */
+.e-about-page table,
+.e-itemlist table{
+	margin-left:0px !important;
+	width:99% !important;
+	}
+.e-about-page table,
+.e-about-page table tr td,
+.e-itemlist table tr td{
+	background:none !important;
+	 border-collapse: collapse !important;
+	 border:none !important;
+	}
+.e-about-page table table table tr td,
+.e-feedback table table table tr th,
+.e-itemlist table tr td,
+.e-itemlist table tr th{
+	padding:3px 8px !important;
+	background:#fcfcfc !important;
+	}
+.e-about-page table table table,
+.e-feedback table table table,
+#e-about-page .e-feedback table table table{
+	border-collapse: separate !important;
+	border:solid 1px #f2f2f2 !important;
+	margin-top:0 !important;
+	margin-bottom:2px !important;
+	margin-left:0 !important;
+	padding:0px !important;
+	width:99% !important;
+	}
+.e-itemlist table tr th{
+	border:solid 1px #e7e7e7 !important;
+	background:#f2f2f2 !important;
+	vertical-align:middle;
+	}
+.e-itemlist table{
+	border-left:solid 1px #f2f2f2 !important;
+	border-right:solid 1px #f2f2f2 !important;
+	}
+.e-itemlist table tr td{
+	border-bottom:solid 1px #f2f2f2 !important;
+	}
+.e-itemlist table tr > td + td + td + td{
+	color:#000 !important;
+	font-weight:bold !important;
+	}
+.e-itemlist table tr > td + td + td + td + td{
+	color:#777 !important;
+	font-weight:normal !important;
+	}
+.e-about-page table table{
+	margin-top:10px !important;
+	margin-bottom:5px !important;
+	}
+
+/* Footer */
+#glbfooter{
+	padding-top:40px !important;
+	}

@@ -1,0 +1,40 @@
+<?$website = $_SERVER["SERVER_NAME"];?>
+<?php include_once('/var/www/html/magento/fitter/dropdown.php');?> 
+<div class="search-vehicle" id="search-vehicle">
+    <div class="title">START HERE BY FINDING YOUR VEHICLE</div>
+        <div class="search-form-vehicle" id="search-form-vehicle">
+            <div class="vform-search">
+            
+                <form action="http://<?echo $website;?>/vaf/product/list/" method="GET">
+                
+                
+                    <select name="year" id="drop_1">
+                      <option value="" selected="selected" class="drop_dummy" disabled="disabled">Select a Year</option>
+                      <?php getTierOne(); ?>
+                    </select>
+                    
+                    <span id="wait_1" style="display: inline;">
+                        <select disabled="disabled" name="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Make</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_1" style="display: none;"></span>
+                    
+                    <span id="wait_2" style="display: inline;">
+                        <select disabled="disabled" class="drop_dummy" id="drop_dummy">
+                            <option value="" selected="selected" disabled="disabled">Select a Model</option>                     
+                        </select>
+                    </span>
+                    
+                    <span id="result_2" style="display: none;"></span>
+
+                    <span id="result_3" style="display: none;"></span>
+                    <div id="cpkBtn" style="display: none">
+                        <input type="image" name="goBtn" img id="goBtn" src="/fitter/go2.png"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+ <global>
+  <cms>
+   <layouts>
+    <cpk_home_page>
+     <label>cpk home page</label>
+     <template>page/home.phtml</template>
+     <layout_handle>page_cpk-home-page</layout_handle>
+    </cpk_home_page>
+   </layouts>
+  </cms>
+ </global>
+</config>

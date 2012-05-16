@@ -1,0 +1,126 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<style>
+.col-left {
+display:none
+}
+.col-main {
+    width: 855px;
+}
+</style>
+<div class="page-title">
+<center><img src="http://carpartkings.com/media/cpk/checkout.png" style="margin:-5px 0px 40px" alt="Order Success"></center>
+    <h1><?php echo $this->__('Triumphant success!') ?></h1>
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+
+
+
+<p>Your order shall be processed with the utmost care and speed. Henceforth, you will receive an order confirmation email with the info required to track its progress towards the targeted destination. </p>
+
+
+<?php if ($this->getOrderId()):?>
+<?php if ($this->getCanViewOrder()) :?>
+    <p><?php echo $this->__('Thine order number is #%s.', sprintf('<a href="%s">%s</a>', $this->escapeHtml($this->getViewOrderUrl()), $this->escapeHtml($this->getOrderId()))) ?></p>
+<?php  else :?>
+    <p><?php echo $this->__('Thine order number is  #%s.', $this->escapeHtml($this->getOrderId())) ?></p>
+<?php endif;?>
+
+<p>The Kings salute you!</p>
+
+<?/*
+    <p><?php echo $this->__('You will receive an order confirmation email with details of your order and a link to track its progress.') ?></p>
+<?php if ($this->getCanViewOrder() && $this->getCanPrintOrder()) :?>
+    <p>
+        <?php echo $this->__('Click <a href="%s" onclick="this.target=\'_blank\'">here to print</a> a copy of your order confirmation.', $this->getPrintUrl()) ?>
+        <?php echo $this->getChildHtml() ?>
+    </p>
+<?php endif;?> */?>
+
+<?php endif;?>
+<?php if ($this->getAgreementRefId()): ?>
+    <p><?php echo $this->__('Your billing agreement # is: %s.', sprintf('<a href="%s">%s</a>', $this->escapeHtml($this->getAgreementUrl()), $this->escapeHtml($this->getAgreementRefId())))?></p>
+<?php endif;?>
+<?php if ($profiles = $this->getRecurringProfiles()):?>
+<p><?php echo $this->__('Your recurring payment profiles:'); ?></p>
+<ul class="disc">
+<?php foreach($profiles as $profile):?>
+<?php $profileIdHtml = ($this->getCanViewProfiles() ? sprintf('<a href="%s">%s</a>', $this->escapeHtml($this->getProfileUrl($profile)), $this->escapeHtml($this->getObjectData($profile, 'reference_id'))) : $this->escapeHtml($this->getObjectData($profile, 'reference_id')));?>
+    <li><?php echo $this->__('Payment profile # %s: "%s".', $profileIdHtml, $this->escapeHtml($this->getObjectData($profile, 'schedule_description')))?></li>
+<?php endforeach;?>
+</ul>
+<?php endif;?>
+
+
+
+
+
+
+
+
+<div class="buttons-set">
+    <button type="button" class="button" title="<?php echo $this->__('Continue Shopping') ?>" onclick="window.location='<?php echo $this->getUrl() ?>'"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
+</div>
+<?
+// left a few other variables in here just in case we want more tracking info
+//$_customerId = Mage::getSingleton('customer/session')->getCustomerId();
+//$customer = Mage::getSingleton('customer/session')->getCustomer();
+$lastOrderId = Mage::getSingleton('checkout/session')->getLastOrderId();
+$order = Mage::getSingleton('sales/order');
+$order->load($lastOrderId);
+$_totalData = $order->getData();
+$_grand = $_totalData['grand_total'];
+$_email = $order->getBillingAddress()->getEmail();
+//$_name = $customer->getName();
+//$_taxvat = $customer->getTaxvat();
+$thisOrder = $this->escapeHtml($this->getOrderId());
+?>
+<SCRIPT LANGUAGE="JavaScript">
+ord=Math.random();
+ord=ord*10000000000000000000;
+document.write('<IFRAME SRC="https://ad.mlnadvertising.com/tag.ashx?id=4AD8A627-481C-49D2-A2F9-0C8C071FF2D8&amp;tag=adi&amp;value=<?echo $_grand?>&amp;activity=<?echo $thisOrder ?>&amp;ord='+ord+'?" style="visibility:hidden;display:none" width="1" height="1" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling=no bordercolor="#000000">');
+document.write('</IFRAME>');
+</SCRIPT>
+
+<?/*  this is the standard reseller code
+<link rel="stylesheet" href="https://www.resellerratings.com/images/js/dhtml_survey.css" type="text/css" />
+<script type="text/javascript">
+seller_id = 43195;
+document.write('<'+ 'script type="text/javascript" src="https://www.resellerratings.com/images/js/popup_include.js"><\/script>');
+</script> */ ?>
+
+<?// this is the advanced reseller code?>
+
+
+<link rel="stylesheet" href="https://www.resellerratings.com/images/js/dhtml_survey.css" type="text/css" />
+<script type="text/javascript">
+seller_id = 43195;
+__rr_inv = "<?echo $thisOrder?>";
+__rr_email_pass = "<? echo $_email;?>";
+document.write('<'+ 'script type="text/javascript" src="https://www.resellerratings.com/images/js/popup_include.js"><\/script>');
+</script>

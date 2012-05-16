@@ -1,0 +1,1 @@
+C:\wamp\bin\php\php5.3.4\php %*

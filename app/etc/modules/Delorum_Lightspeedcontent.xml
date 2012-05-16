@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Delorum_Lightspeedcontent>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Delorum_Lightspeedcontent>        
+    </modules>
+</config>

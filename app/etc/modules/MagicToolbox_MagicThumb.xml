@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <MagicToolbox_MagicThumb>
+            <active>true</active>
+            <codePool>local</codePool>
+        </MagicToolbox_MagicThumb>
+    </modules>
+</config>
