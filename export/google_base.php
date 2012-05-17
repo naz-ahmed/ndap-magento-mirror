@@ -204,6 +204,8 @@ try
                     $file_index++;
                     fclose($handle);
                     $handle = fopen(SAVE_FEED_LOCATION.SAVE_FEED_FILENAME.$file_index.SAVE_FEED_FILE_EXTENSION, 'w');
+                    $heading = 			array('id','title','description','google_product_category','product_type','link','image_link','condition','availability','price','brand','mpn','weight');
+                    $feed_line= implode("\t", $heading)."\r\n";
                     fwrite($handle, $feed_line);
 	
                 }
