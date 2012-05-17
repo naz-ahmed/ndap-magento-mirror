@@ -37,10 +37,11 @@ try
 	//$products->addAttributeToFilter('status', 1);
 	//$products->addAttributeToFilter('visibility', 4);
 	//$products->addAttributeToFilter('price', array('gt' => 1000));
-	//$products->addAttributeToFilter('entity_id',array('in' => array(22333)));
+	//$products->addAttributeToFilter('entity_id',array('in' => array(530630)));
 	$products->addAttributeToSelect('sku');
 	$products->addAttributeToSelect('name');
 	$products->addAttributeToSelect('google_fitment_text');
+	$products->addAttributeToSelect('category_google');
 	$products->addAttributeToSelect('category_ids');
 	$products->addAttributeToSelect('url');
 	$products->addAttributeToSelect('image');
@@ -69,8 +70,7 @@ try
 		$product_data["description"] = $product->getGoogleFitmentText();
 		
 		//google_product_category
-		$thecat = "Vehicles & Parts > Automotive Parts";
-		$product_data["google_product_category"] = $thecat;
+		$product_data['google_product_category'] = $product->getCategoryGoogle();
 		
 		//product_type
 		foreach ($product->getCategoryIds() as $_categoryId)
