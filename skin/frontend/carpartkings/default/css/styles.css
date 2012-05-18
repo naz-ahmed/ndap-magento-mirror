@@ -1896,4 +1896,10 @@ div.MagicToolboxContainer {margin: auto;}
 .MagicScrollItem img {padding-left: 25px;}
 /* ======================================================================================= */ 
 
-.features-test { list-style: disc;  }
+.features-test { list-style: disc; margin-left: 8px;  }
+.features-item-test{ margin-left: 5px; } 
+
+.features-list { list-style: disc; margin-left: 8px;  }
+.features-list-item{ margin-left: 5px; } 
+
+.corenote { display: block; }
