@@ -86,9 +86,9 @@
 						$_savings = round(100-(100/$_product->getMsrp())*$_product->getPrice(),2); 
 						if($_savings >= 50): 
 						?>
-						<?php echo $this->__('Over 50%!') ?>
+						<?php echo $this->__('Over 50%') ?>
                         <?php else: ?>
-                        <?php echo $_savings.'%!' ?>
+                        <?php echo $_savings.'%' ?>
 						<?php endif; ?>
                         <?php endif; ?> 
 						</span></li>
