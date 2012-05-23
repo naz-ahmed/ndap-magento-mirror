@@ -32,11 +32,11 @@ function getSelectBox($attributeCode, $label = '', $defaultSelect = null, $extra
     foreach ($_category->getChildren() as $child): 			
         $_i = $_i+1;
     endforeach; 
-    ?>      
-        <dt>
-        <? $catName = $_category->getName(); 
-        $catName = str_replace (" ", "", $catName); ?>
-        <a href="javascript:void(0);" onclick="if (jQuery('#<?php echo $catName?>').css('display')=='none') {jQuery('#<?php echo $catName?>').slideDown('slow');} else {jQuery('#<?php echo $catName?>').hide('slow');}"><?php print $_category->getName();?></a> </dt>  
+        $catName = $_category->getName(); 
+        $catName = str_replace (" ", "", $catName); ?>   
+        <dt onclick="if (jQuery('#<?php echo $catName?>').css('display')=='none') {jQuery('#<?php echo $catName?>').slideDown('slow');} else {jQuery('#<?php echo $catName?>').hide('slow');}">
+        
+        <a href="javascript:void(0);" ><?php print $_category->getName();?></a> </dt>  
         
         <?/*<a href="<?php print $this->getCategoryUrl($_category); ?>" class="<?php echo $parent_class ?>"><?php print $_category->getName();?></a></dt>  */?>
   
