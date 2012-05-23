@@ -112,7 +112,7 @@
             	<?php if($_product->getPrice()):?>
                 <div class="price-box">
                 <span class="regular-price">
-                <span class="price"><?php echo $this->__('Our Price: ') ?><?php echo $_coreHelper->currency($_product->getPrice(),true,false);  ?></span></span>
+                <span class="price"><?php echo $this->__('Your Price: ') ?><?php echo $_coreHelper->currency($_product->getPrice(),true,false);  ?></span></span>
                 </div>
                 <?php else: ?>
 				<?php echo $this->getPriceHtml($_product, true) ?>
