@@ -33,6 +33,9 @@ function getSelectBox($attributeCode, $label = '', $defaultSelect = null, $extra
         $_i = $_i+1;
     endforeach; 
         $catName = $_category->getName(); 
+        if ($catName == ""){
+            continue;
+        }
         $catName = str_replace (" ", "", $catName); ?>   
         <dt onclick="if (jQuery('#<?php echo $catName?>').css('display')=='none') {jQuery('#<?php echo $catName?>').slideDown('slow');} else {jQuery('#<?php echo $catName?>').hide('slow');}">
         
