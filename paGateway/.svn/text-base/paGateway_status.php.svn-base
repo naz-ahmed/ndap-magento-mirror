@@ -1,0 +1,71 @@
+<?php
+//Error reporting
+ini_set('display_errors', 1);
+error_reporting(E_ALL); 
+
+	//load paAPI
+	require_once("paOrder.php");
+
+function getStatus($orderId)
+{
+	$config_info = parse_ini_file('paGateway.ini', true);
+
+	$uid = $config_info['login']['uid'];
+	$pass = $config_info['login']['pass'];
+	
+	// PO Number entered via API. Use Magento Invoice ID.
+	//$_orderId = "100000043";
+	
+
+	$order = new paOrder();
+	$order->setUser($uid, $pass);
+	$order->setPoNumber($orderId);
+	$order->sendRequest();  //response is JSON object
+	
+	//$ret = json_decode($order->sendRequest(),true);
+	return $order->sendRequest();
+	
+}
+
+
+
+try
+{
+
+// var_dump(getStatus('100000043'));
+// $obj = getStatus('100000046');
+$obj = getStatus('100000051');
+
+$myArray = json_decode($obj, true); 
+
+var_dump($myArray); 
+
+$Status = $myArray[0]['Status'];
+echo "DISPLAY VARIABLES: \r\n";
+echo "<Status>".$Status;
+echo "</Status>";
+echo "\r\n"; 
+
+$TrackingNumber = $myArray[0]['TrackingNum'];
+echo "<Tracking>".$TrackingNumber;
+echo "</Tracking>";
+
+/*
+if($myArray["responseStatus"] == "Failed")
+{
+	echo "RESPONSE FAILED";
+
+}
+*/
+
+}
+catch(Exception $e)
+{}
+
+
+
+
+
+
+
+?>

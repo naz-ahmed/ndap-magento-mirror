@@ -1,0 +1,49 @@
+<?php
+//Error reporting
+ini_set('display_errors', 1);
+error_reporting(E_ALL); 
+
+$con = mysql_connect("ndap01.c2lug8itjgui.us-east-1.rds.amazonaws.com", "magento", "C3HKMVYD7DQJsSVY");
+if (!$con)
+{
+	die('Could not connect: ' . mysql_error());
+}
+
+$db = mysql_select_db("magento", $con);
+if (!$db) {echo "cant select database";}
+
+//External script - Load magento framework
+require_once("../app/Mage.php");
+Mage::app();
+
+//construct paAPI class
+require_once('paAPI.php');
+$paOrder = new paAPI();
+
+
+$myOrder=Mage::getModel('sales/order'); 
+$orders=Mage::getModel('sales/mysql4_order_collection');
+
+//Optional filters you might want to use - more available operations in method _getConditionSql in Varien_Data_Collection_Db. 
+$orders->addFieldToFilter('total_paid',Array('gt'=>0)); //Amount paid larger than 0
+$orders->addFieldToFilter('status',Array('eq'=>"processing"));  //Status is "processing"
+
+$allIds=$orders->getAllIds();
+foreach($allIds as $thisId) {
+    $myOrder->reset()->load($thisId);
+    //echo "<pre>";
+    //print_r($myOrder);
+    //echo "</pre>";
+
+
+    //Some random fields
+    echo "'" . $myOrder->getBillingAddress()->getLastname() . "',";
+    echo "'" . $myOrder->getTotal_paid() . "',";
+    echo "'" . $myOrder->getShippingAddress()->getTelephone() . "',";
+    echo "'" . $myOrder->getPayment()->getCc_type() . "',";
+    echo "'" . $myOrder->getStatus() . "',";
+    echo "\r\n";
+}
+
+
+?>

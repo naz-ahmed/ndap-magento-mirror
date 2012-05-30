@@ -15,18 +15,17 @@ $log->lwrite("starting file. \r\n");
 
 // **************************************** SCRIPT MODE ***************************************************************/
 // set to test so that magento status is not set to complete. no way to move from complete back to processing         */
-	$scriptMode = "live";
+	$scriptMode = "test";
 
-$config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', true);
+$config_info = parse_ini_file('paGateway.ini', true);
 
 //load paAPI
-require_once("/var/www/html/magento/paGateway/paOrder.php");
+require_once("paOrder.php");
 
 
 function getStatus($orderId)
 {
-	//why do i need this twice? is it left over from testing externally?
-	$config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', true);
+	$config_info = parse_ini_file('paGateway.ini', true);
 
 	$uid = $config_info['login']['uid'];
 	$pass = $config_info['login']['pass'];
@@ -38,37 +37,26 @@ function getStatus($orderId)
 	$order = new paOrder();
 	$order->setUser($uid, $pass);
 	$order->setPoNumber($orderId);
-	$obj = $order->sendRequest();  //response is JSON object
+	$order->sendRequest();  //response is JSON object
 	
 	//get the response
 	$response = json_decode($obj, true); 
 	$OrderStatus = array();
 	if($response)
 	{
-		if(array_key_exists("responseStatus", $response))
+		if($response["responseStatus"] == "Failed")
 		{
-			if($response["responseStatus"] == "Failed")
-			{
-				//PO number was wrong or response failed for some other reason
-				//echo "Response failed \r\n";
-				$logMessage = "Response failed while checking order status at PA. Order# ".$orderId." ResponseDetail: ".$response['responseDetail']."\r\n"; 
-				$OrderStatus['Status'] = "Failed";
-				$OrderStatus['Messages'] = $logMessage;
-				$OrderStatus['Id'] = $orderId;
-			}
+			//PO number was wrong or response failed for some other reason
+			echo "Response failed \r\n";
+			$log->lwrite("Response failed while checking order status at PA. Order# ".$orderId." ResponseDetail: ".$response['responseDetail']."\r\n"); 
+			$OrderStatus['Status'] = "Failed";
 			
 		}
-		else
-		{
-			//prepare array to return
-			$OrderStatus['Status'] = $response[0]['Status'];
-			$OrderStatus['TrackingNumber'] = $response[0]['TrackingNum'];
-			$OrderStatus['Time'] = $response[0]['entryTime'];
-			$OrderStatus['Messages'] = $logMessage;
-			$OrderStatus['Id'] = $oderId;
-		}
 		
-	
+	//prepare array to return
+	$OrderStatus['Status'] = $response[0]['Status'];
+	$OrderStatus['TrackingNumber'] = $response[0]['TrackingNum'];
+	$OrderStatus['Time'] = $response[0]['entryTime'];
 	
 	}
 	
@@ -77,7 +65,7 @@ function getStatus($orderId)
 }
 
 
-require_once("/var/www/html/magento/app/Mage.php");
+require_once("../app/Mage.php");
 Mage::app();
 
 
@@ -89,6 +77,8 @@ if($scriptMode == "live") { $email = true; }
 
 $includeComment = false;  //sets if the comment should be included in the email to customer.
 if($scriptMode == "live") { $includeComment = false; }
+
+//***************************** testing with one ID for now. TODO: loop through all Ids with status=sent_to_pa *********** */
 
 
 //$order = Mage::getModel('sales/order')->loadByIncrementId($orderId);
@@ -112,13 +102,13 @@ foreach($allIds as $thisId)
 	$paDetails = getStatus($IncrementId);
 	$paStatus = $paDetails['Status'];
 	
-	$log->lwrite("Order id = ".$thisId." Increment Id = ".$IncrementId." PA Status = ".$paStatus." Messages = ".$paDetails['Messages']."\r\n");
+	$log->lwrite("Order id = ".$thisId." Increment Id = ".$IncrementId." PA Status = ".$paStatus."\r\n");
 	
 	//skip over anything that doesn't have "Shipped" status from PA
 	if($paStatus !== "Shipped") { continue; }
 
-	$TrackingNumber = $paDetails['TrackingNumber'];
-	$comment .= " ".$paDetails['Time']; //adds the shipping time to the comment
+	$TrackingNumber = $paStatus['TrackingNumber'];
+	$comment .= " ".$paStatus['Time']; //adds the shipping time to the comment
 	
 	//DEV
 	// going to try it for all. should only make changes if we have a tracking number
@@ -127,31 +117,7 @@ foreach($allIds as $thisId)
 	echo "Increment Id = ".$IncrementId."\r\n";
 	echo	"Status = ".$myOrder->getStatus()."\r\n";
 	
-	//still getting errors when trying to process more than 1 at a time
-	//line 219 vardump(data) never happens
-	/*
 	
-		Increment Id = 100000059
-		Status = sent_to_pa
-		MagentoShipMethod = fedex_fedex_ground
-		MagentoShipDescription = federal express - ground
-		PHP Fatal error:  Uncaught exception 'Mage_Core_Exception' with message 'Mage registry key "current_shipment" already exists' in /var/www/html/magento/app/Mage.php:566
-		Stack trace:
-		#0 /var/www/html/magento/app/Mage.php(195): Mage::throwException('Mage registry k...')
-		#1 /var/www/html/magento/paGateway/pag_update_shipping.php(187): Mage::register('current_shipmen...', Object(Mage_Sales_Model_Order_Shipment))
-		#2 {main}
-		  thrown in /var/www/html/magento/app/Mage.php on line 566
-		
-		Fatal error: Uncaught exception 'Mage_Core_Exception' with message 'Mage registry key "current_shipment" already exists' in /var/www/html/magento/app/Mage.php on line 566
-		
-		Mage_Core_Exception: Mage registry key "current_shipment" already exists in /var/www/html/magento/app/Mage.php on line 566
-		
-		Call Stack:
-		    0.0006     694568   1. {main}() /var/www/html/magento/paGateway/pag_update_shipping.php:0
-		    4.0219   31206352   2. Mage::register() /var/www/html/magento/paGateway/pag_update_shipping.php:187
-		    4.0219   31206520   3. Mage::throwException() /var/www/html/magento/app/Mage.php:195
-	
-	*/
 	
 	$convertor = Mage::getModel('sales/convert_order');
 	$shipment = $convertor->toShipment($myOrder);
@@ -175,34 +141,25 @@ foreach($allIds as $thisId)
 	
 	
 
-	$MagentoShipMethod = strtolower($myOrder->getShippingMethod());
-	$MagentoShipDescription = strtolower($myOrder->getShippingDescription());
-	//$MagentoShipCode = $myOrder->getCarrier_code(); this doesn't work. need to find cx way to get CarrierCode
-	$CarrierCode = substr($MagentoShipMethod,0,strpos($MagentoShipMethod,'_'));
+	$MagentoShipMethod = $myOrder->getShippingMethod();
+	$MagentoShipDescription = $myOrder->getShippingDescription();
+	$MagentoShipCode = $myOrder->getCarrier_code();
 	
 	echo "MagentoShipMethod = ".$MagentoShipMethod."\r\n";
 	echo	"MagentoShipDescription = ".$MagentoShipDescription."\r\n";
-		
-	// reset CarrierCode for googlecheckout orders to appropriate carrier
-	if($CarrierCode == "googlecheckout")
-	{ 
-		// continue;
-		// check from shipping description which carrier selected
-		if(strpos($MagentoShipDescription, "fedex" )) 
-		{
-			$CarrierCode = "fedex";
-		}
-		if(strpos($MagentoShipDescription, "usps"))
-		{
-			$CarrierCode = "usps";
-		}
+	echo "MagentoShipCode = ".$MagentoShipCode."\r\n";
 	
+	//$carrierInstances = Mage::getSingleton('shipping/config')->getAllCarriers($myOrder->getShipment()->getStoreId());
+	//$carrierInstances = Mage::getSingleton('shipping/config')->getAllCarriers(1);
+	//print_r($carrierInstances);
 	
-	}
+	//TODO google_checkout carriers! skipping them for now
+	if($MagentoShipCode == "googlecheckout_carrier")
+	{ continue; }
 	
 	$data = array();
-	$data['carrier_code'] = $CarrierCode;
-	$data['title'] = ucwords($MagentoShipDescription);
+	$data['carrier_code'] = substr($MagentoShipMethod,0,strpos($MagentoShipMethod,'_'));
+	$data['title'] = $MagentoShipDescription;
 	$data['number'] = $TrackingNumber;
 	
 	$track = Mage::getModel('sales/order_shipment_track')->addData($data);
@@ -213,31 +170,28 @@ foreach($allIds as $thisId)
 	$shipment->register();
 	$shipment->addComment($comment, $email && $includeComment);
 	
-	// Changing to false is not being respected by magento
+	// TODO in admin marked email sent but don't see an email yet. doublecheck.
 	$shipment->setEmailSent(false);
-	if($scriptMode == 'live') { $shipment->setEmailSent(true); }
+	if($scriptMode = live) { $shipment->setEmailSent(true); }
 	
-	var_dump($data);
-	
-	
-	if($scriptMode == "live")
+	// TODO marks item COMPLETE - disable for testing?
+	if($scriptMode == "test")
 	{
 		//TODO enable this line for real LIVE useage.
-		$shipment->getOrder()->setIsInProcess(true); // this is what marks the order complete
+		//$shipment->getOrder()->setIsInProcess(true); // believe this is what marks the order complete
 		
-		
+		/*
 		$transactionSave = Mage::getModel('core/resource_transaction')
 		    ->addObject($shipment)
 		    ->addObject($shipment->getOrder())
 		    ->save();
 		
 		$shipment->sendEmail($email, ($includeComment ? $comment : ''));
-		
+		*/
 		$log->lwrite("shipping recorded and order updated for Order Id: ".$IncrementId."\r\n");
 	}
 
-	// to remove the error that the shipment already exists for the second item in the loop. 
-	Mage::unregister('current_shipment');
+
 
 } //for-each $allIds
 

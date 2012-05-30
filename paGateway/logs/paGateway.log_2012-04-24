@@ -1,0 +1,617 @@
+00:10:01 (paGateway) Script STARTED.
+
+00:10:02 (paGateway) Order Id 2631 success : 2012.04.24 : 12:04:01 
+00:10:02 (paGateway) APIMODE = live
+00:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Gabriel Arroyo</cust_name><ship_add1>5713 East Homecoming Circle Unit E</ship_add1><ship_add2></ship_add2><ship_city>Mira loma</ship_city><ship_state>CA</ship_state><ship_zip>91752</ship_zip><ship_meth>USP</ship_meth><order_num>100002618</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>EP</line_code><part_num>39135</part_num><quantity>1.0000</quantity><cost>3.5200</cost></item></order></PAOrderEntry>
+00:10:02 (paGateway) ORDERID = 2631 InvoiceId = 100002618 STATUS = sent_to_pa Customer Name = Gabriel Arroyo Address1 = 5713 East Homecoming Circle Unit E Address2 =  City = Mira loma State = CA PostalCode = 91752 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+00:10:02 (paGateway) Order Id 2632 success : 2012.04.24 : 12:04:01 
+00:10:02 (paGateway) APIMODE = live
+00:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>John Camacho</cust_name><ship_add1>HC 1 BOX 4312</ship_add1><ship_add2></ship_add2><ship_city>Rincon</ship_city><ship_state></ship_state><ship_zip>00677-8733</ship_zip><ship_meth>USP</ship_meth><order_num>100002619</order_num><ship_country>Puerto Rico</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>IW</line_code><part_num>54256030</part_num><quantity>1.0000</quantity><cost>36.8000</cost></item></order></PAOrderEntry>
+00:10:02 (paGateway) ORDERID = 2632 InvoiceId = 100002619 STATUS = sent_to_pa Customer Name = John Camacho Address1 = HC 1 BOX 4312 Address2 =  City = Rincon State =  PostalCode = 00677-8733 Country = Puerto Rico MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+00:10:02 (paGateway) Script FINISHED.
+
+
+00:40:01 (paGateway) Script STARTED.
+
+00:40:01 (paGateway) Script FINISHED.
+
+
+01:10:02 (paGateway) Script STARTED.
+
+01:10:02 (paGateway) Script FINISHED.
+
+
+01:40:01 (paGateway) Script STARTED.
+
+01:40:05 (paGateway) Order Id 2633 success : 2012.04.24 : 01:04:01 
+01:40:05 (paGateway) APIMODE = live
+01:40:05 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Ivette DeJesus</cust_name><ship_add1>907 Gascony Ct</ship_add1><ship_add2></ship_add2><ship_city>Kissimmee</ship_city><ship_state>FL</ship_state><ship_zip>34759-3845</ship_zip><ship_meth>USP</ship_meth><order_num>100002620</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>AC</line_code><part_num>36079</part_num><quantity>1.0000</quantity><cost>31.0200</cost></item></order></PAOrderEntry>
+01:40:05 (paGateway) ORDERID = 2633 InvoiceId = 100002620 STATUS = sent_to_pa Customer Name = Ivette DeJesus Address1 = 907 Gascony Ct Address2 =  City = Kissimmee State = FL PostalCode = 34759-3845 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+01:40:05 (paGateway) Script FINISHED.
+
+
+02:10:02 (paGateway) Script STARTED.
+
+02:10:04 (paGateway) Order Id 2634 success : 2012.04.24 : 02:04:02 
+02:10:04 (paGateway) APIMODE = live
+02:10:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>KOKOMO HONDA, LYNN REID</cust_name><ship_add1>394 S 00 Ew</ship_add1><ship_add2></ship_add2><ship_city>Kokomo</ship_city><ship_state>IN</ship_state><ship_zip>46902-5101</ship_zip><ship_meth>USP</ship_meth><order_num>100002621</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BA</line_code><part_num>1030228</part_num><quantity>6.0000</quantity><cost>9.9900</cost></item></order></PAOrderEntry>
+02:10:04 (paGateway) ORDERID = 2634 InvoiceId = 100002621 STATUS = sent_to_pa Customer Name = KOKOMO HONDA, LYNN REID Address1 = 394 S 00 Ew Address2 =  City = Kokomo State = IN PostalCode = 46902-5101 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+02:10:05 (paGateway) Order Id 2635 success : 2012.04.24 : 02:04:02 
+02:10:05 (paGateway) APIMODE = live
+02:10:05 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>orion mortell</cust_name><ship_add1>36 martin st</ship_add1><ship_add2></ship_add2><ship_city>springfield</ship_city><ship_state>MA</ship_state><ship_zip>01108-3212</ship_zip><ship_meth>USE</ship_meth><order_num>100002622</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BA</line_code><part_num>1311997</part_num><quantity>1.0000</quantity><cost>60.4800</cost></item></order></PAOrderEntry>
+02:10:05 (paGateway) ORDERID = 2635 InvoiceId = 100002622 STATUS = sent_to_pa Customer Name = orion mortell Address1 = 36 martin st Address2 =  City = springfield State = MA PostalCode = 01108-3212 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Express Mail ShippingDescription = eBay Shipping - USPS Express Mail ShippingMethod2 = USE
+02:10:06 (paGateway) Order Id 2636 success : 2012.04.24 : 02:04:02 
+02:10:06 (paGateway) APIMODE = live
+02:10:06 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Eddy Rodriguez</cust_name><ship_add1>H. View #39</ship_add1><ship_add2>Heavenly View Estates</ship_add2><ship_city>Gurabo</ship_city><ship_state>PR</ship_state><ship_zip>00778</ship_zip><ship_meth>USP</ship_meth><order_num>100002623</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>AY</line_code><part_num>8012377</part_num><quantity>1.0000</quantity><cost>110.7500</cost></item></order></PAOrderEntry>
+02:10:06 (paGateway) ORDERID = 2636 InvoiceId = 100002623 STATUS = sent_to_pa Customer Name = Eddy Rodriguez Address1 = H. View #39 Address2 = Heavenly View Estates City = Gurabo State = PR PostalCode = 00778 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+02:10:06 (paGateway) Script FINISHED.
+
+
+02:40:01 (paGateway) Script STARTED.
+
+02:40:02 (paGateway) Order Id 2637 success : 2012.04.24 : 02:04:02 
+02:40:02 (paGateway) APIMODE = live
+02:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Jerry Forthofer</cust_name><ship_add1>455 Huntington Rdg</ship_add1><ship_add2></ship_add2><ship_city>Rockwell</ship_city><ship_state>NC</ship_state><ship_zip>28138-6800</ship_zip><ship_meth>USP</ship_meth><order_num>100002624</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>GE</line_code><part_num>T4WBP2</part_num><quantity>1.0000</quantity><cost>2.1600</cost></item></order></PAOrderEntry>
+02:40:02 (paGateway) ORDERID = 2637 InvoiceId = 100002624 STATUS = sent_to_pa Customer Name = Jerry Forthofer Address1 = 455 Huntington Rdg Address2 =  City = Rockwell State = NC PostalCode = 28138-6800 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+02:40:02 (paGateway) Order Id 2638 success : 2012.04.24 : 02:04:02 
+02:40:02 (paGateway) APIMODE = live
+02:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Sofia Lara</cust_name><ship_add1>831 Pilot Rd</ship_add1><ship_add2></ship_add2><ship_city>Las Vegas</ship_city><ship_state>NV</ship_state><ship_zip>89119</ship_zip><ship_meth>USP</ship_meth><order_num>100002625</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>SI</line_code><part_num>AC193</part_num><quantity>1.0000</quantity><cost>198.0900</cost></item></order></PAOrderEntry>
+02:40:02 (paGateway) ORDERID = 2638 InvoiceId = 100002625 STATUS = sent_to_pa Customer Name = Sofia Lara Address1 = 831 Pilot Rd Address2 =  City = Las Vegas State = NV PostalCode = 89119 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+02:40:03 (paGateway) Order Id 2639 success : 2012.04.24 : 02:04:02 
+02:40:03 (paGateway) APIMODE = live
+02:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>kurtis werth</cust_name><ship_add1>101 S Washington St</ship_add1><ship_add2></ship_add2><ship_city>Lockport</ship_city><ship_state>IL</ship_state><ship_zip>60441-2958</ship_zip><ship_meth>USP</ship_meth><order_num>100002626</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BA</line_code><part_num>0513839</part_num><quantity>2.0000</quantity><cost>36.1300</cost></item></order></PAOrderEntry>
+02:40:03 (paGateway) ORDERID = 2639 InvoiceId = 100002626 STATUS = sent_to_pa Customer Name = kurtis werth Address1 = 101 S Washington St Address2 =  City = Lockport State = IL PostalCode = 60441-2958 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+02:40:03 (paGateway) Script FINISHED.
+
+
+03:10:01 (paGateway) Script STARTED.
+
+03:10:02 (paGateway) Order Id 2640 success : 2012.04.24 : 03:04:02 
+03:10:02 (paGateway) APIMODE = live
+03:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Slawomir Kunina</cust_name><ship_add1>1841 N Hacker Rd</ship_add1><ship_add2></ship_add2><ship_city>Howell</ship_city><ship_state>MI</ship_state><ship_zip>48843-9131</ship_zip><ship_meth>USP</ship_meth><order_num>100002627</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>CE</line_code><part_num>14342040</part_num><quantity>1.0000</quantity><cost>3.1400</cost></item></order></PAOrderEntry>
+03:10:02 (paGateway) ORDERID = 2640 InvoiceId = 100002627 STATUS = sent_to_pa Customer Name = Slawomir Kunina Address1 = 1841 N Hacker Rd Address2 =  City = Howell State = MI PostalCode = 48843-9131 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+03:10:02 (paGateway) Script FINISHED.
+
+
+03:40:01 (paGateway) Script STARTED.
+
+03:40:04 (paGateway) Order Id 2641 success : 2012.04.24 : 03:04:01 
+03:40:04 (paGateway) APIMODE = live
+03:40:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Dennis Villagomez</cust_name><ship_add1>PO Box 503802</ship_add1><ship_add2></ship_add2><ship_city>Saipan</ship_city><ship_state>MP</ship_state><ship_zip>96950-3802</ship_zip><ship_meth>USP</ship_meth><order_num>100002628</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>A1</line_code><part_num>821533DR</part_num><quantity>1.0000</quantity><cost>45.0500</cost></item><item><line_code>BA</line_code><part_num>0430995</part_num><quantity>1.0000</quantity><cost>19.9200</cost></item><item><line_code>BA</line_code><part_num>0160088</part_num><quantity>1.0000</quantity><cost>4.2900</cost></item><item><line_code>BA</line_code><part_num>1032314</part_num><quantity>2.0000</quantity><cost>10.8000</cost></item><item><line_code>BA</line_code><part_num>1032628</part_num><quantity>2.0000</quantity><cost>8.8900</cost></item><item><line_code>BA</line_code><part_num>0450324</part_num><quantity>1.0000</quantity><cost>8.6000</cost></item></order></PAOrderEntry>
+03:40:04 (paGateway) ORDERID = 2641 InvoiceId = 100002628 STATUS = sent_to_pa Customer Name = Dennis Villagomez Address1 = PO Box 503802 Address2 =  City = Saipan State = MP PostalCode = 96950-3802 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+03:40:04 (paGateway) Script FINISHED.
+
+
+04:10:01 (paGateway) Script STARTED.
+
+04:10:02 (paGateway) Script FINISHED.
+
+
+04:40:01 (paGateway) Script STARTED.
+
+04:40:02 (paGateway) Order Id 2642 success : 2012.04.24 : 04:04:01 
+04:40:02 (paGateway) APIMODE = live
+04:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Theron Vaughn</cust_name><ship_add1>6703 NW 7th Street</ship_add1><ship_add2>BGI-9803</ship_add2><ship_city>Miami</ship_city><ship_state>FL</ship_state><ship_zip>33126-6007</ship_zip><ship_meth>FDG</ship_meth><order_num>100002629</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>MI</line_code><part_num>WPT159</part_num><quantity>1.0000</quantity><cost>23.8600</cost></item></order></PAOrderEntry>
+04:40:02 (paGateway) ORDERID = 2642 InvoiceId = 100002629 STATUS = sent_to_pa Customer Name = Theron Vaughn Address1 = 6703 NW 7th Street Address2 = BGI-9803 City = Miami State = FL PostalCode = 33126-6007 Country = United States MagentoShipCode = googlecheckout_carrier ShippingDescription = Google Checkout - FedEx Ground ShippingDescription = Google Checkout - FedEx Ground ShippingMethod2 = FDG
+04:40:02 (paGateway) Order Id 2643 success : 2012.04.24 : 04:04:01 
+04:40:02 (paGateway) APIMODE = live
+04:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Trinity Cole</cust_name><ship_add1>28480 N Dolomite Ln</ship_add1><ship_add2></ship_add2><ship_city>Queen Creek</ship_city><ship_state>AZ</ship_state><ship_zip>85143-6050</ship_zip><ship_meth>USP</ship_meth><order_num>100002630</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>ME</line_code><part_num>MK8292</part_num><quantity>1.0000</quantity><cost>6.7800</cost></item></order></PAOrderEntry>
+04:40:02 (paGateway) ORDERID = 2643 InvoiceId = 100002630 STATUS = sent_to_pa Customer Name = Trinity Cole Address1 = 28480 N Dolomite Ln Address2 =  City = Queen Creek State = AZ PostalCode = 85143-6050 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+04:40:02 (paGateway) Script FINISHED.
+
+
+05:10:01 (paGateway) Script STARTED.
+
+05:10:01 (paGateway) Order Id 2644 success : 2012.04.24 : 05:04:01 
+05:10:01 (paGateway) APIMODE = live
+05:10:01 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Trevor Frank</cust_name><ship_add1>195 South Milpitas Blvd</ship_add1><ship_add2></ship_add2><ship_city>Milpitas</ship_city><ship_state>CA</ship_state><ship_zip>95035</ship_zip><ship_meth>USP</ship_meth><order_num>100002631</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>EM</line_code><part_num>803957</part_num><quantity>1.0000</quantity><cost>65.8700</cost></item></order></PAOrderEntry>
+05:10:01 (paGateway) ORDERID = 2644 InvoiceId = 100002631 STATUS = sent_to_pa Customer Name = Trevor Frank Address1 = 195 South Milpitas Blvd Address2 =  City = Milpitas State = CA PostalCode = 95035 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+05:10:01 (paGateway) Script FINISHED.
+
+
+05:40:01 (paGateway) Script STARTED.
+
+05:40:01 (paGateway) Script FINISHED.
+
+
+06:10:02 (paGateway) Script STARTED.
+
+06:10:02 (paGateway) Order Id 2645 success : 2012.04.24 : 06:04:02 
+06:10:02 (paGateway) APIMODE = live
+06:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Jay Hieb</cust_name><ship_add1>1509 Pennington St</ship_add1><ship_add2></ship_add2><ship_city>Rapid City</ship_city><ship_state>SD</ship_state><ship_zip>57703-0105</ship_zip><ship_meth>USP</ship_meth><order_num>100002632</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BA</line_code><part_num>1755073</part_num><quantity>1.0000</quantity><cost>25.9100</cost></item></order></PAOrderEntry>
+06:10:02 (paGateway) ORDERID = 2645 InvoiceId = 100002632 STATUS = sent_to_pa Customer Name = Jay Hieb Address1 = 1509 Pennington St Address2 =  City = Rapid City State = SD PostalCode = 57703-0105 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+06:10:03 (paGateway) Order Id 2646 success : 2012.04.24 : 06:04:02 
+06:10:03 (paGateway) APIMODE = live
+06:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Donavan Caver</cust_name><ship_add1>526 E Skylark Dr</ship_add1><ship_add2></ship_add2><ship_city>Ontario</ship_city><ship_state>CA</ship_state><ship_zip>91761-5852</ship_zip><ship_meth>USP</ship_meth><order_num>100002633</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>CE</line_code><part_num>41748007</part_num><quantity>2.0000</quantity><cost>2.1500</cost></item></order></PAOrderEntry>
+06:10:03 (paGateway) ORDERID = 2646 InvoiceId = 100002633 STATUS = sent_to_pa Customer Name = Donavan Caver Address1 = 526 E Skylark Dr Address2 =  City = Ontario State = CA PostalCode = 91761-5852 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+06:10:03 (paGateway) Script FINISHED.
+
+
+06:40:01 (paGateway) Script STARTED.
+
+06:40:01 (paGateway) Script FINISHED.
+
+
+07:10:01 (paGateway) Script STARTED.
+
+07:10:01 (paGateway) Script FINISHED.
+
+
+07:40:01 (paGateway) Script STARTED.
+
+07:40:02 (paGateway) FAILED: Order Id 100002634
+07:40:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+07:40:02 (paGateway) 
+
+07:40:02 (paGateway) Script FINISHED.
+
+
+08:10:01 (paGateway) Script STARTED.
+
+08:10:02 (paGateway) FAILED: Order Id 100002634
+08:10:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+08:10:02 (paGateway) 
+
+08:10:02 (paGateway) Script FINISHED.
+
+
+08:40:01 (paGateway) Script STARTED.
+
+08:40:02 (paGateway) FAILED: Order Id 100002634
+08:40:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+08:40:02 (paGateway) 
+
+08:40:03 (paGateway) Order Id 2648 success : 2012.04.24 : 08:04:01 
+08:40:03 (paGateway) APIMODE = live
+08:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>ofer bitan</cust_name><ship_add1>11C GREAT MEADOW LN</ship_add1><ship_add2>TOP 83162</ship_add2><ship_city>EAST HANOVER</ship_city><ship_state>NJ</ship_state><ship_zip>07936-1723</ship_zip><ship_meth>USP</ship_meth><order_num>100002635</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>DE</line_code><part_num>CV10024</part_num><quantity>1.0000</quantity><cost>44.9200</cost></item></order></PAOrderEntry>
+08:40:03 (paGateway) ORDERID = 2648 InvoiceId = 100002635 STATUS = sent_to_pa Customer Name = ofer bitan Address1 = 11C GREAT MEADOW LN Address2 = TOP 83162 City = EAST HANOVER State = NJ PostalCode = 07936-1723 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+08:40:03 (paGateway) Script FINISHED.
+
+
+09:10:01 (paGateway) Script STARTED.
+
+09:10:02 (paGateway) FAILED: Order Id 100002634
+09:10:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+09:10:02 (paGateway) 
+
+09:10:02 (paGateway) Order Id 2649 success : 2012.04.24 : 09:04:01 
+09:10:02 (paGateway) APIMODE = live
+09:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Andrey Chernov</cust_name><ship_add1>60 let Oktyabrya, 13/22</ship_add1><ship_add2></ship_add2><ship_city>Orel</ship_city><ship_state></ship_state><ship_zip>302040</ship_zip><ship_meth>USE</ship_meth><order_num>100002636</order_num><ship_country>Russia</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>MI</line_code><part_num>YF3136</part_num><quantity>1.0000</quantity><cost>141.2300</cost></item></order></PAOrderEntry>
+09:10:02 (paGateway) ORDERID = 2649 InvoiceId = 100002636 STATUS = sent_to_pa Customer Name = Andrey Chernov Address1 = 60 let Oktyabrya, 13/22 Address2 =  City = Orel State =  PostalCode = 302040 Country = Russia MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Express Mail International ShippingDescription = eBay Shipping - USPS Express Mail International ShippingMethod2 = USE
+09:10:02 (paGateway) Script FINISHED.
+
+
+09:40:01 (paGateway) Script STARTED.
+
+09:40:01 (paGateway) FAILED: Order Id 100002634
+09:40:01 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+09:40:01 (paGateway) 
+
+09:40:02 (paGateway) Order Id 2650 success : 2012.04.24 : 09:04:01 
+09:40:02 (paGateway) APIMODE = live
+09:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Danila Struchkov</cust_name><ship_add1>Filatova str, 12, apt.213</ship_add1><ship_add2>Ulyanovsk</ship_add2><ship_city>Ulyanovsk</ship_city><ship_state></ship_state><ship_zip>432000</ship_zip><ship_meth>USP</ship_meth><order_num>100002637</order_num><ship_country>Russia</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>SI</line_code><part_num>VP4</part_num><quantity>1.0000</quantity><cost>64.3900</cost></item><item><line_code>SI</line_code><part_num>ETB6</part_num><quantity>1.0000</quantity><cost>35.4600</cost></item></order></PAOrderEntry>
+09:40:02 (paGateway) ORDERID = 2650 InvoiceId = 100002637 STATUS = sent_to_pa Customer Name = Danila Struchkov Address1 = Filatova str, 12, apt.213 Address2 =  City = Ulyanovsk State = Ulyanovsk PostalCode = 432000 Country = Russia MagentoShipCode = usps_Priority Mail International ShippingDescription = United States Postal Service - Priority Mail International ShippingDescription = United States Postal Service - Priority Mail International ShippingMethod2 = USP
+09:40:03 (paGateway) Order Id 2651 success : 2012.04.24 : 09:04:01 
+09:40:03 (paGateway) APIMODE = live
+09:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Roberfo Estevez</cust_name><ship_add1>PO Box 30000</ship_add1><ship_add2>PMB 13</ship_add2><ship_city>Canovanas</ship_city><ship_state>PR</ship_state><ship_zip>00729-0013</ship_zip><ship_meth>USP</ship_meth><order_num>100002638</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BA</line_code><part_num>0433000</part_num><quantity>1.0000</quantity><cost>24.3600</cost></item></order></PAOrderEntry>
+09:40:03 (paGateway) ORDERID = 2651 InvoiceId = 100002638 STATUS = sent_to_pa Customer Name = Roberfo Estevez Address1 = PO Box 30000 Address2 = PMB 13 City = Canovanas State = PR PostalCode = 00729-0013 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+09:40:03 (paGateway) Script FINISHED.
+
+
+10:10:01 (paGateway) Script STARTED.
+
+10:10:01 (paGateway) FAILED: Order Id 100002634
+10:10:01 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+10:10:01 (paGateway) 
+
+10:10:01 (paGateway) Script FINISHED.
+
+
+10:40:01 (paGateway) Script STARTED.
+
+10:40:01 (paGateway) FAILED: Order Id 100002634
+10:40:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+10:40:02 (paGateway) 
+
+10:40:02 (paGateway) Script FINISHED.
+
+
+11:10:01 (paGateway) Script STARTED.
+
+11:10:01 (paGateway) FAILED: Order Id 100002634
+11:10:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+11:10:02 (paGateway) 
+
+11:10:02 (paGateway) Order Id 2652 success : 2012.04.24 : 11:04:01 
+11:10:02 (paGateway) APIMODE = live
+11:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Markova Galina</cust_name><ship_add1>Bardina 38-125</ship_add1><ship_add2></ship_add2><ship_city>Yekaterinburg</ship_city><ship_state></ship_state><ship_zip>620146</ship_zip><ship_meth>USP</ship_meth><order_num>100002639</order_num><ship_country>Russia</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>HY</line_code><part_num>2831</part_num><quantity>1.0000</quantity><cost>141.5000</cost></item></order></PAOrderEntry>
+11:10:02 (paGateway) ORDERID = 2652 InvoiceId = 100002639 STATUS = sent_to_pa Customer Name = Markova Galina Address1 = Bardina 38-125 Address2 =  City = Yekaterinburg State =  PostalCode = 620146 Country = Russia MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP
+11:10:03 (paGateway) Order Id 2653 success : 2012.04.24 : 11:04:01 
+11:10:03 (paGateway) APIMODE = live
+11:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Ramil Rasco</cust_name><ship_add1>118 Biradan Pulattat</ship_add1><ship_add2></ship_add2><ship_city>Dededo</ship_city><ship_state>GU</ship_state><ship_zip>96929-6600</ship_zip><ship_meth>USP</ship_meth><order_num>100002640</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>CE</line_code><part_num>14346013</part_num><quantity>1.0000</quantity><cost>4.4400</cost></item></order></PAOrderEntry>
+11:10:03 (paGateway) ORDERID = 2653 InvoiceId = 100002640 STATUS = sent_to_pa Customer Name = Ramil Rasco Address1 = 118 Biradan Pulattat Address2 =  City = Dededo State = GU PostalCode = 96929-6600 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+11:10:03 (paGateway) Script FINISHED.
+
+
+11:40:01 (paGateway) Script STARTED.
+
+11:40:02 (paGateway) FAILED: Order Id 100002634
+11:40:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+11:40:02 (paGateway) 
+
+11:40:03 (paGateway) Order Id 2654 success : 2012.04.24 : 11:04:02 
+11:40:03 (paGateway) APIMODE = live
+11:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Levan Jikia</cust_name><ship_add1>12 MCCULLOUGH DR</ship_add1><ship_add2>U01491 c/o TTL</ship_add2><ship_city>New Castle</ship_city><ship_state>DE</ship_state><ship_zip>19720-2076</ship_zip><ship_meth>USP</ship_meth><order_num>100002641</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BA</line_code><part_num>1015299</part_num><quantity>2.0000</quantity><cost>21.6100</cost></item></order></PAOrderEntry>
+11:40:03 (paGateway) ORDERID = 2654 InvoiceId = 100002641 STATUS = sent_to_pa Customer Name = Levan Jikia Address1 = 12 MCCULLOUGH DR Address2 = U01491 c/o TTL City = New Castle State = DE PostalCode = 19720-2076 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+11:40:03 (paGateway) Script FINISHED.
+
+
+12:10:01 (paGateway) Script STARTED.
+
+12:10:02 (paGateway) FAILED: Order Id 100002634
+12:10:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+12:10:02 (paGateway) 
+
+12:10:02 (paGateway) Order Id 2655 success : 2012.04.24 : 12:04:01 
+12:10:02 (paGateway) APIMODE = live
+12:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>noah johnson</cust_name><ship_add1>6 coral st</ship_add1><ship_add2></ship_add2><ship_city>Millbury</ship_city><ship_state>MA</ship_state><ship_zip>01527-3127</ship_zip><ship_meth>USP</ship_meth><order_num>100002642</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>WK</line_code><part_num>18932</part_num><quantity>1.0000</quantity><cost>121.4200</cost></item></order></PAOrderEntry>
+12:10:02 (paGateway) ORDERID = 2655 InvoiceId = 100002642 STATUS = sent_to_pa Customer Name = noah johnson Address1 = 6 coral st Address2 =  City = Millbury State = MA PostalCode = 01527-3127 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+12:10:02 (paGateway) Script FINISHED.
+
+
+12:40:01 (paGateway) Script STARTED.
+
+12:40:01 (paGateway) FAILED: Order Id 100002634
+12:40:01 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+12:40:01 (paGateway) 
+
+12:40:01 (paGateway) Script FINISHED.
+
+
+13:10:01 (paGateway) Script STARTED.
+
+13:10:01 (paGateway) FAILED: Order Id 100002634
+13:10:01 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+13:10:01 (paGateway) 
+
+13:10:02 (paGateway) Order Id 2656 success : 2012.04.24 : 01:04:01 
+13:10:02 (paGateway) APIMODE = live
+13:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Oscar Rivera</cust_name><ship_add1>PO Box 4730</ship_add1><ship_add2></ship_add2><ship_city>Aguadilla</ship_city><ship_state>PR</ship_state><ship_zip>00605-4730</ship_zip><ship_meth>USP</ship_meth><order_num>100002643</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BA</line_code><part_num>0940880</part_num><quantity>1.0000</quantity><cost>34.9300</cost></item></order></PAOrderEntry>
+13:10:02 (paGateway) ORDERID = 2656 InvoiceId = 100002643 STATUS = sent_to_pa Customer Name = Oscar Rivera Address1 = PO Box 4730 Address2 =  City = Aguadilla State = PR PostalCode = 00605-4730 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+13:10:02 (paGateway) Order Id 2657 success : 2012.04.24 : 01:04:01 
+13:10:02 (paGateway) APIMODE = live
+13:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>James Parker</cust_name><ship_add1>113 Woodall St</ship_add1><ship_add2></ship_add2><ship_city>Marshall</ship_city><ship_state>TX</ship_state><ship_zip>75672-7229</ship_zip><ship_meth>USP</ship_meth><order_num>100002644</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>ME</line_code><part_num>MS40502</part_num><quantity>1.0000</quantity><cost>110.5200</cost></item></order></PAOrderEntry>
+13:10:02 (paGateway) ORDERID = 2657 InvoiceId = 100002644 STATUS = sent_to_pa Customer Name = James Parker Address1 = 113 Woodall St Address2 =  City = Marshall State = TX PostalCode = 75672-7229 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+13:10:03 (paGateway) Order Id 2658 success : 2012.04.24 : 01:04:01 
+13:10:03 (paGateway) APIMODE = live
+13:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Nick Boutet</cust_name><ship_add1>#408 10531 117st</ship_add1><ship_add2></ship_add2><ship_city>Edmonton</ship_city><ship_state>AB</ship_state><ship_zip>t5h 0a8</ship_zip><ship_meth>USP</ship_meth><order_num>100002645</order_num><ship_country>CA</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>FS</line_code><part_num>55455</part_num><quantity>1.0000</quantity><cost>80.9300</cost></item></order></PAOrderEntry>
+13:10:03 (paGateway) ORDERID = 2658 InvoiceId = 100002645 STATUS = sent_to_pa Customer Name = Nick Boutet Address1 = #408 10531 117st Address2 =  City = Edmonton State = AB PostalCode = t5h 0a8 Country = Canada MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP
+13:10:03 (paGateway) Script FINISHED.
+
+
+13:40:01 (paGateway) Script STARTED.
+
+13:40:02 (paGateway) FAILED: Order Id 100002634
+13:40:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+13:40:02 (paGateway) 
+
+13:40:02 (paGateway) Order Id 2659 success : 2012.04.24 : 01:04:01 
+13:40:02 (paGateway) APIMODE = live
+13:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>matt bull</cust_name><ship_add1>80 munson street</ship_add1><ship_add2></ship_add2><ship_city>milford</ship_city><ship_state>CT</ship_state><ship_zip>06461</ship_zip><ship_meth>FD2</ship_meth><order_num>100002646</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>RB</line_code><part_num>924402</part_num><quantity>1.0000</quantity><cost>60.8900</cost></item></order></PAOrderEntry>
+13:40:02 (paGateway) ORDERID = 2659 InvoiceId = 100002646 STATUS = sent_to_pa Customer Name = matt bull Address1 = 80 munson street Address2 =  City = milford State = CT PostalCode = 06461 Country = United States MagentoShipCode = fedex_FEDEX_2_DAY ShippingDescription = Federal Express - 2 Day ShippingDescription = Federal Express - 2 Day ShippingMethod2 = FD2
+13:40:03 (paGateway) Order Id 2660 success : 2012.04.24 : 01:04:01 
+13:40:03 (paGateway) APIMODE = live
+13:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Libby Lehman</cust_name><ship_add1>5 Bayberry Hill Rd</ship_add1><ship_add2></ship_add2><ship_city>Townsend</ship_city><ship_state>MA</ship_state><ship_zip>01469</ship_zip><ship_meth>USP</ship_meth><order_num>100002647</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>MO</line_code><part_num>K8516</part_num><quantity>1.0000</quantity><cost>22.9200</cost></item></order></PAOrderEntry>
+13:40:03 (paGateway) ORDERID = 2660 InvoiceId = 100002647 STATUS = sent_to_pa Customer Name = Libby Lehman Address1 = 5 Bayberry Hill Rd Address2 =  City = Townsend State = MA PostalCode = 01469 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+13:40:03 (paGateway) Order Id 2661 success : 2012.04.24 : 01:04:01 
+13:40:03 (paGateway) APIMODE = live
+13:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>ralph weaver</cust_name><ship_add1>2342 Pleasant St</ship_add1><ship_add2></ship_add2><ship_city>dighton</ship_city><ship_state>MA</ship_state><ship_zip>02715-1500</ship_zip><ship_meth>USP</ship_meth><order_num>100002648</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>VG</line_code><part_num>JV1206</part_num><quantity>1.0000</quantity><cost>11.0300</cost></item></order></PAOrderEntry>
+13:40:03 (paGateway) ORDERID = 2661 InvoiceId = 100002648 STATUS = sent_to_pa Customer Name = ralph weaver Address1 = 2342 Pleasant St Address2 =  City = dighton State = MA PostalCode = 02715-1500 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+13:40:04 (paGateway) Order Id 2662 success : 2012.04.24 : 01:04:01 
+13:40:04 (paGateway) APIMODE = live
+13:40:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>arben tahiri</cust_name><ship_add1>1 VINCENT RD</ship_add1><ship_add2>APT j</ship_add2><ship_city>BRONXVILLE</ship_city><ship_state>NY</ship_state><ship_zip>10708-6525</ship_zip><ship_meth>FDO</ship_meth><order_num>100002649</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>FS</line_code><part_num>54963</part_num><quantity>1.0000</quantity><cost>62.5000</cost></item></order></PAOrderEntry>
+13:40:04 (paGateway) ORDERID = 2662 InvoiceId = 100002649 STATUS = sent_to_pa Customer Name = arben tahiri Address1 = 1 VINCENT RD Address2 = APT j City = BRONXVILLE State = NY PostalCode = 10708-6525 Country = United States MagentoShipCode = fedex_STANDARD_OVERNIGHT ShippingDescription = Federal Express - Standard Overnight ShippingDescription = Federal Express - Standard Overnight ShippingMethod2 = FDO
+13:40:04 (paGateway) Script FINISHED.
+
+
+14:10:01 (paGateway) Script STARTED.
+
+14:10:01 (paGateway) FAILED: Order Id 100002634
+14:10:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+14:10:02 (paGateway) 
+
+14:10:02 (paGateway) Order Id 2663 success : 2012.04.24 : 02:04:01 
+14:10:02 (paGateway) APIMODE = live
+14:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>herman oliger</cust_name><ship_add1>2231 camp ground road</ship_add1><ship_add2></ship_add2><ship_city>cabot</ship_city><ship_state>AR</ship_state><ship_zip>72023</ship_zip><ship_meth>USP</ship_meth><order_num>100002650</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>DY</line_code><part_num>95241K1</part_num><quantity>1.0000</quantity><cost>40.0000</cost></item></order></PAOrderEntry>
+14:10:02 (paGateway) ORDERID = 2663 InvoiceId = 100002650 STATUS = sent_to_pa Customer Name = herman oliger Address1 = 2231 camp ground road Address2 =  City = cabot State = AR PostalCode = 72023 Country = United States MagentoShipCode = usps_Priority Mail ShippingDescription = United States Postal Service - Priority Mail ShippingDescription = United States Postal Service - Priority Mail ShippingMethod2 = USP
+14:10:02 (paGateway) Script FINISHED.
+
+
+14:40:01 (paGateway) Script STARTED.
+
+14:40:02 (paGateway) FAILED: Order Id 100002634
+14:40:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+14:40:02 (paGateway) 
+
+14:40:03 (paGateway) Order Id 2664 success : 2012.04.24 : 02:04:01 
+14:40:03 (paGateway) APIMODE = live
+14:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>DAVID GIEBEL</cust_name><ship_add1>2712 PARKWAY DR</ship_add1><ship_add2></ship_add2><ship_city>RALEIGH</ship_city><ship_state>NC</ship_state><ship_zip>27603-5237</ship_zip><ship_meth>USP</ship_meth><order_num>100002651</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>A1</line_code><part_num>5472502</part_num><quantity>1.0000</quantity><cost>116.4300</cost></item></order></PAOrderEntry>
+14:40:03 (paGateway) ORDERID = 2664 InvoiceId = 100002651 STATUS = sent_to_pa Customer Name = DAVID GIEBEL Address1 = 2712 PARKWAY DR Address2 =  City = RALEIGH State = NC PostalCode = 27603-5237 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+14:40:04 (paGateway) Order Id 2665 success : 2012.04.24 : 02:04:01 
+14:40:04 (paGateway) APIMODE = live
+14:40:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Sean  Bakerlis </cust_name><ship_add1>17 Sunset Avenue</ship_add1><ship_add2></ship_add2><ship_city>Oxford </ship_city><ship_state>MA</ship_state><ship_zip>01540</ship_zip><ship_meth>FDO</ship_meth><order_num>100002652</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>WK</line_code><part_num>42477</part_num><quantity>1.0000</quantity><cost>7.7300</cost></item><item><line_code>WK</line_code><part_num>45006</part_num><quantity>1.0000</quantity><cost>23.9000</cost></item><item><line_code>WK</line_code><part_num>18156</part_num><quantity>1.0000</quantity><cost>32.9700</cost></item><item><line_code>WK</line_code><part_num>35413</part_num><quantity>3.0000</quantity><cost>1.0900</cost></item><item><line_code>WK</line_code><part_num>18566</part_num><quantity>1.0000</quantity><cost>44.8800</cost></item><item><line_code>WK</line_code><part_num>55143</part_num><quantity>1.0000</quantity><cost>35.7200</cost></item><item><line_code>WK</line_code><part_num>35337</part_num><quantity>2.0000</quantity><cost>1.7100</cost></item><item><line_code>WK</line_code><part_num>36369</part_num><quantity>1.0000</quantity><cost>10.7000</cost></item><item><line_code>BS</line_code><part_num>40521</part_num><quantity>2.0000</quantity><cost>3.7800</cost></item><item><line_code>BS</line_code><part_num>40520</part_num><quantity>2.0000</quantity><cost>3.7800</cost></item></order></PAOrderEntry>
+14:40:04 (paGateway) ORDERID = 2665 InvoiceId = 100002652 STATUS = sent_to_pa Customer Name = Sean  Bakerlis  Address1 = 17 Sunset Avenue Address2 =  City = Oxford  State = MA PostalCode = 01540 Country = United States MagentoShipCode = fedex_STANDARD_OVERNIGHT ShippingDescription = Federal Express - Standard Overnight ShippingDescription = Federal Express - Standard Overnight ShippingMethod2 = FDO
+14:40:04 (paGateway) Script FINISHED.
+
+
+15:10:01 (paGateway) Script STARTED.
+
+15:10:02 (paGateway) FAILED: Order Id 100002634
+15:10:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = processing Customer Name = Krzysztof Rożuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 66.0500
+
+15:10:02 (paGateway) 
+
+15:10:04 (paGateway) Order Id 2667 success : 2012.04.24 : 03:04:01 
+15:10:04 (paGateway) APIMODE = live
+15:10:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>doug nickelson</cust_name><ship_add1>2313 wilson street</ship_add1><ship_add2></ship_add2><ship_city>inverness</ship_city><ship_state>FL</ship_state><ship_zip>34453</ship_zip><ship_meth>FDG</ship_meth><order_num>100002654</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>A1</line_code><part_num>659540</part_num><quantity>1.0000</quantity><cost>267.0000</cost></item></order></PAOrderEntry>
+15:10:04 (paGateway) ORDERID = 2667 InvoiceId = 100002654 STATUS = sent_to_pa Customer Name = doug nickelson Address1 = 2313 wilson street Address2 =  City = inverness State = FL PostalCode = 34453 Country = United States MagentoShipCode = fedex_GROUND_HOME_DELIVERY ShippingDescription = Federal Express - Home Delivery ShippingDescription = Federal Express - Home Delivery ShippingMethod2 = FDG
+15:10:05 (paGateway) Order Id 2668 success : 2012.04.24 : 03:04:01 
+15:10:05 (paGateway) APIMODE = live
+15:10:05 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Marcos Ysabel</cust_name><ship_add1>8390 SW 154th Ave</ship_add1><ship_add2>Apt 51</ship_add2><ship_city>Miami</ship_city><ship_state>FL</ship_state><ship_zip>33193-5021</ship_zip><ship_meth>USP</ship_meth><order_num>100002655</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>FS</line_code><part_num>33403</part_num><quantity>1.0000</quantity><cost>8.7800</cost></item></order></PAOrderEntry>
+15:10:05 (paGateway) ORDERID = 2668 InvoiceId = 100002655 STATUS = sent_to_pa Customer Name = Marcos Ysabel Address1 = 8390 SW 154th Ave Address2 = Apt 51 City = Miami State = FL PostalCode = 33193-5021 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+15:10:05 (paGateway) Script FINISHED.
+
+
+15:40:01 (paGateway) Script STARTED.
+
+15:40:02 (paGateway) Order Id 2647 success : 2012.04.24 : 03:04:01 
+15:40:02 (paGateway) APIMODE = live
+15:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Krzysztof Rozuk</cust_name><ship_add1>Kasztanowa 118</ship_add1><ship_add2></ship_add2><ship_city>Siemiatycze</ship_city><ship_state></ship_state><ship_zip>17300</ship_zip><ship_meth>USP</ship_meth><order_num>100002634</order_num><ship_country>Poland</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>FS</line_code><part_num>55644</part_num><quantity>1.0000</quantity><cost>31.0500</cost></item></order></PAOrderEntry>
+15:40:02 (paGateway) ORDERID = 2647 InvoiceId = 100002634 STATUS = sent_to_pa Customer Name = Krzysztof Rozuk Address1 = Kasztanowa 118 Address2 =  City = Siemiatycze State =  PostalCode = 17300 Country = Poland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP
+15:40:03 (paGateway) Order Id 2669 success : 2012.04.24 : 03:04:01 
+15:40:03 (paGateway) APIMODE = live
+15:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Deana Marrill</cust_name><ship_add1>3210 Pleasant Valley Rd</ship_add1><ship_add2>Apt 112</ship_add2><ship_city>Mobile</ship_city><ship_state>AL</ship_state><ship_zip>36606-2705</ship_zip><ship_meth>USP</ship_meth><order_num>100002656</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BA</line_code><part_num>0729726</part_num><quantity>1.0000</quantity><cost>36.6000</cost></item></order></PAOrderEntry>
+15:40:03 (paGateway) ORDERID = 2669 InvoiceId = 100002656 STATUS = sent_to_pa Customer Name = Deana Marrill Address1 = 3210 Pleasant Valley Rd Address2 = Apt 112 City = Mobile State = AL PostalCode = 36606-2705 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+15:40:03 (paGateway) Order Id 2670 success : 2012.04.24 : 03:04:01 
+15:40:03 (paGateway) APIMODE = live
+15:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Mahtem Wendemagenehu</cust_name><ship_add1>225 South whiting st  Apt # 819</ship_add1><ship_add2></ship_add2><ship_city>Alexandria</ship_city><ship_state>VA</ship_state><ship_zip>22304</ship_zip><ship_meth>FDG</ship_meth><order_num>100002657</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BF</line_code><part_num>R499</part_num><quantity>1.0000</quantity><cost>18.1900</cost></item></order></PAOrderEntry>
+15:40:03 (paGateway) ORDERID = 2670 InvoiceId = 100002657 STATUS = sent_to_pa Customer Name = Mahtem Wendemagenehu Address1 = 225 South whiting st  Apt # 819 Address2 =  City = Alexandria State = VA PostalCode = 22304 Country = United States MagentoShipCode = fedex_GROUND_HOME_DELIVERY ShippingDescription = Federal Express - Home Delivery ShippingDescription = Federal Express - Home Delivery ShippingMethod2 = FDG
+15:40:03 (paGateway) Script FINISHED.
+
+
+16:10:02 (paGateway) Script STARTED.
+
+16:10:07 (paGateway) Order Id 2671 success : 2012.04.24 : 04:04:02 
+16:10:07 (paGateway) APIMODE = live
+16:10:07 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Wes Van Wart</cust_name><ship_add1>54 Gordon street</ship_add1><ship_add2></ship_add2><ship_city>Brantford</ship_city><ship_state>ON</ship_state><ship_zip>N3S 2N2</ship_zip><ship_meth>FDG</ship_meth><order_num>100002658</order_num><ship_country>CA</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>A1</line_code><part_num>431863</part_num><quantity>1.0000</quantity><cost>81.9200</cost></item></order></PAOrderEntry>
+16:10:07 (paGateway) ORDERID = 2671 InvoiceId = 100002658 STATUS = sent_to_pa Customer Name = Wes Van Wart Address1 = 54 Gordon street Address2 =  City = Brantford State = ON PostalCode = N3S 2N2 Country = Canada MagentoShipCode = fedex_FEDEX_GROUND ShippingDescription = Federal Express - Ground ShippingDescription = Federal Express - Ground ShippingMethod2 = FDG
+16:10:08 (paGateway) Order Id 2672 success : 2012.04.24 : 04:04:02 
+16:10:08 (paGateway) APIMODE = live
+16:10:08 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>john glorioso</cust_name><ship_add1>12128 Spring Hill Dr</ship_add1><ship_add2></ship_add2><ship_city>spring hill</ship_city><ship_state>FL</ship_state><ship_zip>34609-4852</ship_zip><ship_meth>USP</ship_meth><order_num>100002659</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>VG</line_code><part_num>5746</part_num><quantity>2.0000</quantity><cost>18.7000</cost></item></order></PAOrderEntry>
+16:10:08 (paGateway) ORDERID = 2672 InvoiceId = 100002659 STATUS = sent_to_pa Customer Name = john glorioso Address1 = 12128 Spring Hill Dr Address2 =  City = spring hill State = FL PostalCode = 34609-4852 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+16:10:08 (paGateway) Script FINISHED.
+
+
+16:40:01 (paGateway) Script STARTED.
+
+16:40:01 (paGateway) Script FINISHED.
+
+
+17:40:01 (paGateway) Script STARTED.
+
+17:40:02 (paGateway) Order Id 2673 success : 2012.04.24 : 05:04:01 
+17:40:02 (paGateway) APIMODE = live
+17:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>nancy rasugu</cust_name><ship_add1>161 Seaview Ave</ship_add1><ship_add2>Bsmt</ship_add2><ship_city>jersey city</ship_city><ship_state>NJ</ship_state><ship_zip>07305-2412</ship_zip><ship_meth>USP</ship_meth><order_num>100002660</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BA</line_code><part_num>1016036</part_num><quantity>1.0000</quantity><cost>6.8243</cost></item></order></PAOrderEntry>
+17:40:02 (paGateway) ORDERID = 2673 InvoiceId = 100002660 STATUS = sent_to_pa Customer Name = nancy rasugu Address1 = 161 Seaview Ave Address2 = Bsmt City = jersey city State = NJ PostalCode = 07305-2412 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+17:40:02 (paGateway) Order Id 2674 success : 2012.04.24 : 05:04:01 
+17:40:02 (paGateway) APIMODE = live
+17:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>kirk imai</cust_name><ship_add1>16-2099  tiki lane  p.o. box 2218</ship_add1><ship_add2></ship_add2><ship_city>keaau</ship_city><ship_state>HI</ship_state><ship_zip>96749</ship_zip><ship_meth>USP</ship_meth><order_num>100002661</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>CE</line_code><part_num>30363022</part_num><quantity>1.0000</quantity><cost>86.5800</cost></item></order></PAOrderEntry>
+17:40:02 (paGateway) ORDERID = 2674 InvoiceId = 100002661 STATUS = sent_to_pa Customer Name = kirk imai Address1 = 16-2099  tiki lane  p.o. box 2218 Address2 =  City = keaau State = HI PostalCode = 96749 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+17:40:03 (paGateway) Order Id 2675 success : 2012.04.24 : 05:04:01 
+17:40:03 (paGateway) APIMODE = live
+17:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Trinity Cole</cust_name><ship_add1>28480 N Dolomite Ln</ship_add1><ship_add2></ship_add2><ship_city>Queen Creek</ship_city><ship_state>AZ</ship_state><ship_zip>85143-6050</ship_zip><ship_meth>USP</ship_meth><order_num>100002662</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>ME</line_code><part_num>MK8292</part_num><quantity>1.0000</quantity><cost>6.7800</cost></item></order></PAOrderEntry>
+17:40:03 (paGateway) ORDERID = 2675 InvoiceId = 100002662 STATUS = sent_to_pa Customer Name = Trinity Cole Address1 = 28480 N Dolomite Ln Address2 =  City = Queen Creek State = AZ PostalCode = 85143-6050 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+17:40:04 (paGateway) Order Id 2676 success : 2012.04.24 : 05:04:01 
+17:40:04 (paGateway) APIMODE = live
+17:40:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Tom Gylterud</cust_name><ship_add1>Fjellveien 37</ship_add1><ship_add2>Auli</ship_add2><ship_city>default</ship_city><ship_state></ship_state><ship_zip>N-1929</ship_zip><ship_meth>USE</ship_meth><order_num>100002663</order_num><ship_country>Norway</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>TS</line_code><part_num>181668</part_num><quantity>1.0000</quantity><cost>124.7800</cost></item></order></PAOrderEntry>
+17:40:04 (paGateway) ORDERID = 2676 InvoiceId = 100002663 STATUS = sent_to_pa Customer Name = Tom Gylterud Address1 = Fjellveien 37 Address2 = Auli City = default State =  PostalCode = N-1929 Country = Norway MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Express Mail International ShippingDescription = eBay Shipping - USPS Express Mail International ShippingMethod2 = USE
+17:40:04 (paGateway) Order Id 2677 success : 2012.04.24 : 05:04:01 
+17:40:04 (paGateway) APIMODE = live
+17:40:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Tom Gylterud</cust_name><ship_add1>Fjellveien 37</ship_add1><ship_add2>Auli</ship_add2><ship_city>default</ship_city><ship_state></ship_state><ship_zip>N-1929</ship_zip><ship_meth>USE</ship_meth><order_num>100002664</order_num><ship_country>Norway</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>TS</line_code><part_num>181667</part_num><quantity>1.0000</quantity><cost>124.7800</cost></item></order></PAOrderEntry>
+17:40:04 (paGateway) ORDERID = 2677 InvoiceId = 100002664 STATUS = sent_to_pa Customer Name = Tom Gylterud Address1 = Fjellveien 37 Address2 = Auli City = default State =  PostalCode = N-1929 Country = Norway MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Express Mail International ShippingDescription = eBay Shipping - USPS Express Mail International ShippingMethod2 = USE
+17:40:04 (paGateway) Script FINISHED.
+
+
+18:10:01 (paGateway) Script STARTED.
+
+18:10:02 (paGateway) FAILED: Order Id 100002665
+18:10:02 (paGateway) ORDERID = 2678 InvoiceId = 100002665 STATUS = processing Customer Name = Ove Österlund Address1 = Bartsgårdavägen 83 Address2 =  City = AX-22310 State =  PostalCode = ÅLAND Country = Finland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 51.7600
+
+18:10:02 (paGateway) 
+
+18:10:03 (paGateway) Order Id 2679 success : 2012.04.24 : 06:04:02 
+18:10:03 (paGateway) APIMODE = live
+18:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Tommy Clark</cust_name><ship_add1>7150 Ousley Rd</ship_add1><ship_add2></ship_add2><ship_city>Valdosta</ship_city><ship_state>GA</ship_state><ship_zip>31601-7808</ship_zip><ship_meth>USP</ship_meth><order_num>100002666</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>VG</line_code><part_num>MS19235</part_num><quantity>1.0000</quantity><cost>13.7000</cost></item></order></PAOrderEntry>
+18:10:03 (paGateway) ORDERID = 2679 InvoiceId = 100002666 STATUS = sent_to_pa Customer Name = Tommy Clark Address1 = 7150 Ousley Rd Address2 =  City = Valdosta State = GA PostalCode = 31601-7808 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+18:10:03 (paGateway) Order Id 2680 success : 2012.04.24 : 06:04:02 
+18:10:03 (paGateway) APIMODE = live
+18:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Donald Campbell</cust_name><ship_add1>601 W 1st Street APT 272</ship_add1><ship_add2></ship_add2><ship_city>Evart</ship_city><ship_state>MI</ship_state><ship_zip>49631</ship_zip><ship_meth>FD2</ship_meth><order_num>100002667</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>RZ</line_code><part_num>PS0120</part_num><quantity>1.0000</quantity><cost>110.8100</cost></item></order></PAOrderEntry>
+18:10:03 (paGateway) ORDERID = 2680 InvoiceId = 100002667 STATUS = sent_to_pa Customer Name = Donald Campbell Address1 = 601 W 1st Street APT 272 Address2 =  City = Evart State = MI PostalCode = 49631 Country = United States MagentoShipCode = fedex_FEDEX_2_DAY ShippingDescription = Federal Express - 2 Day ShippingDescription = Federal Express - 2 Day ShippingMethod2 = FD2
+18:10:03 (paGateway) Script FINISHED.
+
+
+18:40:01 (paGateway) Script STARTED.
+
+18:40:02 (paGateway) FAILED: Order Id 100002665
+18:40:02 (paGateway) ORDERID = 2678 InvoiceId = 100002665 STATUS = processing Customer Name = Ove Österlund Address1 = Bartsgårdavägen 83 Address2 =  City = AX-22310 State =  PostalCode = ÅLAND Country = Finland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 51.7600
+
+18:40:02 (paGateway) 
+
+18:40:03 (paGateway) Order Id 2681 success : 2012.04.24 : 06:04:02 
+18:40:03 (paGateway) APIMODE = live
+18:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Jozsef Paricsi</cust_name><ship_add1>Menyecske u.3.  4/26</ship_add1><ship_add2>4.em 26</ship_add2><ship_city>budapest</ship_city><ship_state></ship_state><ship_zip>1112</ship_zip><ship_meth>USE</ship_meth><order_num>100002668</order_num><ship_country>Hungary</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>VG</line_code><part_num>VS50297</part_num><quantity>1.0000</quantity><cost>10.1900</cost></item></order></PAOrderEntry>
+18:40:03 (paGateway) ORDERID = 2681 InvoiceId = 100002668 STATUS = sent_to_pa Customer Name = József Páricsi Address1 = Menyecske u.3.  4/26 Address2 = 4.em 26 City = budapest State =  PostalCode = 1112 Country = Hungary MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Express Mail International ShippingDescription = eBay Shipping - USPS Express Mail International ShippingMethod2 = USE
+18:40:03 (paGateway) Order Id 2682 success : 2012.04.24 : 06:04:02 
+18:40:03 (paGateway) APIMODE = live
+18:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Robert Belfiore</cust_name><ship_add1>1465 avenue de Maurin - C5</ship_add1><ship_add2>Montpellier</ship_add2><ship_city>34</ship_city><ship_state></ship_state><ship_zip>34070</ship_zip><ship_meth>USP</ship_meth><order_num>100002669</order_num><ship_country>France</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BO</line_code><part_num>720671</part_num><quantity>1.0000</quantity><cost>74.2800</cost></item></order></PAOrderEntry>
+18:40:03 (paGateway) ORDERID = 2682 InvoiceId = 100002669 STATUS = sent_to_pa Customer Name = Robert Belfiore Address1 = 1465 avenue de Maurin - C5 Address2 = Cite fleurie - Bat. C5 City = Montpellier State = 34 PostalCode = 34070 Country = France MagentoShipCode = usps_Priority Mail International ShippingDescription = United States Postal Service - Priority Mail International ShippingDescription = United States Postal Service - Priority Mail International ShippingMethod2 = USP
+18:40:04 (paGateway) Order Id 2683 success : 2012.04.24 : 06:04:02 
+18:40:04 (paGateway) APIMODE = live
+18:40:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>MetroWest Motors - Gary Marcoux</cust_name><ship_add1>477 Main St</ship_add1><ship_add2></ship_add2><ship_city>Waltham</ship_city><ship_state>MA</ship_state><ship_zip>02452-6138</ship_zip><ship_meth>USP</ship_meth><order_num>100002670</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>HA</line_code><part_num>FF898</part_num><quantity>2.0000</quantity><cost>15.1000</cost></item></order></PAOrderEntry>
+18:40:04 (paGateway) ORDERID = 2683 InvoiceId = 100002670 STATUS = sent_to_pa Customer Name = MetroWest Motors - Gary Marcoux Address1 = 477 Main St Address2 =  City = Waltham State = MA PostalCode = 02452-6138 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+18:40:05 (paGateway) Order Id 2684 success : 2012.04.24 : 06:04:02 
+18:40:05 (paGateway) APIMODE = live
+18:40:05 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Elliot Pabon</cust_name><ship_add1>131 Gallop Place</ship_add1><ship_add2></ship_add2><ship_city>Newport News</ship_city><ship_state>VA</ship_state><ship_zip>23608</ship_zip><ship_meth>FD2</ship_meth><order_num>100002671</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>NP</line_code><part_num>9520043</part_num><quantity>1.0000</quantity><cost>14.3400</cost></item></order></PAOrderEntry>
+18:40:05 (paGateway) ORDERID = 2684 InvoiceId = 100002671 STATUS = sent_to_pa Customer Name = Elliot Pabon Address1 = 131 Gallop Place Address2 =  City = Newport News State = VA PostalCode = 23608 Country = United States MagentoShipCode = fedex_FEDEX_2_DAY ShippingDescription = Federal Express - 2 Day ShippingDescription = Federal Express - 2 Day ShippingMethod2 = FD2
+18:40:05 (paGateway) Script FINISHED.
+
+
+18:50:50 (paGateway) Script STARTED.
+
+18:50:50 (paGateway) FAILED: Order Id 100002665
+18:50:50 (paGateway) ORDERID = 2678 InvoiceId = 100002665 STATUS = processing Customer Name = Ove Österlund Address1 = Bartsgårdavägen 83 Address2 =  City = AX-22310 State =  PostalCode = ÅLAND Country = Finland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP Total paid = 51.7600
+
+18:50:50 (paGateway) 
+
+18:50:51 (paGateway) Order Id 2685 success : 2012.04.24 : 06:04:50 
+18:50:51 (paGateway) APIMODE = live
+18:50:51 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>QUAN NGUYEN</cust_name><ship_add1>9100 Westheimer Rd</ship_add1><ship_add2>Ste 2326</ship_add2><ship_city>HOUSTON</ship_city><ship_state>TX</ship_state><ship_zip>77063-3552</ship_zip><ship_meth>USP</ship_meth><order_num>100002672</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>AK</line_code><part_num>EUR983</part_num><quantity>1.0000</quantity><cost>148.0000</cost></item></order></PAOrderEntry>
+18:50:51 (paGateway) ORDERID = 2685 InvoiceId = 100002672 STATUS = sent_to_pa Customer Name = QUAN NGUYEN Address1 = 9100 Westheimer Rd Address2 = Ste 2326 City = HOUSTON State = TX PostalCode = 77063-3552 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+18:50:51 (paGateway) Script FINISHED.
+
+
+19:02:08 (paGateway) Script STARTED.
+
+19:02:08 (paGateway) Order Id 2678 success : 2012.04.24 : 07:04:08 
+19:02:08 (paGateway) APIMODE = live
+19:02:08 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Ove Osterlund</cust_name><ship_add1>Bartsgardavagen 83</ship_add1><ship_add2></ship_add2><ship_city>Palsbole</ship_city><ship_state></ship_state><ship_zip>AX-22310</ship_zip><ship_meth>USP</ship_meth><order_num>100002665</order_num><ship_country>Finland</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>EP</line_code><part_num>71122</part_num><quantity>1.0000</quantity><cost>16.7600</cost></item></order></PAOrderEntry>
+19:02:08 (paGateway) ORDERID = 2678 InvoiceId = 100002665 STATUS = sent_to_pa Customer Name = Ove Österlund Address1 = Bartsgårdavägen 83 Address2 =  City = Pålsböle State =  PostalCode = AX-22310 Country = Finland MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP
+19:02:09 (paGateway) Order Id 2686 success : 2012.04.24 : 07:04:08 
+19:02:09 (paGateway) APIMODE = live
+19:02:09 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Ronald Munsey</cust_name><ship_add1>RR 1 Box 101-F</ship_add1><ship_add2></ship_add2><ship_city>peterstown</ship_city><ship_state>WV</ship_state><ship_zip>24963-9707</ship_zip><ship_meth>USP</ship_meth><order_num>100002673</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>FS</line_code><part_num>57276</part_num><quantity>1.0000</quantity><cost>194.6200</cost></item></order></PAOrderEntry>
+19:02:09 (paGateway) ORDERID = 2686 InvoiceId = 100002673 STATUS = sent_to_pa Customer Name = Ronald Munsey Address1 = RR 1 Box 101-F Address2 =  City = peterstown State = WV PostalCode = 24963-9707 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+19:02:09 (paGateway) Order Id 2687 success : 2012.04.24 : 07:04:08 
+19:02:09 (paGateway) APIMODE = live
+19:02:09 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Bruce Chhuth</cust_name><ship_add1>1394 Ramish Drive</ship_add1><ship_add2></ship_add2><ship_city>San Jose</ship_city><ship_state>CA</ship_state><ship_zip>95131</ship_zip><ship_meth>FDG</ship_meth><order_num>100002674</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BO</line_code><part_num>284021</part_num><quantity>1.0000</quantity><cost>77.4300</cost></item></order></PAOrderEntry>
+19:02:09 (paGateway) ORDERID = 2687 InvoiceId = 100002674 STATUS = sent_to_pa Customer Name = Bruce Chhuth Address1 = 1394 Ramish Drive Address2 =  City = San Jose State = CA PostalCode = 95131 Country = United States MagentoShipCode = fedex_GROUND_HOME_DELIVERY ShippingDescription = Federal Express - Home Delivery ShippingDescription = Federal Express - Home Delivery ShippingMethod2 = FDG
+19:02:09 (paGateway) Script FINISHED.
+
+
+19:10:01 (paGateway) Script STARTED.
+
+19:10:02 (paGateway) Order Id 2688 success : 2012.04.24 : 07:04:01 
+19:10:02 (paGateway) APIMODE = live
+19:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Peter Paquette</cust_name><ship_add1>21 Dike Dr</ship_add1><ship_add2></ship_add2><ship_city>clinton</ship_city><ship_state>MA</ship_state><ship_zip>01510-4303</ship_zip><ship_meth>USP</ship_meth><order_num>100002675</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>WK</line_code><part_num>18932</part_num><quantity>1.0000</quantity><cost>121.4200</cost></item></order></PAOrderEntry>
+19:10:02 (paGateway) ORDERID = 2688 InvoiceId = 100002675 STATUS = sent_to_pa Customer Name = Peter Paquette Address1 = 21 Dike Dr Address2 =  City = clinton State = MA PostalCode = 01510-4303 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+19:10:02 (paGateway) Script FINISHED.
+
+
+19:40:01 (paGateway) Script STARTED.
+
+19:40:02 (paGateway) Order Id 2689 success : 2012.04.24 : 07:04:01 
+19:40:02 (paGateway) APIMODE = live
+19:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>john cosmas</cust_name><ship_add1>209 herbert ave</ship_add1><ship_add2></ship_add2><ship_city>fanwood</ship_city><ship_state>NJ</ship_state><ship_zip>07023</ship_zip><ship_meth>FDG</ship_meth><order_num>100002676</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BO</line_code><part_num>177297</part_num><quantity>1.0000</quantity><cost>107.0000</cost></item><item><line_code>BO</line_code><part_num>284063</part_num><quantity>1.0000</quantity><cost>75.0000</cost></item></order></PAOrderEntry>
+19:40:02 (paGateway) ORDERID = 2689 InvoiceId = 100002676 STATUS = sent_to_pa Customer Name = john cosmas Address1 = 209 herbert ave Address2 =  City = fanwood State = NJ PostalCode = 07023 Country = United States MagentoShipCode = fedex_GROUND_HOME_DELIVERY ShippingDescription = Federal Express - Home Delivery ShippingDescription = Federal Express - Home Delivery ShippingMethod2 = FDG
+19:40:03 (paGateway) Order Id 2690 success : 2012.04.24 : 07:04:01 
+19:40:03 (paGateway) APIMODE = live
+19:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Rodrigo Alves Teixeira</cust_name><ship_add1>Rua B, Qda. 14, Lt. 09</ship_add1><ship_add2>Bairro: Waldir Lins 2</ship_add2><ship_city>Gurupi</ship_city><ship_state></ship_state><ship_zip>77423010</ship_zip><ship_meth>USP</ship_meth><order_num>100002677</order_num><ship_country>Brazil</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>A1</line_code><part_num>22217</part_num><quantity>1.0000</quantity><cost>235.4900</cost></item></order></PAOrderEntry>
+19:40:03 (paGateway) ORDERID = 2690 InvoiceId = 100002677 STATUS = sent_to_pa Customer Name = Rodrigo Alves Teixeira Address1 = Rua B, Qda. 14, Lt. 09 Address2 = Bairro: Waldir Lins 2 City = Gurupi State =  PostalCode = 77423010 Country = Brazil MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP
+19:40:03 (paGateway) Order Id 2691 success : 2012.04.24 : 07:04:01 
+19:40:03 (paGateway) APIMODE = live
+19:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>ALice Crock</cust_name><ship_add1>10613 E Flossmoor Ave</ship_add1><ship_add2></ship_add2><ship_city>mesa</ship_city><ship_state>AZ</ship_state><ship_zip>85208-7111</ship_zip><ship_meth>USP</ship_meth><order_num>100002678</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>AY</line_code><part_num>7014236</part_num><quantity>1.0000</quantity><cost>70.7500</cost></item></order></PAOrderEntry>
+19:40:03 (paGateway) ORDERID = 2691 InvoiceId = 100002678 STATUS = sent_to_pa Customer Name = ALice Crock Address1 = 10613 E Flossmoor Ave Address2 =  City = mesa State = AZ PostalCode = 85208-7111 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+19:40:04 (paGateway) Order Id 2692 success : 2012.04.24 : 07:04:01 
+19:40:04 (paGateway) APIMODE = live
+19:40:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Josef Zota Klinud</cust_name><ship_add1>Haprachim 5/71</ship_add1><ship_add2></ship_add2><ship_city>Haifa</ship_city><ship_state></ship_state><ship_zip>34733</ship_zip><ship_meth>USP</ship_meth><order_num>100002679</order_num><ship_country>Israel</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>NP</line_code><part_num>2344261</part_num><quantity>1.0000</quantity><cost>65.9300</cost></item></order></PAOrderEntry>
+19:40:04 (paGateway) ORDERID = 2692 InvoiceId = 100002679 STATUS = sent_to_pa Customer Name = Josef Zota Klinud Address1 = Haprachim 5/71 Address2 =  City = Haifa State =  PostalCode = 34733 Country = Israel MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP
+19:40:04 (paGateway) Script FINISHED.
+
+
+20:10:02 (paGateway) Script STARTED.
+
+20:10:02 (paGateway) Order Id 2693 success : 2012.04.24 : 08:04:02 
+20:10:02 (paGateway) APIMODE = live
+20:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Lyle Liberman</cust_name><ship_add1>1055 Washington Blvd</ship_add1><ship_add2></ship_add2><ship_city>Stamford</ship_city><ship_state>CT</ship_state><ship_zip>06901</ship_zip><ship_meth>USP</ship_meth><order_num>100002680</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>M6</line_code><part_num>C301952</part_num><quantity>1.0000</quantity><cost>11.7300</cost></item></order></PAOrderEntry>
+20:10:02 (paGateway) ORDERID = 2693 InvoiceId = 100002680 STATUS = sent_to_pa Customer Name = Lyle Liberman Address1 = 1055 Washington Blvd Address2 =  City = Stamford State = CT PostalCode = 06901 Country = United States MagentoShipCode = usps_Priority Mail ShippingDescription = United States Postal Service - Priority Mail ShippingDescription = United States Postal Service - Priority Mail ShippingMethod2 = USP
+20:10:03 (paGateway) Order Id 2694 success : 2012.04.24 : 08:04:02 
+20:10:03 (paGateway) APIMODE = live
+20:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>hilary connolly</cust_name><ship_add1>21585 State Route Y</ship_add1><ship_add2></ship_add2><ship_city>mountain view</ship_city><ship_state>MO</ship_state><ship_zip>65548-8540</ship_zip><ship_meth>USP</ship_meth><order_num>100002681</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>FS</line_code><part_num>33114</part_num><quantity>1.0000</quantity><cost>18.6600</cost></item></order></PAOrderEntry>
+20:10:03 (paGateway) ORDERID = 2694 InvoiceId = 100002681 STATUS = sent_to_pa Customer Name = hilary connolly Address1 = 21585 State Route Y Address2 =  City = mountain view State = MO PostalCode = 65548-8540 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+20:10:03 (paGateway) Order Id 2695 success : 2012.04.24 : 08:04:02 
+20:10:03 (paGateway) APIMODE = live
+20:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>robert smith</cust_name><ship_add1>12342 Caldvis Rd</ship_add1><ship_add2></ship_add2><ship_city>buda</ship_city><ship_state>TX</ship_state><ship_zip>78610-5201</ship_zip><ship_meth>USP</ship_meth><order_num>100002682</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>FS</line_code><part_num>47876</part_num><quantity>1.0000</quantity><cost>98.3200</cost></item></order></PAOrderEntry>
+20:10:03 (paGateway) ORDERID = 2695 InvoiceId = 100002682 STATUS = sent_to_pa Customer Name = robert smith Address1 = 12342 Caldvis Rd Address2 =  City = buda State = TX PostalCode = 78610-5201 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+20:10:04 (paGateway) Order Id 2696 success : 2012.04.24 : 08:04:02 
+20:10:04 (paGateway) APIMODE = live
+20:10:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Tina Fiber</cust_name><ship_add1>RR 2 Box 224</ship_add1><ship_add2></ship_add2><ship_city>Wellsburg</ship_city><ship_state>WV</ship_state><ship_zip>26070-9522</ship_zip><ship_meth>USP</ship_meth><order_num>100002683</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>CE</line_code><part_num>13048013</part_num><quantity>1.0000</quantity><cost>68.5800</cost></item></order></PAOrderEntry>
+20:10:04 (paGateway) ORDERID = 2696 InvoiceId = 100002683 STATUS = sent_to_pa Customer Name = Tina Fiber Address1 = RR 2 Box 224 Address2 =  City = Wellsburg State = WV PostalCode = 26070-9522 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+20:10:04 (paGateway) Order Id 2697 success : 2012.04.24 : 08:04:02 
+20:10:04 (paGateway) APIMODE = live
+20:10:04 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Huibert Koning</cust_name><ship_add1>Populierstraat 10</ship_add1><ship_add2></ship_add2><ship_city>WOERDEN</ship_city><ship_state></ship_state><ship_zip>3442GP</ship_zip><ship_meth>USP</ship_meth><order_num>100002684</order_num><ship_country>Netherlands</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>DY</line_code><part_num>89378</part_num><quantity>1.0000</quantity><cost>52.0000</cost></item></order></PAOrderEntry>
+20:10:04 (paGateway) ORDERID = 2697 InvoiceId = 100002684 STATUS = sent_to_pa Customer Name = Huibert Koning Address1 = Populierstraat 10 Address2 =  City = WOERDEN State =  PostalCode = 3442GP Country = Netherlands MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingDescription = eBay Shipping - USPS Priority Mail International ShippingMethod2 = USP
+20:10:04 (paGateway) Script FINISHED.
+
+
+20:40:01 (paGateway) Script STARTED.
+
+20:40:02 (paGateway) Order Id 2698 success : 2012.04.24 : 08:04:01 
+20:40:02 (paGateway) APIMODE = live
+20:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Bart Smink / Kaira K. Sperduto</cust_name><ship_add1>230 E 51st St</ship_add1><ship_add2>The Pod Hotel</ship_add2><ship_city>New York</ship_city><ship_state>NY</ship_state><ship_zip>10022-6571</ship_zip><ship_meth>USP</ship_meth><order_num>100002685</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>TM</line_code><part_num>SET16</part_num><quantity>2.0000</quantity><cost>6.7100</cost></item><item><line_code>TM</line_code><part_num>SET11</part_num><quantity>2.0000</quantity><cost>7.5800</cost></item></order></PAOrderEntry>
+20:40:02 (paGateway) ORDERID = 2698 InvoiceId = 100002685 STATUS = sent_to_pa Customer Name = Bart Smink / Kaira K. Sperduto Address1 = 230 E 51st St Address2 = The Pod Hotel City = New York State = NY PostalCode = 10022-6571 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+20:40:03 (paGateway) Order Id 2699 success : 2012.04.24 : 08:04:01 
+20:40:03 (paGateway) APIMODE = live
+20:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Nathan Martin</cust_name><ship_add1>6119 Forest Pines Rd</ship_add1><ship_add2></ship_add2><ship_city>Pensacola</ship_city><ship_state>FL</ship_state><ship_zip>32526</ship_zip><ship_meth>USP</ship_meth><order_num>100002686</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BA</line_code><part_num>0844029</part_num><quantity>1.0000</quantity><cost>63.3700</cost></item></order></PAOrderEntry>
+20:40:03 (paGateway) ORDERID = 2699 InvoiceId = 100002686 STATUS = sent_to_pa Customer Name = Nathan Martin Address1 = 6119 Forest Pines Rd Address2 =  City = Pensacola State = FL PostalCode = 32526 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+20:40:03 (paGateway) Script FINISHED.
+
+
+21:10:02 (paGateway) Script STARTED.
+
+21:10:03 (paGateway) Order Id 2700 success : 2012.04.24 : 09:04:02 
+21:10:03 (paGateway) APIMODE = live
+21:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Ryan Williams</cust_name><ship_add1>25 Judith Dr</ship_add1><ship_add2></ship_add2><ship_city>dalton</ship_city><ship_state>MA</ship_state><ship_zip>01226-1954</ship_zip><ship_meth>USP</ship_meth><order_num>100002687</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>A1</line_code><part_num>141206</part_num><quantity>1.0000</quantity><cost>13.3500</cost></item></order></PAOrderEntry>
+21:10:03 (paGateway) ORDERID = 2700 InvoiceId = 100002687 STATUS = sent_to_pa Customer Name = Ryan Williams Address1 = 25 Judith Dr Address2 =  City = dalton State = MA PostalCode = 01226-1954 Country = United States MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Priority Mail ShippingDescription = eBay Shipping - USPS Priority Mail ShippingMethod2 = USP
+21:10:03 (paGateway) Script FINISHED.
+
+
+21:40:01 (paGateway) Script STARTED.
+
+21:40:02 (paGateway) Order Id 2701 success : 2012.04.24 : 09:04:02 
+21:40:02 (paGateway) APIMODE = live
+21:40:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Hicham Nasseh</cust_name><ship_add1>1946 SWAIM RD</ship_add1><ship_add2></ship_add2><ship_city>Winston Salem</ship_city><ship_state>NC</ship_state><ship_zip>27127</ship_zip><ship_meth>FD2</ship_meth><order_num>100002688</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>BS</line_code><part_num>FR7NPP332</part_num><quantity>6.0000</quantity><cost>9.3800</cost></item></order></PAOrderEntry>
+21:40:02 (paGateway) ORDERID = 2701 InvoiceId = 100002688 STATUS = sent_to_pa Customer Name = Hicham Nasseh Address1 = 1946 SWAIM RD Address2 =  City = Winston Salem State = NC PostalCode = 27127 Country = United States MagentoShipCode = fedex_FEDEX_2_DAY ShippingDescription = Federal Express - 2 Day ShippingDescription = Federal Express - 2 Day ShippingMethod2 = FD2
+21:40:03 (paGateway) Order Id 2702 success : 2012.04.24 : 09:04:02 
+21:40:03 (paGateway) APIMODE = live
+21:40:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Beverley Punt</cust_name><ship_add1>2, Dudsbury Road,</ship_add1><ship_add2>West Parley,</ship_add2><ship_city>Ferndown,</ship_city><ship_state></ship_state><ship_zip>BH22 8RE</ship_zip><ship_meth>USE</ship_meth><order_num>100002689</order_num><ship_country>United Kingdom</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>TM</line_code><part_num>SP550201</part_num><quantity>1.0000</quantity><cost>161.4200</cost></item></order></PAOrderEntry>
+21:40:03 (paGateway) ORDERID = 2702 InvoiceId = 100002689 STATUS = sent_to_pa Customer Name = Beverley Punt Address1 = 2, Dudsbury Road, Address2 = West Parley, City = Ferndown, State =  PostalCode = BH22 8RE Country = United Kingdom MagentoShipCode = m2eproshipping_m2eproshipping ShippingDescription = eBay Shipping - USPS Express Mail International ShippingDescription = eBay Shipping - USPS Express Mail International ShippingMethod2 = USE
+21:40:03 (paGateway) Script FINISHED.
+
+
+22:10:01 (paGateway) Script STARTED.
+
+22:10:02 (paGateway) Order Id 2703 success : 2012.04.24 : 10:04:01 
+22:10:02 (paGateway) APIMODE = live
+22:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Scott Harmon</cust_name><ship_add1>1807 robin dr.</ship_add1><ship_add2></ship_add2><ship_city>Warsaw</ship_city><ship_state>IN</ship_state><ship_zip>46580</ship_zip><ship_meth>FDG</ship_meth><order_num>100002690</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>CE</line_code><part_num>12662079SR</part_num><quantity>2.0000</quantity><cost>63.7400</cost></item></order></PAOrderEntry>
+22:10:02 (paGateway) ORDERID = 2703 InvoiceId = 100002690 STATUS = sent_to_pa Customer Name = Scott Harmon Address1 = 1807 robin dr. Address2 =  City = Warsaw State = IN PostalCode = 46580 Country = United States MagentoShipCode = fedex_GROUND_HOME_DELIVERY ShippingDescription = Federal Express - Home Delivery ShippingDescription = Federal Express - Home Delivery ShippingMethod2 = FDG
+22:10:03 (paGateway) Order Id 2704 success : 2012.04.24 : 10:04:01 
+22:10:03 (paGateway) APIMODE = live
+22:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Theng Yang</cust_name><ship_add1>1311 St Andrew Blvd</ship_add1><ship_add2></ship_add2><ship_city>Eagan</ship_city><ship_state>MN</ship_state><ship_zip>55123</ship_zip><ship_meth>FDG</ship_meth><order_num>100002691</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>CE</line_code><part_num>14144555</part_num><quantity>1.0000</quantity><cost>87.9100</cost></item></order></PAOrderEntry>
+22:10:03 (paGateway) ORDERID = 2704 InvoiceId = 100002691 STATUS = sent_to_pa Customer Name = Theng Yang Address1 = 1311 St Andrew Blvd Address2 =  City = Eagan State = MN PostalCode = 55123 Country = United States MagentoShipCode = fedex_GROUND_HOME_DELIVERY ShippingDescription = Federal Express - Home Delivery ShippingDescription = Federal Express - Home Delivery ShippingMethod2 = FDG
+22:10:03 (paGateway) Script FINISHED.
+
+

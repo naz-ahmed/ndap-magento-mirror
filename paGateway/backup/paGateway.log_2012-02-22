@@ -1,0 +1,136 @@
+00:10:01 (paGateway) Script STARTED.
+
+00:10:02 (paGateway) Order Id 114 success : 2012.02.22 : 12:02:01 
+00:10:02 (paGateway) APIMODE = live
+00:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Justin Paraskevis</cust_name><ship_add1>59 Rattray Road</ship_add1><ship_add2></ship_add2><ship_city>Montmorency</ship_city><ship_state>Victoria</ship_state><ship_zip>3094</ship_zip><ship_meth>FDG</ship_meth><order_num>100000113</order_num><ship_country>AU</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>A1</line_code><part_num>1055555</part_num><quantity>1.0000</quantity><cost>40.5900</cost></item><item><line_code>PR</line_code><part_num>BD8878</part_num><quantity>2.0000</quantity><cost>25.6500</cost></item></order></PAOrderEntry>
+00:10:02 (paGateway) ORDERID = 114 InvoiceId = 100000113 STATUS = sent_to_pa Customer Name = Justin Paraskevis Address1 = 59 Rattray Road Address2 =  City = Montmorency State = Victoria PostalCode = 3094 Country = AU MagentoShipCode = fedex_INTERNATIONAL_PRIORITY ShippingDescription = Federal Express - International Priority ShippingDescription = Federal Express - International Priority ShippingMethod2 = FDG
+00:10:02 (paGateway) Script FINISHED.
+
+
+01:10:02 (paGateway) Script STARTED.
+
+01:10:02 (paGateway) Script FINISHED.
+
+
+02:10:01 (paGateway) Script STARTED.
+
+02:10:01 (paGateway) Script FINISHED.
+
+
+03:10:01 (paGateway) Script STARTED.
+
+03:10:01 (paGateway) Script FINISHED.
+
+
+04:10:01 (paGateway) Script STARTED.
+
+04:10:01 (paGateway) Script FINISHED.
+
+
+05:10:01 (paGateway) Script STARTED.
+
+05:10:02 (paGateway) Order Id 115 success : 2012.02.22 : 05:02:01 
+05:10:02 (paGateway) APIMODE = live
+05:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>David Ingram</cust_name><ship_add1>52 Technology Drive</ship_add1><ship_add2></ship_add2><ship_city>Anderson</ship_city><ship_state>SC</ship_state><ship_zip>29630</ship_zip><ship_meth>FD2</ship_meth><order_num>100000114</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>NP</line_code><part_num>6734013</part_num><quantity>4.0000</quantity><cost>65.2200</cost></item></order></PAOrderEntry>
+05:10:02 (paGateway) ORDERID = 115 InvoiceId = 100000114 STATUS = sent_to_pa Customer Name = David Ingram Address1 = 52 Technology Drive Address2 =  City = Anderson State = SC PostalCode = 29630 Country = US MagentoShipCode = fedex_FEDEX_2_DAY ShippingDescription = Federal Express - 2 Day ShippingDescription = Federal Express - 2 Day ShippingMethod2 = FD2
+05:10:02 (paGateway) Script FINISHED.
+
+
+06:10:02 (paGateway) Script STARTED.
+
+06:10:02 (paGateway) Script FINISHED.
+
+
+07:10:01 (paGateway) Script STARTED.
+
+07:10:01 (paGateway) Script FINISHED.
+
+
+08:10:01 (paGateway) Script STARTED.
+
+08:10:01 (paGateway) Script FINISHED.
+
+
+09:10:01 (paGateway) Script STARTED.
+
+09:10:02 (paGateway) Script FINISHED.
+
+
+10:10:01 (paGateway) Script STARTED.
+
+10:10:01 (paGateway) Script FINISHED.
+
+
+11:10:01 (paGateway) Script STARTED.
+
+11:10:01 (paGateway) Script FINISHED.
+
+
+12:10:01 (paGateway) Script STARTED.
+
+12:10:01 (paGateway) Script FINISHED.
+
+
+13:10:01 (paGateway) Script STARTED.
+
+13:10:01 (paGateway) Script FINISHED.
+
+
+14:10:01 (paGateway) Script STARTED.
+
+14:10:02 (paGateway) Script FINISHED.
+
+
+15:10:01 (paGateway) Script STARTED.
+
+15:10:02 (paGateway) Script FINISHED.
+
+
+16:10:01 (paGateway) Script STARTED.
+
+16:10:01 (paGateway) Script FINISHED.
+
+
+17:10:01 (paGateway) Script STARTED.
+
+17:10:01 (paGateway) Script FINISHED.
+
+
+18:10:02 (paGateway) Script STARTED.
+
+18:10:03 (paGateway) Script FINISHED.
+
+
+19:10:01 (paGateway) Script STARTED.
+
+19:10:01 (paGateway) Script FINISHED.
+
+
+20:10:02 (paGateway) Script STARTED.
+
+20:10:02 (paGateway) Order Id 116 success : 2012.02.22 : 08:02:02 
+20:10:02 (paGateway) APIMODE = live
+20:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Hyo Lee</cust_name><ship_add1>2241 CUESTA DR</ship_add1><ship_add2></ship_add2><ship_city>MILPITAS</ship_city><ship_state>CA</ship_state><ship_zip>95035-7875</ship_zip><ship_meth>FDG</ship_meth><order_num>100000115</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>CE</line_code><part_num>10210530</part_num><quantity>1.0000</quantity><cost>15.3800</cost></item></order></PAOrderEntry>
+20:10:02 (paGateway) ORDERID = 116 InvoiceId = 100000115 STATUS = sent_to_pa Customer Name = Hyo Lee Address1 = 2241 CUESTA DR Address2 =  City = MILPITAS State = CA PostalCode = 95035-7875 Country = US MagentoShipCode = fedex_FEDEX_GROUND ShippingDescription = Federal Express - Ground ShippingDescription = Federal Express - Ground ShippingMethod2 = FDG
+20:10:03 (paGateway) Order Id 117 success : 2012.02.22 : 08:02:02 
+20:10:03 (paGateway) APIMODE = live
+20:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>alfonso galeas</cust_name><ship_add1>1660 crotona park east apt # 3b</ship_add1><ship_add2>apt # 3b</ship_add2><ship_city>bronx</ship_city><ship_state>NY</ship_state><ship_zip>10460</ship_zip><ship_meth>FDG</ship_meth><order_num>100000116</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>MO</line_code><part_num>ES3438</part_num><quantity>2.0000</quantity><cost>29.6300</cost></item><item><line_code>AK</line_code><part_num>ACT815</part_num><quantity>1.0000</quantity><cost>43.8900</cost></item><item><line_code>AK</line_code><part_num>ACT905</part_num><quantity>1.0000</quantity><cost>47.3200</cost></item></order></PAOrderEntry>
+20:10:03 (paGateway) ORDERID = 117 InvoiceId = 100000116 STATUS = sent_to_pa Customer Name = alfonso galeas Address1 = 1660 crotona park east apt # 3b Address2 = apt # 3b City = bronx State = NY PostalCode = 10460 Country = US MagentoShipCode = fedex_FEDEX_GROUND ShippingDescription = Federal Express - Ground ShippingDescription = Federal Express - Ground ShippingMethod2 = FDG
+20:10:03 (paGateway) Script FINISHED.
+
+
+21:10:01 (paGateway) Script STARTED.
+
+21:10:01 (paGateway) Script FINISHED.
+
+
+22:10:01 (paGateway) Script STARTED.
+
+22:10:01 (paGateway) Script FINISHED.
+
+
+23:10:02 (paGateway) Script STARTED.
+
+23:10:02 (paGateway) Script FINISHED.
+
+

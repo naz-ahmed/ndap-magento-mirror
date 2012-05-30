@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 // ini_set("include_path", ".:/var/www/html/magento/paGateway:/usr/local/lib/php:/home/path/to/pear");
 
-$con = mysql_connect("magento01.c2lug8itjgui.us-east-1.rds.amazonaws.com", "magento", "C3HKMVYD7DQJsSVY");
+$con = mysql_connect("ndap01.c2lug8itjgui.us-east-1.rds.amazonaws.com", "magento", "C3HKMVYD7DQJsSVY");
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());
@@ -24,7 +24,6 @@ $apiMode = "live";
 $config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', true);
 
 include "/var/etl/bin/includes/logging.php";
-include "/var/etl/bin/includes/functions.php";
 
 // Logging class initialization
 $log = new Logging();
@@ -84,8 +83,6 @@ $allIds=$orders->getAllIds();
 
 foreach($allIds as $thisId) {
 	$myOrder->reset()->load($thisId);
-	
-	// DEBUG -- if($myOrder->getIncrementId() != '100003277'){continue;}
 
 	// pull in fields 
 	$CustomerName = $myOrder->getShippingAddress()->getFirstname()." ".$myOrder->getShippingAddress()->getLastname();
@@ -96,8 +93,6 @@ foreach($allIds as $thisId) {
 	//Fedex wants country code, and USPS wants country name
 	//when PA API is ready to handle that, we'll implement a check ship method and send appropriate. 
 	//until then, we will send CountryID
-	// 20120516 -- now we're told that usps can handle country code, fedex and dst want 2-letter country code
-	// country is being truncated (in DST?) to first two letters sent
 	$CountryId = $myOrder->getShippingAddress()->getCountryId();
 	//get country name instead
 	$Country = Mage::getModel('directory/country')->load($CountryId)->getName();
@@ -141,7 +136,6 @@ foreach($allIds as $thisId) {
 	//echo "ORDER NUMBER".$myOrder->getIncrementId()." thisId = ".$thisId; 
 	$InvoiceId = $myOrder->getIncrementId();
 	
-	
 	// var_dump($myOrder->getInvoiceCollection());
 	
 	/*
@@ -180,17 +174,17 @@ foreach($allIds as $thisId) {
 	$paOrder->setUser($uid, $pass);//api account username and pass
 		// $paOrder->setClient("Sample Client v1");//passes the name of the connection client *optional*
 	$paOrder->setAccountNum($config_info['login']['paAccountNum']);
-	$paOrder->set_cust_name(normalize_special_characters($CustomerName));//ship to name
-	$paOrder->set_ship_add1(normalize_special_characters($Address[0]));//ship to address1
+	$paOrder->set_cust_name($CustomerName);//ship to name
+	$paOrder->set_ship_add1($Address[0]);//ship to address1
 	
 	if($CountryId == "US" || $CountryId == "CA")
 	{
 		if($Address[1])
 		{
-			$paOrder->set_ship_add2(normalize_special_characters($Address[1]));//ship to address2
+			$paOrder->set_ship_add2($Address[1]);//ship to address2
 		}
-		$paOrder->set_ship_city(normalize_special_characters($City));//ship to city
-		$paOrder->set_ship_state(normalize_special_characters($State));//ship to state
+		$paOrder->set_ship_city($City);//ship to city
+		$paOrder->set_ship_state($State);//ship to state
 		$paOrder->set_ship_zip($PostalCode);//ship to postal code
 		$paOrder->set_ship_meth($ShippingMethod2);//ship method FDG=Ground, FD2=2nd Day, FDO=Overnight
 		$paOrder->set_order_num($InvoiceId);//customer PO#
@@ -207,35 +201,28 @@ foreach($allIds as $thisId) {
 	
 		// Field lengths on PA side are 30 char. Foreign orders where Address line 2 show are going to have issues. 
 		// Nick will have to handle this and then we can improve this code. 
-		$State = $myOrder->getShippingAddress()->getRegion();
 		
 		if(empty($State))
 		{
 			if($Address[1])
 			{
-				$paOrder->set_ship_add2(normalize_special_characters($Address[1]));//ship to address2
+				$paOrder->set_ship_add2($Address[1]);//ship to address2
 			}
 
-			$paOrder->set_ship_city(normalize_special_characters($City)); //ship to city
+			$paOrder->set_ship_city($City); //ship to city
 			$paOrder->set_ship_state('');//ship to state
 			$paOrder->set_ship_zip($PostalCode);//ship to postal code
-			//$paOrder->set_ship_country(normalize_special_characters($Country));//ship to country name
-			// 20120516 changed back to use country code - dst truncating to two chars
-			$paOrder->set_ship_country($CountryId);
+			$paOrder->set_ship_country($Country);//ship to country name
 		}
 		else
 		{
-			$paOrder->set_ship_add2(normalize_special_characters($City));  //ship to address2
+			$paOrder->set_ship_add2($City);  //ship to address2
 
-			$paOrder->set_ship_city(normalize_special_characters($State)); //ship to city
+			$paOrder->set_ship_city($State); //ship to city
 			$paOrder->set_ship_state('');//ship to state
 			$paOrder->set_ship_zip($PostalCode);//ship to postal code
-			//$paOrder->set_ship_country(normalize_special_characters($Country));//ship to country name
-			// 20120516 changed back to use country code - dst truncating to two chars
-			$paOrder->set_ship_country($CountryId);
-			
+			$paOrder->set_ship_country($Country);//ship to country name
 		
-		//var_dump($paOrder);
 		}
 		
 		
@@ -345,7 +332,7 @@ foreach($allIds as $thisId) {
 		$subject = "Error in PA Gateway - order submission: order failed";
 		$body = "Submitting order ".$InvoiceId." to paAPI failed. Response detail = ".$ret->responseDetail." \r";
 		mail($to, $subject, $body);
-		$log->lwrite("ORDERID = ".$thisId." InvoiceId = ".$InvoiceId." STATUS = ".$myOrder->getStatus()." Customer Name = ".normalize_special_characters($CustomerName)." Address1 = ".normalize_special_characters($Address[0])." Address2 = ".normalize_special_characters($Address[1])." City = ".normalize_special_characters($City)." State = ".normalize_special_characters($State)." PostalCode = ".$PostalCode." Country = ".normalize_special_characters($Country)." MagentoShipCode = ".$MagentoShipCode." ShippingDescription = ".$MagentoShipDescription." ShippingDescription = ".$MagentoShipDescription." ShippingMethod2 = ".$ShippingMethod2. " Total paid = ".$myOrder->getTotal_paid()."\r\n");
+		$log->lwrite("ORDERID = ".$thisId." InvoiceId = ".$InvoiceId." STATUS = ".$myOrder->getStatus()." Customer Name = ".$CustomerName." Address1 = ".$Address[0]." Address2 = ".$Address[1]." City = ".$City." State = ".$State." PostalCode = ".$PostalCode." Country = ".$Country." MagentoShipCode = ".$MagentoShipCode." ShippingDescription = ".$MagentoShipDescription." ShippingDescription = ".$MagentoShipDescription." ShippingMethod2 = ".$ShippingMethod2. " Total paid = ".$myOrder->getTotal_paid()."\r\n");
 		$log->lwrite($ret->orderFileXML."\r\n");
 		continue;
 

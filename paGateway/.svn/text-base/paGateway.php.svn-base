@@ -90,12 +90,7 @@ foreach($allIds as $thisId) {
 	$City = $myOrder->getShippingAddress()->getCity();
 	$State = $myOrder->getShippingAddress()->getRegionCode();
 	$PostalCode = $myOrder->getShippingAddress()->getPostcode();
-	//Fedex wants country code, and USPS wants country name
-	//when PA API is ready to handle that, we'll implement a check ship method and send appropriate. 
-	//until then, we will send CountryID
-	$CountryId = $myOrder->getShippingAddress()->getCountryId();
-	//get country name instead
-	$Country = Mage::getModel('directory/country')->load($CountryId)->getName();
+	$Country = $myOrder->getShippingAddress()->getCountryId(); 
 	
 	
 	/*
@@ -123,8 +118,6 @@ foreach($allIds as $thisId) {
 	{
 		//$log->lwrite("PartId=".$PartId."\n");
 		$log->lwrite("PA Shipping method code not found. Order ".$thisId." skipped.\n");
-		$log->lwrite($MagentoShipCode."\n");
-		$log->lwrite($MagentoShipDescription."\n");
 		$subject = "Error in PA Gateway - order submission:shipping";
 		$body = "PA Shipping method code not found. Order ".$thisId." skipped.\n";
 		mail($to, $subject, $body);
@@ -176,61 +169,21 @@ foreach($allIds as $thisId) {
 	$paOrder->setAccountNum($config_info['login']['paAccountNum']);
 	$paOrder->set_cust_name($CustomerName);//ship to name
 	$paOrder->set_ship_add1($Address[0]);//ship to address1
-	
-	if($CountryId == "US" || $CountryId == "CA")
+	if($Address[1])
 	{
-		if($Address[1])
-		{
-			$paOrder->set_ship_add2($Address[1]);//ship to address2
-		}
-		$paOrder->set_ship_city($City);//ship to city
-		$paOrder->set_ship_state($State);//ship to state
-		$paOrder->set_ship_zip($PostalCode);//ship to postal code
-		$paOrder->set_ship_meth($ShippingMethod2);//ship method FDG=Ground, FD2=2nd Day, FDO=Overnight
-		$paOrder->set_order_num($InvoiceId);//customer PO#
-		$paOrder->set_ship_country($CountryId);//ship to country code
-			// $paOrder->set_conf_number($ConfNumber);//confirmation from DST
-			// $paOrder->set_paypal_number($BTN);//paypal reference number
-			// $paOrder->set_tax_amount($TAX);//tax on order
-			// $paOrder->set_ship_amount($HSC);//calculated shipping cost of order
+		$paOrder->set_ship_add2($Address[1]);//ship to address2
 	}
-	else
-	{
-		// this is a workaround for PA/DST issues with foreign orders
-		// move city to ship_add2, state to ship_city since DST state is 2-char max
+	$paOrder->set_ship_city($City);//ship to city
+	$paOrder->set_ship_state($State);//ship to state
+	$paOrder->set_ship_zip($PostalCode);//ship to postal code
+	$paOrder->set_ship_meth($ShippingMethod2);//ship method FDG=Ground, FD2=2nd Day, FDO=Overnight
+	$paOrder->set_order_num($InvoiceId);//customer PO#
+	$paOrder->set_ship_country($Country);//ship to country code
+		// $paOrder->set_conf_number($ConfNumber);//confirmation from DST
+		// $paOrder->set_paypal_number($BTN);//paypal reference number
+		// $paOrder->set_tax_amount($TAX);//tax on order
+		// $paOrder->set_ship_amount($HSC);//calculated shipping cost of order
 	
-		// Field lengths on PA side are 30 char. Foreign orders where Address line 2 show are going to have issues. 
-		// Nick will have to handle this and then we can improve this code. 
-		
-		if(empty($State))
-		{
-			if($Address[1])
-			{
-				$paOrder->set_ship_add2($Address[1]);//ship to address2
-			}
-
-			$paOrder->set_ship_city($City); //ship to city
-			$paOrder->set_ship_state('');//ship to state
-			$paOrder->set_ship_zip($PostalCode);//ship to postal code
-			$paOrder->set_ship_country($CountryId);//ship to country code
-		}
-		else
-		{
-			$paOrder->set_ship_add2($City);  //ship to address2
-
-			$paOrder->set_ship_city($State); //ship to city
-			$paOrder->set_ship_state('');//ship to state
-			$paOrder->set_ship_zip($PostalCode);//ship to postal code
-			$paOrder->set_ship_country($CountryId);//ship to country code
-		
-		}
-		
-		
-		$paOrder->set_ship_meth($ShippingMethod2);//ship method FDG=Ground, FD2=2nd Day, FDO=Overnight
-		$paOrder->set_order_num($InvoiceId);//customer PO#
-		
-
-	}
 	
 	$items = $myOrder->getAllItems();
 	$itemcount = count($items);

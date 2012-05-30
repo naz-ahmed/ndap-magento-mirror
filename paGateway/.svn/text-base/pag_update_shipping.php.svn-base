@@ -17,16 +17,15 @@ $log->lwrite("starting file. \r\n");
 // set to test so that magento status is not set to complete. no way to move from complete back to processing         */
 	$scriptMode = "live";
 
-$config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', true);
+$config_info = parse_ini_file('paGateway.ini', true);
 
 //load paAPI
-require_once("/var/www/html/magento/paGateway/paOrder.php");
+require_once("paOrder.php");
 
 
 function getStatus($orderId)
 {
-	//why do i need this twice? is it left over from testing externally?
-	$config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', true);
+	$config_info = parse_ini_file('paGateway.ini', true);
 
 	$uid = $config_info['login']['uid'];
 	$pass = $config_info['login']['pass'];
@@ -77,7 +76,7 @@ function getStatus($orderId)
 }
 
 
-require_once("/var/www/html/magento/app/Mage.php");
+require_once("../app/Mage.php");
 Mage::app();
 
 
@@ -127,31 +126,7 @@ foreach($allIds as $thisId)
 	echo "Increment Id = ".$IncrementId."\r\n";
 	echo	"Status = ".$myOrder->getStatus()."\r\n";
 	
-	//still getting errors when trying to process more than 1 at a time
-	//line 219 vardump(data) never happens
-	/*
 	
-		Increment Id = 100000059
-		Status = sent_to_pa
-		MagentoShipMethod = fedex_fedex_ground
-		MagentoShipDescription = federal express - ground
-		PHP Fatal error:  Uncaught exception 'Mage_Core_Exception' with message 'Mage registry key "current_shipment" already exists' in /var/www/html/magento/app/Mage.php:566
-		Stack trace:
-		#0 /var/www/html/magento/app/Mage.php(195): Mage::throwException('Mage registry k...')
-		#1 /var/www/html/magento/paGateway/pag_update_shipping.php(187): Mage::register('current_shipmen...', Object(Mage_Sales_Model_Order_Shipment))
-		#2 {main}
-		  thrown in /var/www/html/magento/app/Mage.php on line 566
-		
-		Fatal error: Uncaught exception 'Mage_Core_Exception' with message 'Mage registry key "current_shipment" already exists' in /var/www/html/magento/app/Mage.php on line 566
-		
-		Mage_Core_Exception: Mage registry key "current_shipment" already exists in /var/www/html/magento/app/Mage.php on line 566
-		
-		Call Stack:
-		    0.0006     694568   1. {main}() /var/www/html/magento/paGateway/pag_update_shipping.php:0
-		    4.0219   31206352   2. Mage::register() /var/www/html/magento/paGateway/pag_update_shipping.php:187
-		    4.0219   31206520   3. Mage::throwException() /var/www/html/magento/app/Mage.php:195
-	
-	*/
 	
 	$convertor = Mage::getModel('sales/convert_order');
 	$shipment = $convertor->toShipment($myOrder);
@@ -183,8 +158,8 @@ foreach($allIds as $thisId)
 	echo "MagentoShipMethod = ".$MagentoShipMethod."\r\n";
 	echo	"MagentoShipDescription = ".$MagentoShipDescription."\r\n";
 		
-	// reset CarrierCode for googlecheckout or ebay orders to appropriate carrier
-	if(($CarrierCode == "googlecheckout") || ($CarrierCode == "m2eproshipping_m2eproshipping") )
+	// reset CarrierCode for googlecheckout orders to appropriate carrier
+	if($CarrierCode == "googlecheckout")
 	{ 
 		// continue;
 		// check from shipping description which carrier selected
@@ -196,12 +171,13 @@ foreach($allIds as $thisId)
 		{
 			$CarrierCode = "usps";
 		}
-	}
 	
+	
+	}
 	
 	$data = array();
 	$data['carrier_code'] = $CarrierCode;
-	$data['title'] = ucwords($MagentoShipDescription);
+	$data['title'] = $MagentoShipDescription;
 	$data['number'] = $TrackingNumber;
 	
 	$track = Mage::getModel('sales/order_shipment_track')->addData($data);
@@ -235,8 +211,7 @@ foreach($allIds as $thisId)
 		$log->lwrite("shipping recorded and order updated for Order Id: ".$IncrementId."\r\n");
 	}
 
-	// to remove the error that the shipment already exists for the second item in the loop. 
-	Mage::unregister('current_shipment');
+
 
 } //for-each $allIds
 

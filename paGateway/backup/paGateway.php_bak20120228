@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 // ini_set("include_path", ".:/var/www/html/magento/paGateway:/usr/local/lib/php:/home/path/to/pear");
 
-$con = mysql_connect("magento01.c2lug8itjgui.us-east-1.rds.amazonaws.com", "magento", "C3HKMVYD7DQJsSVY");
+$con = mysql_connect("ndap01.c2lug8itjgui.us-east-1.rds.amazonaws.com", "magento", "C3HKMVYD7DQJsSVY");
 if (!$con)
 {
 	die('Could not connect: ' . mysql_error());
@@ -24,7 +24,6 @@ $apiMode = "live";
 $config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', true);
 
 include "/var/etl/bin/includes/logging.php";
-include "/var/etl/bin/includes/functions.php";
 
 // Logging class initialization
 $log = new Logging();
@@ -91,12 +90,7 @@ foreach($allIds as $thisId) {
 	$City = $myOrder->getShippingAddress()->getCity();
 	$State = $myOrder->getShippingAddress()->getRegionCode();
 	$PostalCode = $myOrder->getShippingAddress()->getPostcode();
-	//Fedex wants country code, and USPS wants country name
-	//when PA API is ready to handle that, we'll implement a check ship method and send appropriate. 
-	//until then, we will send CountryID
-	$CountryId = $myOrder->getShippingAddress()->getCountryId();
-	//get country name instead
-	$Country = Mage::getModel('directory/country')->load($CountryId)->getName();
+	$Country = $myOrder->getShippingAddress()->getCountryId(); 
 	
 	
 	/*
@@ -111,7 +105,7 @@ foreach($allIds as $thisId) {
 	//will have to check text of magento for googlecheckout [shipping_description] => Flat Rate - Fixed
 	$MagentoShipCode = $myOrder->getShippingMethod();
 	$MagentoShipDescription = $myOrder->getShippingDescription();
-	if(($MagentoShipCode == "googlecheckout_carrier") || ($MagentoShipCode == "m2eproshipping_m2eproshipping") )
+	if($MagentoShipCode == "googlecheckout_carrier")
 	{
 		$ShippingMethod2 = getPaShipCode($MagentoShipDescription);
 	}
@@ -124,8 +118,6 @@ foreach($allIds as $thisId) {
 	{
 		//$log->lwrite("PartId=".$PartId."\n");
 		$log->lwrite("PA Shipping method code not found. Order ".$thisId." skipped.\n");
-		$log->lwrite($MagentoShipCode."\n");
-		$log->lwrite($MagentoShipDescription."\n");
 		$subject = "Error in PA Gateway - order submission:shipping";
 		$body = "PA Shipping method code not found. Order ".$thisId." skipped.\n";
 		mail($to, $subject, $body);
@@ -175,64 +167,23 @@ foreach($allIds as $thisId) {
 	$paOrder->setUser($uid, $pass);//api account username and pass
 		// $paOrder->setClient("Sample Client v1");//passes the name of the connection client *optional*
 	$paOrder->setAccountNum($config_info['login']['paAccountNum']);
-	$paOrder->set_cust_name(normalize_special_characters($CustomerName));//ship to name
-	$paOrder->set_ship_add1(normalize_special_characters($Address[0]));//ship to address1
-	
-	if($CountryId == "US" || $CountryId == "CA")
+	$paOrder->set_cust_name($CustomerName);//ship to name
+	$paOrder->set_ship_add1($Address[0]);//ship to address1
+	if($Address[1])
 	{
-		if($Address[1])
-		{
-			$paOrder->set_ship_add2(normalize_special_characters($Address[1]));//ship to address2
-		}
-		$paOrder->set_ship_city(normalize_special_characters($City));//ship to city
-		$paOrder->set_ship_state(normalize_special_characters($State));//ship to state
-		$paOrder->set_ship_zip($PostalCode);//ship to postal code
-		$paOrder->set_ship_meth($ShippingMethod2);//ship method FDG=Ground, FD2=2nd Day, FDO=Overnight
-		$paOrder->set_order_num($InvoiceId);//customer PO#
-		$paOrder->set_ship_country($CountryId);//ship to country code
-			// $paOrder->set_conf_number($ConfNumber);//confirmation from DST
-			// $paOrder->set_paypal_number($BTN);//paypal reference number
-			// $paOrder->set_tax_amount($TAX);//tax on order
-			// $paOrder->set_ship_amount($HSC);//calculated shipping cost of order
+		$paOrder->set_ship_add2($Address[1]);//ship to address2
 	}
-	else
-	{
-		// this is a workaround for PA/DST issues with foreign orders
-		// move city to ship_add2, state to ship_city since DST state is 2-char max
+	$paOrder->set_ship_city($City);//ship to city
+	$paOrder->set_ship_state($State);//ship to state
+	$paOrder->set_ship_zip($PostalCode);//ship to postal code
+	$paOrder->set_ship_meth($ShippingMethod2);//ship method FDG=Ground, FD2=2nd Day, FDO=Overnight
+	$paOrder->set_order_num($InvoiceId);//customer PO#
+	$paOrder->set_ship_country($Country);//ship to country code
+		// $paOrder->set_conf_number($ConfNumber);//confirmation from DST
+		// $paOrder->set_paypal_number($BTN);//paypal reference number
+		// $paOrder->set_tax_amount($TAX);//tax on order
+		// $paOrder->set_ship_amount($HSC);//calculated shipping cost of order
 	
-		// Field lengths on PA side are 30 char. Foreign orders where Address line 2 show are going to have issues. 
-		// Nick will have to handle this and then we can improve this code. 
-		$State = $myOrder->getShippingAddress()->getRegion();
-		
-		if(empty($State))
-		{
-			if($Address[1])
-			{
-				$paOrder->set_ship_add2(normalize_special_characters($Address[1]));//ship to address2
-			}
-
-			$paOrder->set_ship_city(normalize_special_characters($City)); //ship to city
-			$paOrder->set_ship_state('');//ship to state
-			$paOrder->set_ship_zip($PostalCode);//ship to postal code
-			$paOrder->set_ship_country(normalize_special_characters($Country));//ship to country name
-		}
-		else
-		{
-			$paOrder->set_ship_add2(normalize_special_characters($City));  //ship to address2
-
-			$paOrder->set_ship_city(normalize_special_characters($State)); //ship to city
-			$paOrder->set_ship_state('');//ship to state
-			$paOrder->set_ship_zip($PostalCode);//ship to postal code
-			$paOrder->set_ship_country(normalize_special_characters($Country));//ship to country name
-		
-		}
-		
-		
-		$paOrder->set_ship_meth($ShippingMethod2);//ship method FDG=Ground, FD2=2nd Day, FDO=Overnight
-		$paOrder->set_order_num($InvoiceId);//customer PO#
-		
-
-	}
 	
 	$items = $myOrder->getAllItems();
 	$itemcount = count($items);
@@ -312,12 +263,6 @@ foreach($allIds as $thisId) {
 		$myOrder->setStatus('sent_to_pa');
 		if ($apiMode == 'live')
 		{
-			//$myOrder->save();
-			$state = "processing";
-			$status = "sent_to_pa";
-			$isCustomerNotified = FALSE;
-			$comment = 'Changing state to Processing and status to sent_to_pa';
-			$myOrder->setState($state, $status, $comment, $isCustomerNotified);
 			$myOrder->save();
 		}
 		// echo "STATUS UPDATED: ".$myOrder->getStatus();
@@ -330,12 +275,11 @@ foreach($allIds as $thisId) {
 	}
 	else
 	{
-		$log->lwrite("FAILED: Order Id ".$InvoiceId."\r");
+		$log->lwrite("FAILED: Order Id ".$thisId."\r");
 		$subject = "Error in PA Gateway - order submission: order failed";
-		$body = "Submitting order ".$InvoiceId." to paAPI failed. Response detail = ".$ret->responseDetail." \r";
+		$body = "Submitting order ".$thisId." to paAPI failed. Response detail = ".$ret->responseDetail." \r";
 		mail($to, $subject, $body);
 		$log->lwrite("ORDERID = ".$thisId." InvoiceId = ".$InvoiceId." STATUS = ".$myOrder->getStatus()." Customer Name = ".$CustomerName." Address1 = ".$Address[0]." Address2 = ".$Address[1]." City = ".$City." State = ".$State." PostalCode = ".$PostalCode." Country = ".$Country." MagentoShipCode = ".$MagentoShipCode." ShippingDescription = ".$MagentoShipDescription." ShippingDescription = ".$MagentoShipDescription." ShippingMethod2 = ".$ShippingMethod2. " Total paid = ".$myOrder->getTotal_paid()."\r\n");
-		$log->lwrite($ret->orderFileXML."\r\n");
 		continue;
 
 	}

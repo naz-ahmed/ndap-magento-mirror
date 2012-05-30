@@ -23,10 +23,8 @@ $unwanted_array = array(    'Š'=>'S', 'š'=>'s', 'Ş'=>'S', 'ş'=>'s', 'Ž'=>'Z
 	                           
 	                                                   
 
-$log->lwrite($unwanted_array);	                            
-	                    
-
-
-
+$log->lwrite(print_r($unwanted_array));	                            
+	
+// comment	                    
 
 ?>

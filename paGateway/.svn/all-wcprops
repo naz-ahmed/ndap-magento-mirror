@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/repos/magento/!svn/ver/10/paGateway
+END
+paAPI.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/magento/!svn/ver/10/paGateway/paAPI.php
+END
+paGateway.ini
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/magento/!svn/ver/10/paGateway/paGateway.ini
+END
+pag_update_shipping.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/magento/!svn/ver/10/paGateway/pag_update_shipping.php
+END
+sample_order_entry-orig.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/magento/!svn/ver/10/paGateway/sample_order_entry-orig.php
+END
+paOrder.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/magento/!svn/ver/10/paGateway/paOrder.php
+END
+test_conn.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/magento/!svn/ver/10/paGateway/test_conn.php
+END
+sample_order_entry.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/magento/!svn/ver/10/paGateway/sample_order_entry.php
+END
+paGateway_testing.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/magento/!svn/ver/10/paGateway/paGateway_testing.php
+END
+sampleClient.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/magento/!svn/ver/10/paGateway/sampleClient.php
+END
+paGateway.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/magento/!svn/ver/12/paGateway/paGateway.php
+END
+test_function.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/magento/!svn/ver/10/paGateway/test_function.php
+END
+paGateway_status.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/magento/!svn/ver/13/paGateway/paGateway_status.php
+END
+pag_update_shipping.php.bak
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/magento/!svn/ver/10/paGateway/pag_update_shipping.php.bak
+END

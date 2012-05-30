@@ -1,0 +1,42 @@
+<?
+
+//Error reporting
+ini_set('display_errors', 1);
+error_reporting(E_ALL); 
+
+
+require_once('paAPI.php');
+$order = new paAPI();//construct paAPI class
+$order->setUser('ndap_llc','mozllc');//api account username and pass
+$order->setAccountNum('64366');
+// $order->setClient("Sample Client v1");//passes the name of the connection client *optional*
+$order->set_cust_name('Alice Fritz');//ship to name
+$order->set_ship_add1('30 Franklin Ave.');//ship to address1
+$order->set_ship_add2('');//ship to address2
+$order->set_ship_city('Brooklyn');//ship to city
+$order->set_ship_state('NY');//ship to state
+$order->set_ship_zip('11205');//ship to postal code
+$order->set_ship_meth('FDG');//ship method FDG=Ground, FD2=2nd Day, FDO=Overnight
+$order->set_order_num('28');//customer PO#
+$order->set_ship_country('US');//ship to country code
+// $order->set_conf_number($ConfNumber);//confirmation from DST
+// $order->set_paypal_number($BTN);//paypal reference number
+// $order->set_tax_amount($TAX);//tax on order
+// $order->set_ship_amount($HSC);//calculated shipping cost of order
+
+
+///pass line item information
+$order->addItem(array('line_code'=>'vg','part_num'=>'JV8','quantity'=>2,'cost'=>3.16));
+$order->set_status('test');//takes either ('test') or ('live')
+
+echo "\r\n";
+print_r($order->sendOrder('enterOrder'));
+
+
+$ret = json_decode($order->sendOrder('enterOrder')); //order entry response in json string
+
+
+var_dump($ret);
+
+ 
+?>

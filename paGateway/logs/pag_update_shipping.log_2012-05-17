@@ -1,0 +1,266 @@
+00:20:01 (pag_update_shipping) starting file. 
+
+00:20:01 (pag_update_shipping) Order id = 2496 Increment Id = 100002483 PA Status = Processing Messages = Response status: Processing
+
+00:20:01 (pag_update_shipping) Order id = 3478 Increment Id = 100003459 PA Status = Processing Messages = Response status: Processing
+
+00:20:01 (pag_update_shipping) Order id = 3849 Increment Id = 100003830 PA Status = Processing Messages = Response status: Processing
+
+00:20:01 (pag_update_shipping) Order id = 3862 Increment Id = 100003843 PA Status = Processing Messages = Response status: Processing
+
+00:20:01 (pag_update_shipping) Order id = 3896 Increment Id = 100003877 PA Status = Processing Messages = Response status: Processing
+
+00:20:01 (pag_update_shipping) Order id = 3913 Increment Id = 100003894 PA Status = Processing Messages = Response status: Processing
+
+00:20:01 (pag_update_shipping) Order id = 3925 Increment Id = 100003906 PA Status = Processing Messages = Response status: Processing
+
+00:20:01 (pag_update_shipping) Order id = 3935 Increment Id = 100003916 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4033 Increment Id = 100004014 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4037 Increment Id = 100004018 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4073 Increment Id = 100004053 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4108 Increment Id = 100004087 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4118 Increment Id = 100004097 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4129 Increment Id = 100004108 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4140 Increment Id = 100004119 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4141 Increment Id = 100004120 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4149 Increment Id = 100004128 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4154 Increment Id = 100004133 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4158 Increment Id = 100004137 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4164 Increment Id = 100004143 PA Status = Processing Messages = Response status: Processing
+
+00:20:02 (pag_update_shipping) Order id = 4177 Increment Id = 100004156 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4184 Increment Id = 100004163 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4189 Increment Id = 100004168 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4192 Increment Id = 100004171 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4195 Increment Id = 100004174 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4204 Increment Id = 100004183 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4229 Increment Id = 100004208 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4232 Increment Id = 100004211 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4243 Increment Id = 100004222 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4244 Increment Id = 100004223 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4246 Increment Id = 100004225 PA Status = Processing Messages = Response status: Processing
+
+00:20:03 (pag_update_shipping) Order id = 4250 Increment Id = 100004229 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4262 Increment Id = 100004241 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4268 Increment Id = 100004247 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4282 Increment Id = 100004262 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4287 Increment Id = 100004267 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4292 Increment Id = 100004272 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4295 Increment Id = 100004275 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4299 Increment Id = 100004279 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4306 Increment Id = 100004285 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4310 Increment Id = 100004290 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4313 Increment Id = 100004293 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4315 Increment Id = 100004295 PA Status = Processing Messages = Response status: Processing
+
+00:20:04 (pag_update_shipping) Order id = 4316 Increment Id = 100004296 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4317 Increment Id = 100004297 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4318 Increment Id = 100004298 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4319 Increment Id = 100004299 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4321 Increment Id = 100004301 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4322 Increment Id = 100004302 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4325 Increment Id = 100004305 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4326 Increment Id = 100004306 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4327 Increment Id = 100004307 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4329 Increment Id = 100004309 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4330 Increment Id = 100004310 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4331 Increment Id = 100004311 PA Status = Processing Messages = Response status: Processing
+
+00:20:05 (pag_update_shipping) Order id = 4332 Increment Id = 100004312 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4334 Increment Id = 100004314 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4338 Increment Id = 100004318 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4339 Increment Id = 100004319 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4343 Increment Id = 100004323 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4344 Increment Id = 100004324 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4345 Increment Id = 100004325 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4346 Increment Id = 100004326 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4347 Increment Id = 100004327 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4349 Increment Id = 100004329 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4357 Increment Id = 100004337 PA Status = Processing Messages = Response status: Processing
+
+00:20:06 (pag_update_shipping) Order id = 4358 Increment Id = 100004338 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4361 Increment Id = 100004341 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4362 Increment Id = 100004342 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4364 Increment Id = 100004344 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4367 Increment Id = 100004347 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4368 Increment Id = 100004348 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4369 Increment Id = 100004349 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4370 Increment Id = 100004350 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4372 Increment Id = 100004352 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4373 Increment Id = 100004353 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4374 Increment Id = 100004354 PA Status = Processing Messages = Response status: Processing
+
+00:20:07 (pag_update_shipping) Order id = 4376 Increment Id = 100004356 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4377 Increment Id = 100004357 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4378 Increment Id = 100004358 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4379 Increment Id = 100004359 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4382 Increment Id = 100004362 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4383 Increment Id = 100004363 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4384 Increment Id = 100004364 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4385 Increment Id = 100004365 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4386 Increment Id = 100004366 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4387 Increment Id = 100004367 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4388 Increment Id = 100004368 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4389 Increment Id = 100004369 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4390 Increment Id = 100004370 PA Status = Processing Messages = Response status: Processing
+
+00:20:08 (pag_update_shipping) Order id = 4391 Increment Id = 100004371 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4392 Increment Id = 100004372 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4393 Increment Id = 100004373 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4394 Increment Id = 100004374 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4395 Increment Id = 100004375 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4396 Increment Id = 100004376 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4397 Increment Id = 100004377 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4398 Increment Id = 100004378 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4399 Increment Id = 100004379 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4400 Increment Id = 100004380 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4401 Increment Id = 100004381 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4402 Increment Id = 100004382 PA Status = Processing Messages = Response status: Processing
+
+00:20:09 (pag_update_shipping) Order id = 4404 Increment Id = 100004384 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4405 Increment Id = 100004385 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4406 Increment Id = 100004386 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4408 Increment Id = 100004388 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4409 Increment Id = 100004389 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4410 Increment Id = 100004390 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4411 Increment Id = 100004391 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4412 Increment Id = 100004392 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4413 Increment Id = 100004393 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4414 Increment Id = 100004394 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4415 Increment Id = 100004395 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4416 Increment Id = 100004396 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4417 Increment Id = 100004397 PA Status = Processing Messages = Response status: Processing
+
+00:20:10 (pag_update_shipping) Order id = 4418 Increment Id = 100004398 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4419 Increment Id = 100004399 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4420 Increment Id = 100004400 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4421 Increment Id = 100004401 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4422 Increment Id = 100004402 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4423 Increment Id = 100004403 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4424 Increment Id = 100004404 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4425 Increment Id = 100004405 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4426 Increment Id = 100004406 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4427 Increment Id = 100004407 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4428 Increment Id = 100004408 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4429 Increment Id = 100004409 PA Status = Processing Messages = Response status: Processing
+
+00:20:11 (pag_update_shipping) Order id = 4430 Increment Id = 100004410 PA Status = Processing Messages = Response status: Processing
+
+00:20:12 (pag_update_shipping) Order id = 4431 Increment Id = 100004411 PA Status = Processing Messages = Response status: Processing
+
+00:20:12 (pag_update_shipping) Order id = 4432 Increment Id = 100004412 PA Status = Processing Messages = Response status: Processing
+
+00:20:12 (pag_update_shipping) Order id = 4433 Increment Id = 100004413 PA Status = Processing Messages = Response status: Processing
+
+00:20:12 (pag_update_shipping) Order id = 4434 Increment Id = 100004414 PA Status = Processing Messages = Response status: Processing
+

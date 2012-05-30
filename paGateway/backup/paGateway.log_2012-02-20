@@ -1,0 +1,132 @@
+00:10:01 (paGateway) Script STARTED.
+
+00:10:02 (paGateway) Order Id 101 success : 2012.02.20 : 12:02:01 
+00:10:02 (paGateway) APIMODE = live
+00:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Colin van Leyden</cust_name><ship_add1>Havikskruid 19</ship_add1><ship_add2></ship_add2><ship_city>Boxmeer</ship_city><ship_state>None</ship_state><ship_zip>5831PH</ship_zip><ship_meth>USP</ship_meth><order_num>100000100</order_num><ship_country>NL</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>SI</line_code><part_num>CJ33</part_num><quantity>1.0000</quantity><cost>81.1200</cost></item></order></PAOrderEntry>
+00:10:02 (paGateway) ORDERID = 101 InvoiceId = 100000100 STATUS = sent_to_pa Customer Name = Colin van Leyden Address1 = Havikskruid 19 Address2 =  City = Boxmeer State =  PostalCode = 5831PH Country = NL MagentoShipCode = usps_Priority Mail International ShippingDescription = United States Postal Service - Priority Mail International ShippingDescription = United States Postal Service - Priority Mail International ShippingMethod2 = USP
+00:10:02 (paGateway) Script FINISHED.
+
+
+01:10:02 (paGateway) Script STARTED.
+
+01:10:02 (paGateway) Script FINISHED.
+
+
+02:10:01 (paGateway) Script STARTED.
+
+02:10:02 (paGateway) Script FINISHED.
+
+
+03:10:01 (paGateway) Script STARTED.
+
+03:10:02 (paGateway) Script FINISHED.
+
+
+04:10:01 (paGateway) Script STARTED.
+
+04:10:01 (paGateway) Script FINISHED.
+
+
+05:10:01 (paGateway) Script STARTED.
+
+05:10:01 (paGateway) Script FINISHED.
+
+
+06:10:01 (paGateway) Script STARTED.
+
+06:10:02 (paGateway) Script FINISHED.
+
+
+07:10:02 (paGateway) Script STARTED.
+
+07:10:02 (paGateway) Script FINISHED.
+
+
+08:10:01 (paGateway) Script STARTED.
+
+08:10:01 (paGateway) Script FINISHED.
+
+
+09:10:02 (paGateway) Script STARTED.
+
+09:10:02 (paGateway) Script FINISHED.
+
+
+10:10:01 (paGateway) Script STARTED.
+
+10:10:01 (paGateway) Script FINISHED.
+
+
+11:10:01 (paGateway) Script STARTED.
+
+11:10:02 (paGateway) Script FINISHED.
+
+
+12:10:01 (paGateway) Script STARTED.
+
+12:10:01 (paGateway) Script FINISHED.
+
+
+13:10:01 (paGateway) Script STARTED.
+
+13:10:02 (paGateway) Script FINISHED.
+
+
+14:10:01 (paGateway) Script STARTED.
+
+14:10:02 (paGateway) Script FINISHED.
+
+
+15:10:01 (paGateway) Script STARTED.
+
+15:10:02 (paGateway) Script FINISHED.
+
+
+16:10:02 (paGateway) Script STARTED.
+
+16:10:02 (paGateway) Script FINISHED.
+
+
+17:10:02 (paGateway) Script STARTED.
+
+17:10:02 (paGateway) Order Id 102 success : 2012.02.20 : 05:02:02 
+17:10:02 (paGateway) APIMODE = live
+17:10:02 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>amir merali</cust_name><ship_add1>7720 sw 180 st</ship_add1><ship_add2></ship_add2><ship_city>miami</ship_city><ship_state>FL</ship_state><ship_zip>33157</ship_zip><ship_meth>FDG</ship_meth><order_num>100000101</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>ME</line_code><part_num>MP902955</part_num><quantity>2.0000</quantity><cost>29.5500</cost></item></order></PAOrderEntry>
+17:10:02 (paGateway) ORDERID = 102 InvoiceId = 100000101 STATUS = sent_to_pa Customer Name = amir merali Address1 = 7720 sw 180 st Address2 =  City = miami State = FL PostalCode = 33157 Country = US MagentoShipCode = fedex_FEDEX_GROUND ShippingDescription = Federal Express - Ground ShippingDescription = Federal Express - Ground ShippingMethod2 = FDG
+17:10:03 (paGateway) Order Id 103 success : 2012.02.20 : 05:02:02 
+17:10:03 (paGateway) APIMODE = live
+17:10:03 (paGateway) <PAOrderEntry><version>.2</version><order><header><cust_num>64366</cust_num><cust_name>Aroon Daby</cust_name><ship_add1>12334 135TH ST</ship_add1><ship_add2></ship_add2><ship_city>SOUTH OZONE PARK</ship_city><ship_state>NY</ship_state><ship_zip>11420-3017</ship_zip><ship_meth>FDG</ship_meth><order_num>100000102</order_num><ship_country>US</ship_country><admin_account>N</admin_account><price_override>N</price_override><location_number>8</location_number><est_frt>0</est_frt></header><item><line_code>ME</line_code><part_num>MS30163</part_num><quantity>1.0000</quantity><cost>66.0900</cost></item><item><line_code>ME</line_code><part_num>MS30164</part_num><quantity>1.0000</quantity><cost>66.0900</cost></item><item><line_code>ME</line_code><part_num>MS30165</part_num><quantity>1.0000</quantity><cost>60.4800</cost></item><item><line_code>ME</line_code><part_num>MS30166</part_num><quantity>1.0000</quantity><cost>60.4800</cost></item></order></PAOrderEntry>
+17:10:03 (paGateway) ORDERID = 103 InvoiceId = 100000102 STATUS = sent_to_pa Customer Name = Aroon Daby Address1 = 12334 135TH ST Address2 =  City = SOUTH OZONE PARK State = NY PostalCode = 11420-3017 Country = US MagentoShipCode = fedex_FEDEX_GROUND ShippingDescription = Federal Express - Ground ShippingDescription = Federal Express - Ground ShippingMethod2 = FDG
+17:10:03 (paGateway) Script FINISHED.
+
+
+18:10:01 (paGateway) Script STARTED.
+
+18:10:02 (paGateway) Script FINISHED.
+
+
+19:10:01 (paGateway) Script STARTED.
+
+19:10:01 (paGateway) Script FINISHED.
+
+
+20:10:01 (paGateway) Script STARTED.
+
+20:10:02 (paGateway) Script FINISHED.
+
+
+21:10:01 (paGateway) Script STARTED.
+
+21:10:01 (paGateway) Script FINISHED.
+
+
+22:10:01 (paGateway) Script STARTED.
+
+22:10:01 (paGateway) Script FINISHED.
+
+
+23:10:02 (paGateway) Script STARTED.
+
+23:10:02 (paGateway) Script FINISHED.
+
+
