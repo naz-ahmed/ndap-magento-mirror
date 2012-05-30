@@ -27,6 +27,6 @@ $log->lwrite($unwanted_array);
 	                    
 
 
-// my comment
+
 
 ?>
