@@ -27,8 +27,8 @@ $pass = $config_info['login']['pass'];
 $nw = new invoiceReport();
 $nw->setUser($uid,$pass);
 $nw->setAction('getInvoiceInRange');//only supported function 
-$nw->setStartDate('20120501');//start date
-$nw->setEndDate('20120502');//end date
+$nw->setStartDate('20120101');//start date
+$nw->setEndDate('20120531');//end date
 
 $obj = $nw->sendRequest();
 
@@ -63,7 +63,7 @@ $i = 0;
 			*/
 						
 			
-			var_dump($responseDetail[$i]);
+			//var_dump($responseDetail[$i]);
 											
 			$norm_partnumber = preg_replace("/[^\p{L}\p{N}]/u", '', $responseDetail[$i]['xsku']);
 				//set up an insert statement
