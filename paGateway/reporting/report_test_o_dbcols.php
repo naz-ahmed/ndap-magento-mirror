@@ -13,11 +13,11 @@ Mage::app();
 
 $config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', true);
 
-require_once 'classes/std.table.class.inc';
-require_once 'classes/db.inc';
-require_once 'classes/error.inc';
-include 'classes/PaInvoice.class.inc';
-include 'classes/PaInvoiceByPOandInv.class.inc';
+require_once '../classes/std.table.class.inc';
+require_once '../classes/db.inc';
+require_once '../classes/error.inc';
+include '../classes/PaInvoice.class.inc';
+include '../classes/PaInvoiceByPOandInv.class.inc';
 
 function makeDate($strDate)
 {
@@ -96,10 +96,13 @@ echo $where;
 
 
 echo "<html><head>";
-echo '<link type="text/css" href="includes/jquery-ui-1.8.19.custom/css/smoothness/jquery-ui-1.8.19.custom.css" rel="Stylesheet" />';
-echo '<script type="text/javascript" src="includes/jquery-ui-1.8.19.custom/js/jquery-1.7.2.min.js"></script>';
-echo '<script type="text/javascript" src="includes/jquery-ui-1.8.19.custom/js/jquery-ui-1.8.19.custom.min.js"></script>';
-echo '<script type="text/javascript" src="report.js"></script>';
+echo '<link type="text/css" href="../includes/jquery-ui-1.8.19.custom/css/smoothness/jquery-ui-1.8.19.custom.css" rel="Stylesheet" />';
+// echo '<script type="text/javascript" src="../includes/jquery-ui-1.8.19.custom/js/jquery-1.7.2.min.js"></script>';
+echo '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>';
+echo '<script type="text/javascript" src="../includes/jquery-ui-1.8.19.custom/js/jquery-ui-1.8.19.custom.min.js"></script>';
+echo '<script type="text/javascript" src="../report.js"></script>';
+echo '<script type="text/javascript" src="../test/persist.js"></script>';
+echo '<link rel="stylesheet" href="../test/persist.css">';
 echo "</head><body style='font-family: Arial, sans-serif; font-size: 12px;'>";
 
 
@@ -120,30 +123,39 @@ echo "</form></div>";
 
 
 
+echo '<div id="page-wrap">';
 
 
+echo '<table class="persist-area">';
+echo '<thead>';
+echo '<tr class="persist-header" >';
 
-echo "<table cellpadding=5 cellspacing=0 border=1>";
+echo "<th>xqty</th>";
+echo "<th>xprice</th>";
+echo "<th>xmpline</th>";
+echo "<th>xline</th>";
+echo "<th>xbran</th>";
+echo "<th>xfreight</th>";
+echo "<th>xcore</th>";
+echo "<th>xord</th>";
+echo "<th>mhind</th>";
+echo "<th>xdate</th>";
+echo "<th>xinvtotal</th>";
+echo "<th>xinv</th>";
+echo "<th>xourpo</th>";
+echo "<th>xsku</th>";
 
-echo "<tr style='font-weight:bold; background-color:1D4E51; color:#f1f1f1;'>";
-echo "<td>xdate</td>";
-echo "<td>xourpo</td>";
-echo "<td>mhind</td>";
-echo "<td>magento order w/o ship</td>";
-echo "<td>xinvtotal + core</td>";
-echo "<td>Magento Ship Cost</td>";
-echo "<td>xfreight</td>";
-echo "<td>Magento Order Total</td>";
-echo "<td>xinvtotal + xcore + xfreight</td>";
 
- echo "<td>magento ppu</td>";
- echo "<td>per part margin</td>";
- echo "<td>mqty</td>";
-  echo "<td>total margin</td>";
+ echo "<th>magento ppu</th>";
+ echo "<th>per part margin</th>";
+ echo "<th>mqty</th>";
+  echo "<th>total margin</th>";
 
 echo "</tr>";
 
+echo "</thead>";
 
+echo "<tbody>";
 
 if($data)
 {
@@ -154,7 +166,7 @@ $i = 0;
 			// var_dump($item);
 			echo "<tr>";
 			
-			/*
+			
 			foreach($row as $field => $value) 
 			{
 			
@@ -169,15 +181,17 @@ $i = 0;
 				}
 				
 			}
-			*/
 			
+			/*
 			echo "<td>".$row['xdate']."</td>";
 			echo "<td>".$row['xourpo']."</td>";
 			echo "<td>".$row['mhind']."</td>";
+			*/
 			
 			$orderId = $row['xourpo'];
 			$order = Mage::getModel('sales/order')->loadByIncrementId($orderId);
 			
+			/*
 			$grandTotal = $order->getGrandTotal();
 			$shipAmount = $order->getShippingAmount();
 			
@@ -198,6 +212,17 @@ $i = 0;
 			$invTotalPlusCorePlusFreight = $total + $core + $freight;
 			echo "<td>".$invTotalPlusCorePlusFreight."</td>";
 			
+			//margin 
+			if($grandTotal != NULL)
+			{
+				$marginDollars = $grandTotal - $invTotalPlusCorePlusFreight;
+				echo "<td>".$marginDollars."</td>";
+			}
+			else
+			{
+				echo "<td></td>";
+			}
+			*/
 			//echo "order = ".var_dump($order);
 			
 			$items = $order->getAllItems();
@@ -232,11 +257,19 @@ $i = 0;
 					echo "</td>";
 				}
 				
-				
-				
 				//if($c == 0) { echo "</td>"; }
 				
 				$c++;
+			}
+			
+
+			if ($items == NULL)
+			{
+				echo "<td>&nbsp;</td>";
+				echo "<td>&nbsp;</td>";
+				echo "<td>&nbsp;</td>";
+				echo "<td>&nbsp;</td>";
+
 			}
 
 						
@@ -252,8 +285,9 @@ else
 }
 
 
-
+echo "</tbody>";
 echo "</table>";
+echo '</div>';
 echo "</body></html>";
 
 
