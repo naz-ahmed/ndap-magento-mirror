@@ -327,12 +327,12 @@ p.required { font-size:11px; text-align:right; color:#EB340A; }
 .sub-title { clear:both; padding:12px 0 0; font-size:16px; font-weight:bold; margin:0 0 6px; }
 
 /* Pager */
-.pager { font-size:14px; background:#fff url(../images/bkg_toolbar.gif) 0 100% repeat-x; padding:4px 8px; border-top:1px solid #ddd; text-align:center; }
+.pager { font-size:12px; background:#fff url(../images/bkg_toolbar.gif) 0 100% repeat-x; padding:4px 8px; border-top:1px solid #ddd; text-align:center; }
 .pager .amount { float:left; margin:0; }
 .pager .limiter { float:right; }
 .pager .limiter label { vertical-align:middle; }
 .pager .limiter select { padding:0; margin:0 0 1px; vertical-align:middle; }
-.pager .pages { margin:0 250px /*140px;*/ }
+.pager .pages { margin:0 220px; font- /*140px;*/ }
 .pager .pages ol { display:inline; }
 .pager .pages ol { /* Added for the toolbar - quickfix */
     display: inline;
@@ -779,7 +779,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 
 .categories .products-list li.item { height:auto !important; }
-.categories .products-list .product-image { float:left; width:120px; height:50px; padding:0 15px 20px 25px; }
+.categories .products-list .product-image { float:left; width:120px; height:50px; padding:15 15px 20px 40px; }
 .categories .products-list .product-shop { width:500px; }
 .categories .products-list li.child { display:none; }
 

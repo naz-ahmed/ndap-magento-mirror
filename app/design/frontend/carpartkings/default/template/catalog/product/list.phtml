@@ -80,7 +80,7 @@
                     $image = $this->helper('catalog/image')->init($_product, 'small_image')->resize($popupImageSize[0], $popupImageSize[1]);
                 }       
             ?>
-            <a href="<?php echo $_product->getProductUrl() ?>"  title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(140); ?>" width="140" height="140" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+            <a href="<?php echo $_product->getProductUrl() ?>"  title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" ><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(140); ?>" width="140" height="140" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
             <?php // Product description ?>
             </div>
             <div class="product-shop">
@@ -196,7 +196,7 @@
             ?>
             
             
-            <a href="<?php echo $_product->getProductUrl() ?>"  title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(80); ?>" width="80" height="80" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+            <a href="<?php echo $_product->getProductUrl() ?>"  title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" ><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(80); ?>" width="80" height="80" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
                 <div class="actions">
                 <?php echo $this->getPriceHtml($_product, true) ?>
                     <?php if($_product->isSaleable()): ?>
