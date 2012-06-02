@@ -138,7 +138,11 @@
 						<?php endif; ?>
 						</span></li>
                         <?php endif; ?>
-                        <li><strong><?php echo $this->__('Inventory') ?>:</strong> <span class="highlight"><?php echo $this->__('In Stock') ?></span></li>
+                        <?php if($_product->isSaleable()): ?>
+                            <li><strong><?php echo $this->__('Inventory') ?>:</strong> <span class="highlight"><?php echo $this->__('In Stock') ?></span></li>
+                         <?php else: ?>    
+                            <li><strong><?php echo $this->__('Inventory') ?>:</strong> <span class="highlight"><b><?php echo $this->__('Out of Stock') ?></b></span></li>
+                         <?php endif; ?>
                     </ul>
                 </div>
                 
@@ -167,8 +171,7 @@
                              }
                          }.bind(productAddToCartForm_<?php echo $_product->getId(); ?>);
                     </script>                    
-                <?php else: ?>
-                    <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                
                 <?php endif; ?>
               </div>
         </li>
