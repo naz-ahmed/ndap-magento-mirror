@@ -115,7 +115,7 @@ foreach($allIds as $thisId) {
 	//will have to check text of magento for googlecheckout [shipping_description] => Flat Rate - Fixed
 	$MagentoShipCode = $myOrder->getShippingMethod();
 	$MagentoShipDescription = $myOrder->getShippingDescription();
-	if(($MagentoShipCode == "googlecheckout_carrier") || ($MagentoShipCode == "m2eproshipping_m2eproshipping") )
+	if(($MagentoShipCode == "googlecheckout_carrier") || ($MagentoShipCode == "m2eproshipping_m2eproshipping") ||  ($MagentoShipCode == "channelunitycustomrate_channelunitycustomrate") )
 	{
 		$ShippingMethod2 = getPaShipCode($MagentoShipDescription);
 	}

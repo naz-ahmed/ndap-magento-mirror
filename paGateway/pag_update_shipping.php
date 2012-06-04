@@ -158,7 +158,7 @@ foreach($allIds as $thisId)
 	echo	"MagentoShipDescription = ".$MagentoShipDescription."\r\n";
 		
 	// reset CarrierCode for googlecheckout or ebay orders to appropriate carrier
-	if(($CarrierCode == "googlecheckout") || ($CarrierCode == "m2eproshipping_m2eproshipping") )
+	if(($CarrierCode == "googlecheckout") || ($CarrierCode == "m2eproshipping_m2eproshipping") || ($CarrierCode == "channelunitycustomrate") )
 	{ 
 		// continue;
 		// check from shipping description which carrier selected
@@ -169,6 +169,10 @@ foreach($allIds as $thisId)
 		if(strpos($MagentoShipDescription, "usps"))
 		{
 			$CarrierCode = "usps";
+		}
+		if(strpos($MagentoShipDescription, "ChannelUnity Shipping"))
+		{
+			$CarrierCode = "fedex";
 		}
 	}
 	
