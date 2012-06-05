@@ -170,9 +170,13 @@ foreach($allIds as $thisId)
 		{
 			$CarrierCode = "usps";
 		}
-		if(strpos($MagentoShipDescription, "ChannelUnity Shipping"))
+		if(strpos($MagentoShipDescription, "Cont US Street Addr")) //channel unity std and exp
 		{
 			$CarrierCode = "fedex";
+		}
+		if(strpos($MagentoShipDescription, "Std US Prot PO Box")) //channel unity usps
+		{
+			$CarrierCode = "usps";
 		}
 	}
 	
