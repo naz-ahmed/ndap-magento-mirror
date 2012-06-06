@@ -35,7 +35,6 @@ function makeDate($strDate)
 
 }
 $pagename = $_SERVER['REQUEST_URI'];
-$detailPage = "report_test_o_detail.php";
 
 $where = "";
 
@@ -60,16 +59,9 @@ if($_POST)
 		$orderId = $_POST['orderId'];
 		//TODO: make sure to is not before from - can be jquery validation
 		
-		$where = "xdate between '".$date_from."' AND '".$date_to."'";
 		
-		if($_POST['selMhind'])
-		{
-			$mhind = $_POST['selMhind'];
-			if($mhind != "B")
-			{
-				$where .= " AND mhind = '".$mhind."'";
-			}
-		}
+		
+		$where = "xdate between '".$date_from."' AND '".$date_to."'";
 				
 		//header("Location: http://localhost/var/etl/bin/categories/tool/assign1.html");
 		//echo "submitted.";
@@ -80,7 +72,6 @@ if($_POST)
 		   // deal with error message(s)
 		}
 	
-		
 }
 
 if($_GET)
@@ -94,7 +85,6 @@ if($_GET)
 	if (!empty($errors)) {
 	   // deal with error message(s)
 	}
-	$otherCols = TRUE;
 }
 
 
@@ -109,9 +99,7 @@ echo "<html><head>";
 echo '<link type="text/css" href="../includes/jquery-ui-1.8.19.custom/css/smoothness/jquery-ui-1.8.19.custom.css" rel="Stylesheet" />';
 echo '<script type="text/javascript" src="../includes/jquery-ui-1.8.19.custom/js/jquery-1.7.2.min.js"></script>';
 echo '<script type="text/javascript" src="../includes/jquery-ui-1.8.19.custom/js/jquery-ui-1.8.19.custom.min.js"></script>';
-echo '<script type="text/javascript" src="../includes/jquery.chromatable.js"></script>';
 echo '<script type="text/javascript" src="../report.js"></script>';
-echo '<link rel="stylesheet" href="report-styles.css">';
 echo "</head><body style='font-family: Arial, sans-serif; font-size: 12px;'>";
 
 
@@ -119,13 +107,6 @@ echo '<div><form id="form1" method="post" action="report_test_o.php">';
 echo '<div id="select-date">';
 echo '<label for="date-from">Date from: </label><input id="date-from" name="date-from" type="text" value="" />';
 echo '<label for="date-to">Date to: </label><input id="date-to" name="date-to" type="text" value="" />';
-echo '<label for="selMhind">Show: </label>';
-echo '<select id="selMhind" name="selMhind">';
-echo '<option value="I">Invoice</option>';
-echo '<option value="C">Credit</option>';
-echo '<option value="B">Both</option>';
-echo '</select>';
-echo '<br/>';
 echo '<input id="btn_reset" type="reset" value="reset" name="btn_reset"/>';
 echo '<input id="btn_submit" type="submit" value="SUBMIT" name="btn_submit"/>';
 echo '</div>';
@@ -138,12 +119,11 @@ echo "</form></div>";
 
 
 
+echo '<div style="height:1000px; overflow: auto;">';
 
+echo "<table cellpadding=5 cellspacing=0 border=1>";
 
-echo '<table id="mainTable" class="persist-area">';
-
-echo '<tr class="persist-header">';
-
+echo "<tr style='font-weight:bold; background-color:1D4E51; color:#f1f1f1;'>";
 
 echo "<th>xdate</th>";
 echo "<th>xourpo</th>";
@@ -163,7 +143,6 @@ echo "<th>Margin $</th>";
  echo "<td>mqty</td>";
   echo "<td>total margin</td>";
 */ 
-
   
 
 echo "</tr>";
@@ -174,112 +153,103 @@ if($data)
 {
 $i = 0;
 
-		foreach($data as $row) 
+	foreach($data as $row) 
+	{
+		// var_dump($item);
+		echo "<tr>";
+
+		echo "<td>".$row['xdate']."</td>";
+		echo "<td>".$row['xourpo']."</td>";
+		echo "<td>".$row['mhind']."</td>";
+		
+		$orderId = $row['xourpo'];
+		$order = Mage::getModel('sales/order')->loadByIncrementId($orderId);
+		
+		$grandTotal = $order->getGrandTotal();
+		$shipAmount = $order->getShippingAmount();
+		
+		$amount = $grandTotal - $shipAmount;
+		if($amount == NULL)
 		{
-			// var_dump($item);
-			echo "<tr>";
-			
-			echo "<td>".$row['xdate']."</td>";
-			if($otherCols == TRUE)
-			{
-				echo "<td>".$row['xourpo']."</td>";
-			}
-			else
-			{
-				echo '<td><a href="'.$detailPage.'?po='.$row['xourpo'].'">'.$row['xourpo'].'</a></td>';
-			}
-			echo "<td>".$row['mhind']."</td>";
-			
-			$orderId = $row['xourpo'];
-			$order = Mage::getModel('sales/order')->loadByIncrementId($orderId);
-			
-			$grandTotal = $order->getGrandTotal();
-			$shipAmount = $order->getShippingAmount();
-			
-			$amount = $grandTotal - $shipAmount;
-			
-			if($amount == NULL)
-			{
-				echo "<td>&nbsp; - &nbsp; </td>";
-			}
-			else 
-			{
-				echo "<td>".$amount."</td>";
-			}
-			
-			$total = $row['Total'];
-			$core = $row['core cost'];
-			$totalPlusCore = $total + $core;
-			$freight = $row['xfreight'];
-			
-				
-			echo "<td>".$totalPlusCore."</td>";
-			if($shipAmount == NULL)
-			{
-				echo "<td>&nbsp; - &nbsp; </td>";
-			}
-			else
-			{
-				echo "<td>".$shipAmount."</td>";
-			}
-			
-			echo "<td>".$freight."</td>";
-			
-			if($grandTotal == NULL)
-			{
-				echo "<td>&nbsp; - &nbsp; </td>";
-			}
-			else
-			{
-				echo "<td>".$grandTotal."</td>";
-			}
-			
-			$invTotalPlusCorePlusFreight = $total + $core + $freight;
-			echo "<td>".$invTotalPlusCorePlusFreight."</td>";
-			
-			//margin $ and margin %
-			// Gross margin Percentage = (Revenue - Cost of goods sold) / Revenue *100%
-			// Gross margin = (Revenue - Cost of goods sold) / Revenue
-			
-			if($grandTotal == NULL)
-			{
-				echo "<td>&nbsp; - &nbsp; </td>";
-				echo "<td>&nbsp; - &nbsp; </td>";
-			}
-			else
-			{
-				//$marginDollars = $grandTotal - $invTotalPlusCorePlusFreight;
-				$tax = $order->getBaseTaxAmount();
-				$revenue = $grandTotal - $tax;
-				
-				//cogs can't be revenue minus. cogs is just sum of total cost, core, and freight
-				//$cogs = $revenue - $total - $core - $freight;
-				$cogs = $total + $core + $freight;
-				
-				
-				// $grossMargin = ($revenue - $cogs) / $revenue;
-				$grossMargin = ($revenue - $cogs);
-				
-				// var_dump($order);
-				echo "<td>".$grossMargin."</td>";
-				
-				$grossMarginPercent = $grossMargin / ($revenue / 100);
-				
-				echo "<td>".$grossMarginPercent."</td>";
-			}
-			
-			
-			
-			//echo "order = ".var_dump($order);
-			
-			$items = $order->getAllItems();
-			//echo "items = ".var_dump($items);
-			
-			$itemcount = count($items);
-						
-			echo "</tr>";
-			$i++;
+			echo "<td>&nbsp; - &nbsp; </td>";
 		}
+		else 
+		{
+			echo "<td>".$amount."</td>";
+		}
+		
+		$total = $row['Total'];
+		$core = $row['core cost'];
+		$totalPlusCore = $total + $core;
+		$freight = $row['xfreight'];
+		
+			
+		echo "<td>".$totalPlusCore."</td>";
+		if($shipAmount == NULL)
+		{
+			echo "<td>&nbsp; - &nbsp; </td>";
+		}
+		else
+		{
+			echo "<td>".$shipAmount."</td>";
+		}
+		
+		echo "<td>".$freight."</td>";
+		
+		if($grandTotal == NULL)
+		{
+			echo "<td>&nbsp; - &nbsp; </td>";
+		}
+		else
+		{
+			echo "<td>".$grandTotal."</td>";
+		}
+		
+		$invTotalPlusCorePlusFreight = $total + $core + $freight;
+		echo "<td>".$invTotalPlusCorePlusFreight."</td>";
+		
+		//margin $ and margin %
+		// Gross margin Percentage = (Revenue - Cost of goods sold) / Revenue *100%
+		// Gross margin = (Revenue - Cost of goods sold) / Revenue
+		
+		if($grandTotal == NULL)
+		{
+			echo "<td>&nbsp; - &nbsp; </td>";
+			echo "<td>&nbsp; - &nbsp; </td>";
+		}
+		else
+		{
+			//$marginDollars = $grandTotal - $invTotalPlusCorePlusFreight;
+			$tax = $order->getBaseTaxAmount();
+			$revenue = $grandTotal - $tax;
+			
+			// cogs is just sum of total cost, core, and freight
+			$cogs = $total - $core - $freight;
+			
+			
+			// $grossMargin = ($revenue - $cogs) / $revenue;
+			$grossMargin = ($revenue - $cogs);
+			
+			// var_dump($order);
+			echo "<td>".$grossMargin."</td>";
+			
+			$grossMarginPercent = $grossMargin / ($revenue / 100);
+			
+			echo "<td>".$grossMarginPercent."</td>";
+		}
+		
+		
+		
+		//echo "order = ".var_dump($order);
+		
+		$items = $order->getAllItems();
+		//echo "items = ".var_dump($items);
+		
+		$itemcount = count($items);
+								
+		echo "</tr>";
+		$i++;
+	}
 		
 		
 }
@@ -291,7 +261,7 @@ else
 
 
 echo "</table>";
-
+echo "</div>";
 
 
 echo "</body></html>";

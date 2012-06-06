@@ -1,0 +1,98 @@
+/*
+	 CSS-Tricks Example
+	 by Chris Coyier
+	 http://css-tricks.com
+*/
+
+*	{ 
+  margin: 0; 
+  padding: 0; 
+}
+body { 
+  font: 14px Georgia, serif; 
+}
+h1 {
+  font: 32px Georgia, Serif;
+  margin: 0 0 20px 0;
+}
+p {
+  margin: 0 0 20px 0;
+}
+#page-wrap { 
+  width: 500px; 
+  margin: 100px auto; 
+}
+.spacer { 
+  height: 600px; 
+}
+table {
+  border-collapse: collapse;
+}
+th { 
+  background-color: lightgrey; 
+  padding: 10px; 
+  width: 200px; 
+  text-align: left;
+}
+tr:nth-child(odd) {
+  background: #eee;
+}
+td { 
+  padding: 10px; 
+  width: 200px; 
+}
+
+.some-other-area {
+  margin: 300px 0;
+  line-height: 2;
+}
+h2 {
+  background: lightgrey;
+  padding: 10px;
+  font: 28px Georgia, Serif;
+  margin: 0 0 20px 0;
+}
+
+/* chromatable */
+
+table {
+  border: solid 1px #D5D5D5;
+  border-collapse: collapse;
+	width:100%; 
+}
+
+table td {
+	border:1px solid #D5D5D5;
+	font-size:12px;
+	padding:7px 5px;
+}
+
+table th {
+	background-color:#EEE;
+	border-right:1px solid #D5D5D5;
+	font-size:13.5px;
+	line-height:120%;
+	font-weight:bold;
+	padding:8px 5px;
+	text-align:left;
+}
+.ui-resizable {
+	position:relative;
+}
+.ui-resizable-handle {
+	display:block;
+	font-size:0.1px;
+	position:absolute;
+	z-index:99999;
+}
+
+.ui-resizable-s { 
+	background:#EEEEEE url(../images/grippie.png) no-repeat scroll center 2px;
+	border-top:1px solid #CCCCCC;
+	bottom:-5px;
+	cursor:s-resize;
+	height:14px;
+	left:0;width:100%; 
+}
+
+
