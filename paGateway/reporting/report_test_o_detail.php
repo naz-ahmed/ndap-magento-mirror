@@ -76,7 +76,7 @@ if($_POST)
 
 if($_GET)
 {
-	echo "yo mama: ". $_GET['po'];
+	// echo "yo mama: ". $_GET['po'];
 	$where = "xourpo = '".$_GET['po']."'";
 	$groupby = "";
 	$data = NULL; 
@@ -88,8 +88,8 @@ if($_GET)
 	$otherCols = TRUE;
 }
 
-
-echo $where;
+//DEBUG
+// echo $where;
 
 
 
@@ -100,8 +100,10 @@ echo "<html><head>";
 echo '<link type="text/css" href="../includes/jquery-ui-1.8.19.custom/css/smoothness/jquery-ui-1.8.19.custom.css" rel="Stylesheet" />';
 echo '<script type="text/javascript" src="../includes/jquery-ui-1.8.19.custom/js/jquery-1.7.2.min.js"></script>';
 echo '<script type="text/javascript" src="../includes/jquery-ui-1.8.19.custom/js/jquery-ui-1.8.19.custom.min.js"></script>';
+echo '<script type="text/javascript" src="../includes/waypoints.js"></script>';
 
-echo '<script type="text/javascript" src="../report.js"></script>';
+echo '<link rel="stylesheet" href="report-styles.css">';
+echo '<script src="../includes/modernizr.custom.js"></script>';
 echo "</head><body style='font-family: Arial, sans-serif; font-size: 12px;'>";
 
 
@@ -121,11 +123,11 @@ echo "</form></div>";
 
 
 
-echo '<div style="height:1000px; overflow: auto;">';
+echo '<div id="wrapper">';
+echo '<p>NOTE: The detail view does not incorporate tax or shipping charges into the margin calculations. </p>';
+echo '<table id="main-nav-holder">';
 
-echo "<table cellpadding=5 cellspacing=0 border=1>";
-
-echo "<tr style='font-weight:bold; background-color:1D4E51; color:#f1f1f1;'>";
+echo '<thead><tr  id="main-nav">';
 
 echo "<th>xdate</th>";
 echo "<th>xourpo</th>";
@@ -151,15 +153,9 @@ echo "<th>% Margin</th>";
   echo "<td>total margin</td>";
 */ 
 
-if($otherCols == TRUE)
-{
-	
-
-
-}
   
 
-echo "</tr>";
+echo "</tr></thead><tbody>";
 
 
 
@@ -266,95 +262,6 @@ $i = 0;
 			}
 
 
-			
-
-			
-			
-		/*	
-			
-			
-			
-			$grandTotal = $order->getGrandTotal();
-			$shipAmount = $order->getShippingAmount();
-			
-			$amount = $grandTotal - $shipAmount;
-			
-			if($amount == NULL)
-			{
-				echo "<td>&nbsp; - &nbsp; </td>";
-			}
-			else 
-			{
-				echo "<td>".$amount."</td>";
-			}
-			
-			$total = $row['Total'];
-			$core = $row['core cost'];
-			$totalPlusCore = $total + $core;
-			$freight = $row['xfreight'];
-			
-				
-			echo "<td>".$totalPlusCore."</td>";
-			if($shipAmount == NULL)
-			{
-				echo "<td>&nbsp; - &nbsp; </td>";
-			}
-			else
-			{
-				echo "<td>".$shipAmount."</td>";
-			}
-			
-			echo "<td>".$freight."</td>";
-			
-			if($grandTotal == NULL)
-			{
-				echo "<td>&nbsp; - &nbsp; </td>";
-			}
-			else
-			{
-				echo "<td>".$grandTotal."</td>";
-			}
-			
-			$invTotalPlusCorePlusFreight = $total + $core + $freight;
-			echo "<td>".$invTotalPlusCorePlusFreight."</td>";
-			
-			//margin $ and margin %
-			// Gross margin Percentage = (Revenue - Cost of goods sold) / Revenue *100%
-			// Gross margin = (Revenue - Cost of goods sold) / Revenue
-			
-			if($grandTotal == NULL)
-			{
-				echo "<td>&nbsp; - &nbsp; </td>";
-				echo "<td>&nbsp; - &nbsp; </td>";
-			}
-			else
-			{
-				//$marginDollars = $grandTotal - $invTotalPlusCorePlusFreight;
-				$tax = $order->getBaseTaxAmount();
-				$revenue = $grandTotal - $tax;
-				
-				//cogs can't be revenue minus. cogs is just sum of total cost, core, and freight
-				//$cogs = $revenue - $total - $core - $freight;
-				$cogs = $total - $core - $freight;
-				
-				
-				// $grossMargin = ($revenue - $cogs) / $revenue;
-				$grossMargin = ($revenue - $cogs);
-				
-				// var_dump($order);
-				echo "<td>".$grossMargin."</td>";
-				
-				$grossMarginPercent = $grossMargin / ($revenue / 100);
-				
-				echo "<td>".$grossMarginPercent."</td>";
-			}
-			
-			
-			
-			//echo "order = ".var_dump($order);
-			
-			
-			*/
 
 						
 			echo "</tr>";
@@ -370,8 +277,31 @@ else
 
 
 
-echo "</table>";
+echo "</tbody></table>";
+echo '<footer><nav><ul><li><a class="top" href="'.$pagename.'" title="Back to top">Top</a></li></ul></nav></footer>';
 echo "</div>";
+
+echo '<script type="text/javascript" src="../report.js"></script>';
+
+echo '<script type="text/javascript">';
+echo '$(document).ready(function() { ';
+echo "$('.top').addClass('hidden');";
+echo "$.waypoints.settings.scrollThrottle = 30;";
+
+echo "$('#wrapper').waypoint(function(event, direction) {";
+echo "$('.top').toggleClass('hidden', direction === \"up\");";
+echo "}, {";
+echo "offset: '-100%'";
+echo "}).find('#main-nav-holder').waypoint(function(event, direction) {";
+echo "$(this).parent().toggleClass('sticky', direction === \"down\");";
+echo "event.stopPropagation();";
+echo "});";
+
+
+
+echo '  });';
+echo '</script>';
+
 
 
 echo "</body></html>";

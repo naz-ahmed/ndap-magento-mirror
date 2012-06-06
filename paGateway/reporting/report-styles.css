@@ -1,13 +1,52 @@
-/*
-	 CSS-Tricks Example
-	 by Chris Coyier
-	 http://css-tricks.com
-*/
-
-*	{ 
-  margin: 0; 
-  padding: 0; 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0b2 | 201101
+   NOTE: THIS IS A BETA VERSION (see previous line)
+   USE WITH CAUTION AND TEST WITH ABANDON */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* END MEYER RESET */
+
 body { 
   font: 14px Georgia, serif; 
 }
@@ -31,15 +70,20 @@ table {
 th { 
   background-color: lightgrey; 
   padding: 10px; 
-  width: 200px; 
+  width: 150px; 
   text-align: left;
+  border:1px solid #0b0b0b;
+  font-size:12px;
+
 }
 tr:nth-child(odd) {
   background: #eee;
 }
 td { 
   padding: 10px; 
-  width: 200px; 
+  width: 150px; 
+  border:1px solid #D5D5D5;
+  font-size:12px;
 }
 
 .some-other-area {
@@ -53,46 +97,173 @@ h2 {
   margin: 0 0 20px 0;
 }
 
-/* chromatable */
 
-table {
-  border: solid 1px #D5D5D5;
-  border-collapse: collapse;
-	width:100%; 
-}
 
-table td {
-	border:1px solid #D5D5D5;
-	font-size:12px;
-	padding:7px 5px;
-}
 
-table th {
-	background-color:#EEE;
-	border-right:1px solid #D5D5D5;
-	font-size:13.5px;
-	line-height:120%;
-	font-weight:bold;
-	padding:8px 5px;
-	text-align:left;
-}
-.ui-resizable {
-	position:relative;
-}
-.ui-resizable-handle {
-	display:block;
-	font-size:0.1px;
+
+/* sticky elements */
+
+
+
+.hide {
+	width:1px;
+	height:1px;
 	position:absolute;
-	z-index:99999;
+	text-indent:-9999px;
+	overflow:hidden;
 }
 
-.ui-resizable-s { 
-	background:#EEEEEE url(../images/grippie.png) no-repeat scroll center 2px;
-	border-top:1px solid #CCCCCC;
-	bottom:-5px;
-	cursor:s-resize;
-	height:14px;
-	left:0;width:100%; 
+.clearfix {
+	&:after {
+		visibility:hidden;
+		display:block;
+		font-size:0;
+		content:" ";
+		clear:both;
+		height:0;
+	}
+	* html & { zoom:1; }
+	*:first-child+html { zoom:1; }
 }
 
+body {
+	font-size:16px;
+	line-height:1.5;
+	color:#444;
+	background:#f5f5ff;
+	font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;
+}
 
+h1 {
+	font-size:24px;
+	font-weight:bold;
+	margin-top:24px;
+}
+
+label { padding-left: 10px;}
+#btn_reset { margin-left: 10px; }
+#select-date { margin: 30px 0 10px 0px; text-align: center; }
+
+#wrapper {
+	/*width:460px; */
+	margin:0 auto;
+}
+
+#main-nav-holder {
+	height:30px;
+}
+
+#main-nav th {
+	/*margin:0 auto; */
+	width: 150px;
+	border:1px solid #D5D5D5;
+     font-size:12px;
+     padding: 10px;
+     font-weight: bold;
+
+}
+
+#main-nav td {
+	width: 150px;
+
+}
+
+/*
+#main-nav ul {
+	/*width:500px;
+	margin-left:-20px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	font-size:14px;
+	background:#333;
+	color:#ddd;
+}
+
+#main-nav li {
+	display:inline;
+	padding:0 15px;
+	border-left:1px solid #555;
+}
+
+#main-nav li:first-child {
+	border-left:0;
+}
+*/
+
+.sticky #main-nav {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+.sticky #main-nav th {
+
+	width: 150px;
+
+	font-size:12px;
+		text-align: left;
+
+}
+
+#container {
+	margin-bottom:16px;
+}
+
+.top {
+	position:fixed;
+	right:15px;
+	bottom:15px;
+	width:50px;
+	height:25px;
+	padding-top:25px;
+	line-height:25px;
+	background:#333;
+	color:#888;
+	display:block;
+	text-transform:uppercase;
+	text-decoration:none;
+	text-align:center;
+	font-size:14px;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	behavior:url(../PIE.htc);
+	visibility: hidden;
+}
+
+.top:before {
+	position:absolute;
+	top:11px;
+	left:14px;
+	content:"";
+	border-bottom:11px solid #888;
+	border-left:11px solid transparent;
+	border-right:11px solid transparent;
+}
+
+.top:hover {
+	color:#eee;
+}
+
+.top:hover:before {
+	border-bottom-color:#eee;
+}
+
+.opacity .top {
+	opacity:1;
+	-webkit-transition:opacity 700ms linear;
+	-moz-transition:opacity 700ms linear;
+	transition:opacity 700ms linear;
+}
+
+.opacity .top.hidden {
+	opacity:0;
+}
+
+.no-opacity .top.hidden {
+	display:none;
+}
+
+/* end sticky elements */

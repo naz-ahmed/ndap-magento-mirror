@@ -27,9 +27,10 @@ $pass = $config_info['login']['pass'];
 $nw = new invoiceReport();
 $nw->setUser($uid,$pass);
 $nw->setAction('getInvoiceInRange');//only supported function 
-$nw->setStartDate('20120101');//start date
-$nw->setEndDate('20120531');//end date
+$nw->setStartDate('20111101');//start date
+$nw->setEndDate('20120606');//end date
 
+echo "sending request";
 $obj = $nw->sendRequest();
 
 // print_r($nw->sendRequest()); //send request and get response in json format
@@ -38,7 +39,7 @@ $response = json_decode($obj, true);
 
 // var_dump($response);
 
-echo "yo";
+echo "yo, request received";
 
 if($response)
 {

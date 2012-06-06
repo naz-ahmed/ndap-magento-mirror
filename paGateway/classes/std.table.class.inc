@@ -149,8 +149,10 @@ class Default_Table
       	//$query = "SELECT * FROM $this->tablename $where_str $limit_str";
       	//$query = "SELECT ".implode(",",$this->fieldlist)." FROM $this->tablename $where_str "."GROUP BY xline, mhind, xourpo, xsku, xmpline, xinv $orderby_str";
       	$query = "SELECT ".implode(",",$this->fieldlist)." FROM $this->tablename $where_str $groupby_str $orderby_str";
-      	echo $query; 
-      	echo "\r\n".$groupby_str;
+      	//DEBUG
+      	// $query .= " LIMIT 300"; 
+      	// echo $query; 
+      	// echo "\r\n".$groupby_str;
       	$result = mysql_query($query, $dbconnect) or trigger_error("SQL", E_USER_ERROR);
       	
       	//dump data into assoc array

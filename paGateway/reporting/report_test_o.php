@@ -85,7 +85,7 @@ if($_POST)
 
 if($_GET)
 {
-	echo "yo mama: ". $_GET['po'];
+	//echo "yo mama: ". $_GET['po'];
 	$where = "xourpo = '".$_GET['po']."'";
 	$groupby = "";
 	$data = NULL; 
@@ -97,8 +97,8 @@ if($_GET)
 	$otherCols = TRUE;
 }
 
-
-echo $where;
+//DEBUG
+//echo $where;
 
 
 
@@ -109,9 +109,11 @@ echo "<html><head>";
 echo '<link type="text/css" href="../includes/jquery-ui-1.8.19.custom/css/smoothness/jquery-ui-1.8.19.custom.css" rel="Stylesheet" />';
 echo '<script type="text/javascript" src="../includes/jquery-ui-1.8.19.custom/js/jquery-1.7.2.min.js"></script>';
 echo '<script type="text/javascript" src="../includes/jquery-ui-1.8.19.custom/js/jquery-ui-1.8.19.custom.min.js"></script>';
-echo '<script type="text/javascript" src="../includes/jquery.chromatable.js"></script>';
-echo '<script type="text/javascript" src="../report.js"></script>';
+echo '<script type="text/javascript" src="../includes/waypoints.js"></script>';
+
 echo '<link rel="stylesheet" href="report-styles.css">';
+echo '<script src="../includes/modernizr.custom.js"></script>';
+
 echo "</head><body style='font-family: Arial, sans-serif; font-size: 12px;'>";
 
 
@@ -125,7 +127,7 @@ echo '<option value="I">Invoice</option>';
 echo '<option value="C">Credit</option>';
 echo '<option value="B">Both</option>';
 echo '</select>';
-echo '<br/>';
+// echo '<br/>';
 echo '<input id="btn_reset" type="reset" value="reset" name="btn_reset"/>';
 echo '<input id="btn_submit" type="submit" value="SUBMIT" name="btn_submit"/>';
 echo '</div>';
@@ -138,11 +140,13 @@ echo "</form></div>";
 
 
 
+echo '<div id="wrapper">';
 
+// echo '<div id="main-nav-holder"><nav id="main-nav"><ul><li>Section 1</li><li>Section 2</li><li>Section 3</li>				<li>Section 4</li><li>Section 5</li></ul></nav></div>';
 
-echo '<table id="mainTable" class="persist-area">';
+echo '<table id="main-nav-holder">';
 
-echo '<tr class="persist-header">';
+echo '<thead><tr  id="main-nav">';
 
 
 echo "<th>xdate</th>";
@@ -166,7 +170,7 @@ echo "<th>Margin $</th>";
 
   
 
-echo "</tr>";
+echo "</tr></thead><tbody>";
 
 
 
@@ -290,9 +294,30 @@ else
 
 
 
-echo "</table>";
+echo "</tbody></table>";
+echo '<footer><nav><ul><li><a class="top" href="'.$pagename.'" title="Back to top">Top</a></li></ul></nav></footer>';
+echo "</div>";
+
+echo '<script type="text/javascript" src="../report.js"></script>';
+
+echo '<script type="text/javascript">';
+echo '$(document).ready(function() { ';
+echo "$('.top').addClass('hidden');";
+echo "$.waypoints.settings.scrollThrottle = 30;";
+
+echo "$('#wrapper').waypoint(function(event, direction) {";
+echo "$('.top').toggleClass('hidden', direction === \"up\");";
+echo "}, {";
+echo "offset: '-100%'";
+echo "}).find('#main-nav-holder').waypoint(function(event, direction) {";
+echo "$(this).parent().toggleClass('sticky', direction === \"down\");";
+echo "event.stopPropagation();";
+echo "});";
 
 
+
+echo '  });';
+echo '</script>';
 
 echo "</body></html>";
 
