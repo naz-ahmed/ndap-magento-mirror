@@ -100,8 +100,12 @@
                             <li><strong><?php echo $this->__('Core Deposit:') ?></strong> 
                             <?php echo '$'.$this->helper('catalog/output')->productAttribute($this->getProduct(), $_core, 'cost_of_core') ?></li>
                         <?php endif; ?>
-                        
-                        <li><strong><?php echo $this->__('Availability') ?>:</strong> <span class="highlight"><?php echo $this->__('In Stock') ?></span></li>     
+                        <?php if($_product->isSaleable()): ?>
+                            <li><strong><?php echo $this->__('Availability') ?>:</strong> <span class="highlight"><?php echo $this->__('In Stock') ?></span></li>
+                         <?php else: ?>    
+                            <li><strong><?php echo $this->__('Availability') ?>:</strong> <span class="highlight"><?php echo $this->__('Out of Stock') ?></span></li>
+                         <?php endif; ?>
+                             
                                                
 						<?php $_shipping = $this->getProduct()->getShipping(); ?>
 						<?php if ($_shipping): ?>
