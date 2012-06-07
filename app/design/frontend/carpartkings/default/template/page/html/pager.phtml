@@ -72,7 +72,7 @@ $this->setData('show_amounts', false);
                     <?php else: ?>
                         <?php echo $this->getAnchorTextForPrevious() ?>
                     <?php endif;?>                                                  
-                </a> | 
+                </a> &nbsp;|
             </li>
         <?php endif;?>
             <li>
@@ -101,7 +101,7 @@ $this->setData('show_amounts', false);
 
         <?php if (!$this->isLastPage()): ?>
             <li>
-                 | <a class="next<?php if(!$this->getAnchorTextForNext()): ?> i-next<?php endif; ?>" href="<?php echo $this->getNextPageUrl() ?>" title="<?php echo $this->__('Next') ?>">
+                |&nbsp;<a class="next<?php if(!$this->getAnchorTextForNext()): ?> i-next<?php endif; ?>" href="<?php echo $this->getNextPageUrl() ?>" title="<?php echo $this->__('Next') ?>">
                     <?php if(!$this->getAnchorTextForNext()): ?>
                         Next >>
                     <?php else: ?>

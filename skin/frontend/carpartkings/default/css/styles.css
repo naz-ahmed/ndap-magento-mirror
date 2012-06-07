@@ -332,12 +332,12 @@ p.required { font-size:11px; text-align:right; color:#EB340A; }
 .pager .limiter { float:right; }
 .pager .limiter label { vertical-align:middle; }
 .pager .limiter select { padding:0; margin:0 0 1px; vertical-align:middle; }
-.pager .pages { margin:0 220px; font- /*140px;*/ }
+.pager .pages { margin:0 180px; font- /*140px;*/ }
 .pager .pages ol { display:inline; }
 .pager .pages ol { /* Added for the toolbar - quickfix */
     display: inline;
     float: right;
-    margin-left: -55px;
+    margin-left: -30px;
 }
 .pager .pages li { display:inline; margin:0 2px; }
 .pager .pages .current {font-weight:900;}
