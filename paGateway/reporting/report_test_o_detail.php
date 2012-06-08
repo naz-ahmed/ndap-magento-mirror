@@ -239,6 +239,10 @@ $i = 0;
 					echo "</td>";
 					*/
 				}
+				else
+				{
+					echo $partnumber."\r\n";
+				}
 				
 								
 				

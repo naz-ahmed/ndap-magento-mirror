@@ -27,8 +27,9 @@ $pass = $config_info['login']['pass'];
 $nw = new invoiceReport();
 $nw->setUser($uid,$pass);
 $nw->setAction('getInvoiceInRange');//only supported function 
-$nw->setStartDate('20111101');//start date
-$nw->setEndDate('20120606');//end date
+// $nw->setStartDate('20111101');//start date
+$nw->setStartDate('20120608');//start date
+$nw->setEndDate('20120608');//end date
 
 echo "sending request";
 $obj = $nw->sendRequest();

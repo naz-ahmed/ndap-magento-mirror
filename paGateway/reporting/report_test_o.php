@@ -3,6 +3,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL); 
 
+date_default_timezone_set('EST');
 
 //load paAPI
 require_once('/var/www/html/magento/paGateway/reportAPI/invoiceReport.php');
@@ -34,10 +35,22 @@ function makeDate($strDate)
 	return($formatted_date);
 
 }
+
+
+
+$current_month = date("m");
+$current_year = date("Y");
+
+$start_current_month = $current_year."-".$current_month."-01";
+$today = date("Y-m-d");
+
 $pagename = $_SERVER['REQUEST_URI'];
 $detailPage = "report_test_o_detail.php";
 
-$where = "";
+
+
+$where = "xdate between '".$start_current_month."' AND '".$today."'";
+
 
 $groupby = "xourpo, xinv ";
 
@@ -55,6 +68,7 @@ $oInvoiceParts = new PaInvoice;
 
 if($_POST)
 {
+		//var_dump($_POST);
 		$date_from = makeDate($_POST['date-from']);
 		$date_to = makeDate($_POST['date-to']);
 		$orderId = $_POST['orderId'];
@@ -119,8 +133,8 @@ echo "</head><body style='font-family: Arial, sans-serif; font-size: 12px;'>";
 
 echo '<div><form id="form1" method="post" action="report_test_o.php">';
 echo '<div id="select-date">';
-echo '<label for="date-from">Date from: </label><input id="date-from" name="date-from" type="text" value="" />';
-echo '<label for="date-to">Date to: </label><input id="date-to" name="date-to" type="text" value="" />';
+echo '<label for="date-from">Date from: </label><input id="date-from" name="date-from" type="text" value="'.$current_month."/"."01/".$current_year.'" />';
+echo '<label for="date-to">Date to: </label><input id="date-to" name="date-to" type="text" value="'.date("m/d/Y").'" />';
 echo '<label for="selMhind">Show: </label>';
 echo '<select id="selMhind" name="selMhind">';
 echo '<option value="I">Invoice</option>';
@@ -208,7 +222,7 @@ $i = 0;
 			}
 			else 
 			{
-				echo "<td>".$amount."</td>";
+				echo "<td>".number_format($amount,2)."</td>";
 			}
 			
 			$total = $row['Total'];
@@ -224,7 +238,7 @@ $i = 0;
 			}
 			else
 			{
-				echo "<td>".$shipAmount."</td>";
+				echo "<td>".number_format($shipAmount,2)."</td>";
 			}
 			
 			echo "<td>".$freight."</td>";
@@ -235,11 +249,11 @@ $i = 0;
 			}
 			else
 			{
-				echo "<td>".$grandTotal."</td>";
+				echo "<td>".number_format($grandTotal,2)."</td>";
 			}
 			
 			$invTotalPlusCorePlusFreight = $total + $core + $freight;
-			echo "<td>".$invTotalPlusCorePlusFreight."</td>";
+			echo "<td>".number_format($invTotalPlusCorePlusFreight,2)."</td>";
 			
 			//margin $ and margin %
 			// Gross margin Percentage = (Revenue - Cost of goods sold) / Revenue *100%
@@ -265,11 +279,11 @@ $i = 0;
 				$grossMargin = ($revenue - $cogs);
 				
 				// var_dump($order);
-				echo "<td>".$grossMargin."</td>";
+				echo "<td>".number_format($grossMargin,2)."</td>";
 				
 				$grossMarginPercent = $grossMargin / ($revenue / 100);
 				
-				echo "<td>".$grossMarginPercent."</td>";
+				echo "<td>".number_format(round($grossMarginPercent,2),2)."</td>";
 			}
 			
 			
