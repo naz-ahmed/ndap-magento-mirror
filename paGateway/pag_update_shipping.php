@@ -178,7 +178,7 @@ foreach($allIds as $thisId)
 		{
 			$CarrierCode = "usps";
 		}
-		if( (strpos($MagentoShipDescription, "ChannelUnity Shipping - Exp Canada")) || (strpos($MagentoShipDescription, "ChannelUnity Shipping - Std Canada")) ) 
+		if( (strpos($MagentoShipDescription, "ChannelUnity Shipping - Exp Canada")) || (strpos($MagentoShipDescription, "ChannelUnity Shipping - Std Canada")) || (strpos($MagentoShipDescription, "ChannelUnity Shipping - Exp Alaska Hawaii Street Addr")) ) 
 		{
 			$CarrierCode = "usps";
 		}
