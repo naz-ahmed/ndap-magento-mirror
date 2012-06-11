@@ -157,24 +157,18 @@ foreach($allIds as $thisId)
 
 	$MagentoShipMethod = strtolower($myOrder->getShippingMethod());
 	$MagentoShipDescription = strtolower($myOrder->getShippingDescription());
-	//$MagentoShipCode = $myOrder->getCarrier_code(); this doesn't work. need to find cx way to get CarrierCode
-	
+
+	//just returns the useless googlecheckout_carrier var	
 	//var_dump($myOrder->getShippingCarrier()->getCarrierCode());
 	//var_dump($myOrder->getShippingCarrier());
-	$CarrierCode = substr($MagentoShipMethod,0,strpos($MagentoShipMethod,'_'));
 	
 	echo "MagentoShipMethod = ".$MagentoShipMethod."\r\n";
 	echo	"MagentoShipDescription = ".$MagentoShipDescription."\r\n";
-		
-	// reset CarrierCode for googlecheckout or ebay orders to appropriate carrier
-	if(($CarrierCode == "googlecheckout") || ($CarrierCode == "m2eproshipping") || ($CarrierCode == "channelunitycustomrate") )
-	{ 
-		$CarrierCode = getShipCarrier($MagentoShipDescription);		
-	}
+
 	
 	
 	$data = array();
-	$data['carrier_code'] = $CarrierCode;
+	$data['carrier_code'] = getShipCarrier($MagentoShipDescription);
 	$data['title'] = ucwords($MagentoShipDescription);
 	$data['number'] = $TrackingNumber;
 	
