@@ -4,7 +4,9 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL); 
 
+include ("/var/www/html/magento/paGateway/includes/conn.php"); 
 include "/var/etl/bin/includes/logging.php";
+include "/var/etl/bin/includes/database_functions.php";
 
 // Logging class initialization
 $log = new Logging();
@@ -18,6 +20,9 @@ $log->lwrite("starting file. \r\n");
 	$scriptMode = "live";
 
 $config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', true);
+
+$db = mysql_select_db($config_info['db_info']['db_selected'], $con);
+if (!$db) {echo "cant select database";}
 
 //load paAPI
 require_once("/var/www/html/magento/paGateway/paOrder.php");
@@ -97,6 +102,7 @@ $myOrder = Mage::getModel('sales/order');
 $orders=Mage::getModel('sales/mysql4_order_collection');
 $orders->addFieldToFilter('status',Array('eq'=>"sent_to_pa"));  //filter to orders whose Status is "sent_to_pa"
 
+
 // print_r($orders);
 
 
@@ -152,38 +158,18 @@ foreach($allIds as $thisId)
 	$MagentoShipMethod = strtolower($myOrder->getShippingMethod());
 	$MagentoShipDescription = strtolower($myOrder->getShippingDescription());
 	//$MagentoShipCode = $myOrder->getCarrier_code(); this doesn't work. need to find cx way to get CarrierCode
+	
+	//var_dump($myOrder->getShippingCarrier()->getCarrierCode());
+	//var_dump($myOrder->getShippingCarrier());
 	$CarrierCode = substr($MagentoShipMethod,0,strpos($MagentoShipMethod,'_'));
 	
 	echo "MagentoShipMethod = ".$MagentoShipMethod."\r\n";
 	echo	"MagentoShipDescription = ".$MagentoShipDescription."\r\n";
 		
 	// reset CarrierCode for googlecheckout or ebay orders to appropriate carrier
-	if(($CarrierCode == "googlecheckout") || ($CarrierCode == "m2eproshipping_m2eproshipping") || ($CarrierCode == "channelunitycustomrate") )
+	if(($CarrierCode == "googlecheckout") || ($CarrierCode == "m2eproshipping") || ($CarrierCode == "channelunitycustomrate") )
 	{ 
-		// continue;
-		// check from shipping description which carrier selected
-		if(strpos($MagentoShipDescription, "fedex" )) 
-		{
-			$CarrierCode = "fedex";
-		}
-		if(strpos($MagentoShipDescription, "usps"))
-		{
-			$CarrierCode = "usps";
-		}
-		if(strpos($MagentoShipDescription, "Cont US Street Addr")) //channel unity std and exp
-		{
-			$CarrierCode = "fedex";
-		}
-		if(strpos($MagentoShipDescription, "Std US Prot PO Box")) //channel unity usps
-		{
-			$CarrierCode = "usps";
-		}
-		if( (strpos($MagentoShipDescription, "ChannelUnity Shipping - Exp Canada")) || (strpos($MagentoShipDescription, "ChannelUnity Shipping - Std Canada")) || (strpos($MagentoShipDescription, "ChannelUnity Shipping - Exp Alaska Hawaii Street Addr")) ) 
-		{
-			$CarrierCode = "usps";
-		}
-
-		
+		$CarrierCode = getShipCarrier($MagentoShipDescription);		
 	}
 	
 	

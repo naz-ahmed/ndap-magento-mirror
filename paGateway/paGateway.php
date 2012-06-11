@@ -3,16 +3,6 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL); 
 
-// ini_set("include_path", ".:/var/www/html/magento/paGateway:/usr/local/lib/php:/home/path/to/pear");
-
-$con = mysql_connect("magento01.c2lug8itjgui.us-east-1.rds.amazonaws.com", "magento", "C3HKMVYD7DQJsSVY");
-if (!$con)
-{
-	die('Could not connect: ' . mysql_error());
-}
-
-$db = mysql_select_db("magento", $con);
-if (!$db) {echo "cant select database";}
 
 //************************ SET STATUS for API ***********************************//
 
@@ -23,8 +13,13 @@ $apiMode = "live";
 
 $config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', true);
 
+include ("/var/www/html/magento/paGateway/includes/conn.php"); 
 include "/var/etl/bin/includes/logging.php";
 include "/var/etl/bin/includes/functions.php";
+include "/var/etl/bin/includes/database_functions.php";
+
+$db = mysql_select_db($config_info['db_info']['db_selected'], $con);
+if (!$db) {echo "cant select database";}
 
 // Logging class initialization
 $log = new Logging();
@@ -54,25 +49,7 @@ $to = $config_info['email']['to'];
 $uid = $config_info['login']['uid'];
 $pass = $config_info['login']['pass'];
 
-function getPaShipCode($text)
-{
-	$sql_string = "SELECT pa_code FROM cpk_shipping_translation WHERE magento_code LIKE '%".$text."%' OR magento_description LIKE '%".$text."%'";
-	$result = mysql_query($sql_string);
-	if($result)
-	{
-		$row = mysql_fetch_row($result);
-		
-		if($row){ 
-			return $row[0];
-		}
-	}
-	else
-	{
-		return "";
-	}
-
-	
-}
+//moved getPaShipCode to /var/etl/bin/includes/database_functions.php
 
 
 //FILTER to only orders in processing status
