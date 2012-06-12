@@ -24,14 +24,16 @@ $config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', t
 $uid = $config_info['login']['uid'];
 $pass = $config_info['login']['pass'];
 
+$today = date("Ymd");
+
 $nw = new invoiceReport();
 $nw->setUser($uid,$pass);
 $nw->setAction('getInvoiceInRange');//only supported function 
 // $nw->setStartDate('20111101');//start date
-$nw->setStartDate('20120608');//start date
-$nw->setEndDate('20120608');//end date
+$nw->setStartDate($today);//start date
+$nw->setEndDate($today);//end date
 
-echo "sending request";
+echo "sending request \r\n";
 $obj = $nw->sendRequest();
 
 // print_r($nw->sendRequest()); //send request and get response in json format
@@ -40,7 +42,7 @@ $response = json_decode($obj, true);
 
 // var_dump($response);
 
-echo "yo, request received";
+echo "yo, request received \r\n";
 
 if($response)
 {
@@ -51,22 +53,7 @@ $i = 0;
 
 		foreach($responseDetail as $item)
 		{
-			// var_dump($item);
-			//echo "<tr>";
-			
-			/*
-			foreach($item as $detail)
-			{
-			
-				echo "<td>$detail</td>";
-				//print_r($detail."-----");
-				
-			}
-			*/
-						
-			
-			//var_dump($responseDetail[$i]);
-											
+														
 			$norm_partnumber = preg_replace("/[^\p{L}\p{N}]/u", '', $responseDetail[$i]['xsku']);
 				//set up an insert statement
 				
@@ -105,11 +92,9 @@ $i = 0;
 			
 			
 			$i++;
-			echo $i;
-			echo "\r\n";
 		}
 		
-		
+		echo "all done. ";
 }
 else
 { 
