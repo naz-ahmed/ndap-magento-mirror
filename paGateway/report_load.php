@@ -25,13 +25,14 @@ $uid = $config_info['login']['uid'];
 $pass = $config_info['login']['pass'];
 
 $today = date("Ymd");
+$yesterday = date("Y-m-d", strtotime("yesterday"));
 
 $nw = new invoiceReport();
 $nw->setUser($uid,$pass);
 $nw->setAction('getInvoiceInRange');//only supported function 
 // $nw->setStartDate('20111101');//start date
-$nw->setStartDate($today);//start date
-$nw->setEndDate($today);//end date
+$nw->setStartDate($yesterday);//start date
+$nw->setEndDate($yesterday);//end date
 
 echo "sending request \r\n";
 $obj = $nw->sendRequest();
