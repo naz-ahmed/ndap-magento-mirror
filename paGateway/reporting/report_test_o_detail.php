@@ -241,7 +241,7 @@ $i = 0;
 				}
 				else
 				{
-					echo $partnumber."\r\n";
+					//echo $partnumber."\r\n";
 				}
 				
 								
