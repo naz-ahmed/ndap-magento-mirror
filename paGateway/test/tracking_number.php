@@ -119,6 +119,7 @@ echo "carrier is ".find_carrier('1Z6R599Y0398743361')."\n";   //ups
 echo "carrier is ".find_carrier('439230031461237')."\n";   //fedex
 echo "carrier is ".find_carrier('230014970309444')."\n";
 
+echo "this returns empty string".find_carrier('1234')."see?";
 
 
 

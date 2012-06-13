@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 include ("/var/www/html/magento/paGateway/includes/conn.php"); 
 include "/var/etl/bin/includes/logging.php";
 include "/var/etl/bin/includes/database_functions.php";
+include "/var/etl/bin/includes/functions.php";
 
 // Logging class initialization
 $log = new Logging();
@@ -73,8 +74,6 @@ function getStatus($orderId)
 			$OrderStatus['Id'] = $orderId;
 		}
 		
-	
-	
 	}
 	
 	return $OrderStatus;
@@ -118,7 +117,8 @@ foreach($allIds as $thisId)
 	$paDetails = getStatus($IncrementId);
 	$paStatus = $paDetails['Status'];
 	
-	$log->lwrite("Order id = ".$thisId." Increment Id = ".$IncrementId." PA Status = ".$paStatus." Messages = ".$paDetails['Messages']."\r\n");
+	//DEBUG more verbose logs
+	// $log->lwrite("Order id = ".$thisId." Increment Id = ".$IncrementId." PA Status = ".$paStatus." Messages = ".$paDetails['Messages']."\r\n");
 	
 	//skip over anything that doesn't have "Shipped" status from PA
 	if($paStatus !== "Shipped") { continue; }
@@ -127,7 +127,6 @@ foreach($allIds as $thisId)
 	$comment .= " ".$paDetails['Time']; //adds the shipping time to the comment
 	
 	//DEV
-	// going to try it for all. should only make changes if we have a tracking number
 	// if($IncrementId !== '100000034') { continue; }
 	
 	echo "Increment Id = ".$IncrementId."\r\n";
@@ -162,14 +161,39 @@ foreach($allIds as $thisId)
 	//var_dump($myOrder->getShippingCarrier()->getCarrierCode());
 	//var_dump($myOrder->getShippingCarrier());
 	
-	echo "MagentoShipMethod = ".$MagentoShipMethod."\r\n";
-	echo	"MagentoShipDescription = ".$MagentoShipDescription."\r\n";
-
+	//find what carrier PA actually shipped with. may differ from customer-specified method
+	//if tracking doesn't match a pattern we know, use the customer-specified method and log the issue.
+	$carrier = find_carrier($TrackingNumber);
+	if($carrier == "")
+	{
+		$carrier = getShipCarrier($MagentoShipDescription);
+		$log->lwrite("Tracking number not matched to carrier: ".$TrackingNumber);
+	}
 	
 	
 	$data = array();
-	$data['carrier_code'] = getShipCarrier($MagentoShipDescription);
-	$data['title'] = ucwords($MagentoShipDescription);
+	$data['carrier_code'] = $carrier;
+	
+	// translate the actual shipping method title
+	$carrier_name = ucwords($MagentoShipDescription);
+	
+	switch($carrier)
+	{
+		case "ups":
+			$carrier_name = "United Parcel Service";
+			break;
+		
+		case "fedex":
+			$carrier_name = "Federal Express";
+			break;
+		
+		case "usps":
+			$carrier_name = "United States Postal Service";
+			break;
+	
+	}
+	
+	$data['title'] = $carrier_name;
 	$data['number'] = $TrackingNumber;
 	
 	$track = Mage::getModel('sales/order_shipment_track')->addData($data);
@@ -184,7 +208,8 @@ foreach($allIds as $thisId)
 	$shipment->setEmailSent(false);
 	if($scriptMode == 'live') { $shipment->setEmailSent(true); }
 	
-	var_dump($data);
+	//DEBUG
+	// var_dump($data);
 	
 	
 	if($scriptMode == "live")
@@ -209,7 +234,7 @@ foreach($allIds as $thisId)
 } //for-each $allIds
 
 
-
+$log->lwrite("finished. \r\n");
 
 
 /******  DEV
