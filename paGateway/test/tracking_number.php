@@ -91,9 +91,9 @@ echo "matched: : {$matches[0]}\n";
 
 function find_carrier($track)
 {
-	$ups = '/[0-9A-Z]{2} ?[0-9A-Z]{4} ?[0-9A-Z]{3} ?[0-9A-Z]{8}/';
-	$usps = '/^(EA|EC|CP|RA|CJ)[0-9]{9}[A-Z]{2}?$|^94[0-9]{20}/';
-	$fedex = '/^[0-9]{12}?$|^[0-9]{15}$/';
+	$ups = '/[0-9A-Z]{2} ?[0-9A-Z]{4} ?[0-9A-Z]{3} ?[0-9A-Z]{8}/i';
+	$usps = '/^(EA|EC|CP|RA|CJ)[0-9]{9}[A-Z]{2}?$|^94[0-9]{20}/i';
+	$fedex = '/^[0-9]{12}?$|^[0-9]{15}$/i';
 	$carrier = "";
 
 	if(preg_match($usps,$track))
@@ -115,7 +115,7 @@ function find_carrier($track)
 
 echo "carrier is ".find_carrier('EC691036825US')."\n";  //usps
 echo "carrier is ".find_carrier('CJ221020023US')."\n";  //usps
-echo "carrier is ".find_carrier('1Z6R599Y0398743361')."\n";   //ups
+echo "little z carrier is ".find_carrier('1z7a5v061340194575')."\n";   //ups
 echo "carrier is ".find_carrier('439230031461237')."\n";   //fedex
 echo "carrier is ".find_carrier('230014970309444')."\n";
 
