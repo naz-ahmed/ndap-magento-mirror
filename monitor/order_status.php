@@ -132,7 +132,7 @@ foreach($allIds as $thisId)
 
 //PREPARE AN EMAIL with this info
 
-$query = "SELECT * FROM m2epro_ebay_orders WHERE magento_order_id IS NULL";
+$query = "SELECT * FROM m2epro_ebay_orders WHERE magento_order_id IS NULL AND payment_status_m2e_code =3";
 	$result = mysql_query($query);
 	
 	if(mysql_num_rows($result) > 0 )
@@ -141,7 +141,7 @@ $query = "SELECT * FROM m2epro_ebay_orders WHERE magento_order_id IS NULL";
 		{
 			$msg_body .= "\r\n";
 			$msg_body .= "\r\n";
-			$msg_body .= "EBAY ORDERS WHERE magento_order_id IS NULL -- means we don't actually have it in stock anymore";
+			$msg_body .= "EBAY ORDERS WHERE magento_order_id IS NULL AND payment_status_m2e_code =3 -- means we don't actually have it in stock anymore and it was paid for";
 			$msg_body .= "\r\n";
 			$msg_body .= "Buyer Name: ".$row['buyer_name'];
 			$msg_body .= "Buyer Email: ".$row['buyer_email'];
