@@ -22,6 +22,9 @@ $log->lwrite("starting file. \r\n");
 
 $config_info = parse_ini_file('/var/www/html/magento/paGateway/paGateway.ini', true);
 
+$now = date('Y.m.d \: h:m:s');
+$to = $config_info['email']['to'];
+
 $db = mysql_select_db($config_info['db_info']['db_selected'], $con);
 if (!$db) {echo "cant select database";}
 
@@ -75,6 +78,12 @@ function getStatus($orderId)
 		}
 		
 	}
+	else
+	{
+		$OrderStatus = FALSE;
+		// echo "didn't get response?"; 
+	}
+	
 	
 	return $OrderStatus;
 	
@@ -110,11 +119,22 @@ $allIds=$orders->getAllIds();
 
 foreach($allIds as $thisId) 
 {
-	
+
 	$myOrder->reset()->load($thisId);
 	$myOrder->load(Mage::getSingleton('sales/order')->getLastOrderId());
 	$IncrementId = $myOrder->getIncrementId();
 	$paDetails = getStatus($IncrementId);
+	/*
+	if($paDetails == FALSE)
+	{
+		//getStatus should only return false if the API is down.
+		$subject = "Error in getting tracking numbers back from PA - api failed";
+		$body = "Did not receive any response from paAPI ".$now.". \r"; 
+		mail($to, $subject, $body);
+		die();
+		
+	}
+	*/
 	$paStatus = $paDetails['Status'];
 	
 	//DEBUG more verbose logs

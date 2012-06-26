@@ -295,7 +295,7 @@ foreach($allIds as $thisId) {
 		$body .= ". \n"; 
 		
 		mail($to, $subject, $body); 
-		
+		die();
 	}
 	
 	if($ret->responseStatus == 'Success')
