@@ -53,6 +53,93 @@ display:none
 
 <p>The Kings salute you!</p>
 
+<?
+// left a few other variables in here just in case we want more tracking info
+//$_customerId = Mage::getSingleton('customer/session')->getCustomerId();
+//$customer = Mage::getSingleton('customer/session')->getCustomer();
+$lastOrderId = Mage::getSingleton('checkout/session')->getLastOrderId();
+$order = Mage::getSingleton('sales/order');
+$order->load($lastOrderId);
+$_totalData = $order->getData();
+$_grand = $_totalData['grand_total'];
+$_email = $order->getBillingAddress()->getEmail();
+//$_name = $customer->getName();
+//$_taxvat = $customer->getTaxvat();
+$thisOrder = $this->escapeHtml($this->getOrderId());
+$address = Mage::getModel('sales/order_address')->load($order->billing_address_id);
+$shipaddress = Mage::getModel('sales/order_address')->load($order->shipping_address_id);
+ $paymentInfo = Mage::helper('payment')->getInfoBlock($order->getPayment())
+            ->setIsSecureMode(true)
+            ->toHtml();
+        $paymentInfo = htmlspecialchars_decode($paymentInfo, ENT_QUOTES);
+        $payment = explode('{{pdf_row_separator}}', $paymentInfo);
+        foreach ($payment as $key=>$value){
+            if (strip_tags(trim($value)) == '') {
+                unset($payment[$key]);
+            }
+        }
+?>
+    Order #:<?php echo $thisOrder ?>
+<table width="100%">
+    
+    <tr>
+        <td width="50%"><b>Sold to:</b></td>
+        <td><b>Ship to:</b></td>
+    </tr>
+    <tr>
+        <td><?php echo $address->getFirstname().'<br>'.
+                        $address->getLastname().'<br>'.
+                        $address->getStreet(1).'<br>'.
+                        $address->getCity().'<br>'.
+                        $address->getPostcode();?>
+        </td>
+        <td><?php echo $shipaddress->getFirstname().'<br>'.
+                        $shipaddress->getLastname().'<br>'.
+                        $shipaddress->getStreet(1).'<br>'.
+                        $shipaddress->getCity().'<br>'.
+                        $shipaddress->getPostcode();?>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Payment Method: </b></td>
+        <td><b>Shipping Method:</b></td>
+    </tr>
+    <tr>
+        <td><?php echo "<pre>";print_r($paymentInfo);echo "</pre>";   ?>
+        </td>
+        <td><?php echo $order->getShippingDescription();?>
+        </td>
+    </tr>
+</table>
+<table width ="100%">
+    <tr>
+        <td width="15%"><b>Products</b></td>
+        <td width="15%"><b>SKU</b></td>
+        <td width="15%"><b>Price</b></td>
+        <td width="15%"><b>Qty</b></td>
+        <td width="15%"><b>Tax</b></td>
+        <td><b>Subtotal</b></td>
+    </tr>
+   <?php foreach($order->getItemsCollection() as $item):?>
+    <tr>
+        <td><?php echo $item->getName(); ?></td>
+        <td><?php echo $item->getSku(); ?></td>
+        <td><?php echo $item->getPrice(); ?></td>
+        <td><?php echo $item->getQtyOrdered(); ?></td>
+        <td><?php echo $item->getTaxAmount(); ?></td>
+        <td><?php echo $item->getRowTotal(); ?></td>
+    </tr>
+   <?php endforeach;?>
+</table>        
+<table>
+    
+    <tr>
+        <td width="50%"></td>
+        <td><b>Totals:</b></td>
+        <td><?php echo "Subtotal: ".$_totalData["subtotal"]."<br>";
+                  echo "Shipping: ".$_totalData["shipping_amount"]."<br>";?></td>
+    </tr>
+<table>
 <?/*
     <p><?php echo $this->__('You will receive an order confirmation email with details of your order and a link to track its progress.') ?></p>
 <?php if ($this->getCanViewOrder() && $this->getCanPrintOrder()) :?>
@@ -86,20 +173,7 @@ display:none
 <div class="buttons-set">
     <button type="button" class="button" title="<?php echo $this->__('Continue Shopping') ?>" onclick="window.location='<?php echo $this->getUrl() ?>'"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
 </div>
-<?
-// left a few other variables in here just in case we want more tracking info
-//$_customerId = Mage::getSingleton('customer/session')->getCustomerId();
-//$customer = Mage::getSingleton('customer/session')->getCustomer();
-$lastOrderId = Mage::getSingleton('checkout/session')->getLastOrderId();
-$order = Mage::getSingleton('sales/order');
-$order->load($lastOrderId);
-$_totalData = $order->getData();
-$_grand = $_totalData['grand_total'];
-$_email = $order->getBillingAddress()->getEmail();
-//$_name = $customer->getName();
-//$_taxvat = $customer->getTaxvat();
-$thisOrder = $this->escapeHtml($this->getOrderId());
-?>
+
 <SCRIPT LANGUAGE="JavaScript">
 ord=Math.random();
 ord=ord*10000000000000000000;

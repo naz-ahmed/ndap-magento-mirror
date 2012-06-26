@@ -53,7 +53,7 @@
 <?php endif; ?>
 </div>
 <?
-if($crumbs && is_array($crumbs) && $this->getRequest()->getControllerName()!="page"){
+if($crumbs && is_array($crumbs) && $this->getRequest()->getControllerName()!="page" && $this->getRequest()->getControllerName()!="result"){
     
 //echo '<div id=changeVfits2 class=changeVfits2"><a href="#inline1" class="fancybox"><img src="'.$this->getUrl().'media/cpk/change.png" alt="Change Vehicle"/></a></div>';
 echo '<div id=changeVfits2 class=changeVfits2"><a href="#inline1" class="fancybox"><img src="'.Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB).'media/cpk/change.png" alt="Change Vehicle"/></a></div>'; 

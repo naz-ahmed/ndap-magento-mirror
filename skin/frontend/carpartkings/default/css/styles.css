@@ -750,7 +750,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* View Type: List */
 .products-list {  }
-.products-list li.item { background:url(../images/products-list.png) 2px 100% no-repeat; margin-bottom:2px; min-height:255px; }
+.products-list li.item { background:url(../images/products-list.png) 2px 100% no-repeat; margin-bottom:2px;  }
 .products-list li.item.last { border-bottom:0; }
 .products-list .product-shop { float:left; width:260px; color:#7d7d7d; line-height:20px; }
 .products-list .product-shop strong { color:#231f20 }
@@ -764,7 +764,7 @@ tr.summary-details-excluded { font-style:italic; }
 .products-list .product-price .p { text-align:center; margin-bottom:5px; }
 /*.products-list .product-price .highlight { color:#ff0000; }*/
 .products-list .product-price .add-to-cart-container { float:left; margin-top:10px; width:198px; }
-.products-list .product-image { float:left; width:140px; height:140px; padding:15px 25px 10px 35px; }
+.products-list .product-image { float:left; width:140px; padding:15px 25px 10px 35px; }
 .products-list .product-name { margin:0 0 6px; font:normal 16px/1.15 'Memphis-Lig',Arial,Helvetica,sans-serif; display:inline; }
 .products-list .product-name a { color:#444; text-decoration:none; }
 .products-list .all-categories { float:right; font:normal 14px/1.25 'Memphis-Med', Arial, Helvetica, sans-serif; display:inline; background:url(../images/arrow_down.png) 100% 8px no-repeat; padding-right:20px; cursor:pointer; }

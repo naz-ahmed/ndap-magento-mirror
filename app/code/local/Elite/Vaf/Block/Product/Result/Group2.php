@@ -52,7 +52,7 @@ class Elite_Vaf_Block_Product_Result_Group2 extends Elite_Vaf_Block_Product_Resu
         $thisCat = $this->htmlEscape($this->imagePath($category));
         $thisCat = str_replace(",", "", $thisCat);
         
-        $html .= '<div class="product-image"><img align="left" src="' . Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) .'categories/'. $thisCat . '.jpg" /></div>';
+        $html .= '<table style="padding: 8px 10px 23px 15px;"><tr><td width="180px"><div class="product-image"><img align="left" src="' . Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) .'categories/'. $thisCat . '.jpg" /></div></td><td width="100%">';
         
         if ($category->hasChildren())
         {
@@ -61,6 +61,7 @@ class Elite_Vaf_Block_Product_Result_Group2 extends Elite_Vaf_Block_Product_Resu
             {
                 $html .= $this->renderChild($child);
             }
+            $html.='</td></tr></table>';
             //$html .= '</ul>';
         }
         return $html;
